@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+              xmlns:local="clr-namespace:ChelperPro.Models;" 
+             x:Class="ChelperPro.Views.PickNewcomerPage"
+             Title="Help other">
+       <NavigationPage.TitleView>
+        <Grid>
+            <Button Text="1234 Broadway Ave ▼" TextColor="White" FontSize="17" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Button Text="Alert" TextColor="White" HorizontalOptions="End" FontSize="17"/>
+        </Grid>
+    </NavigationPage.TitleView>
+       <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="firstItemTemplate">
+            <ViewCell >  
+                <StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="10,10,10,10">
+                        <Label Text="Problem list" FontSize="19" TextColor="#4B4B4B" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+                        <Label Text="Auto Match" FontSize="19" TextColor="#4B4B4B" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"></Label>
+                        <Switch></Switch>
+                    </StackLayout>
+                </StackLayout>
+            </ViewCell>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="otherItemTemplate">
+            <ViewCell>
+                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="8" />
+                                        <RowDefinition Height="10" />
+                                        <RowDefinition Height="15" />
+                                        <RowDefinition Height="15" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="3"
+                                           Grid.Row="0"
+                                           Grid.ColumnSpan="1"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"/>
+                                    <Label Grid.Column="1"
+                                           Grid.Row="0"
+                                           Grid.ColumnSpan="3"
+                                           FontSize="20"
+                                           TextColor="#393939"
+                                           Text="{Binding Name}"
+                                           FontAttributes="Bold"/>
+                                    <Label Grid.Column="1"
+                                           Grid.ColumnSpan="2"
+                                           Grid.Row="1"
+                                           TextColor="Red"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           Text="{Binding Status}" />
+                                     <Label Grid.Row="2"
+                                           Grid.Column="1"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="4"
+                                           Text="{Binding Language}" />
+                                    <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="5"
+                                           FontSize="17"
+                                           Grid.RowSpan="4"
+                                           Text="{Binding ProblemdDscription}"/>
+                                    <Label Grid.Row="7"
+                                           Grid.Column="2"
+                                           TextColor="#393939"
+                                           Grid.ColumnSpan="3"
+                                           FontSize="18"
+                                           HorizontalOptions="End"
+                                           Text="{Binding Location}"/>
+                                </Grid> 
+            </ViewCell>
+            </DataTemplate>
+            
+           <local:ItemsDataTemplateSelector x:Key="itemDataTemplateSelector" FirstItemTemplate="{StaticResource firstItemTemplate}" OtherItemTemplate="{StaticResource otherItemTemplate}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+         <StackLayout>
+            <ListView x:Name="listView" ItemSelected="Handle_ItemSelected" HasUnevenRows="true" ItemTemplate="{StaticResource itemDataTemplateSelector}"/> 
+        </StackLayout>        
+    </ContentPage.Content>
+</ContentPage>
