@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
+             x:Class="ChelperPro.Views.AccountPage">
+        <NavigationPage.TitleView>
+        <Grid>
+            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
+        </Grid>
+    </NavigationPage.TitleView>
+        <sv:SettingsView >
+            <sv:Section>
+             <sv:CommandCell x:Name="commandcell" IconSource="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" 
+                             IconSize="60,60" IconRadius="30"
+                             Title="William Liang" Description="Change photo"
+                             Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
+            </sv:Section>
+            <sv:Section Title="Email Address" FooterText="">
+                <sv:EntryCell Title="Email" ValueText="{Binding InputText.Value}" 
+                              Placeholder="0000 0000 0000 0000" Keyboard="Email" 
+                              TextAlignment="End" HintText="{Binding InputError.Value}" />
+            </sv:Section>
+            <sv:Section Title="Name" FooterText="">
+                <sv:EntryCell Title="First Name" ValueText="{Binding InputText.Value}" 
+                              Placeholder="0000 0000 0000 0000" Keyboard="Email" 
+                              TextAlignment="End" HintText="{Binding InputError.Value}" /> 
+                <sv:EntryCell Title="Last Name" ValueText="{Binding InputText.Value}" 
+                              Placeholder="11/20" Keyboard="Email" 
+                              TextAlignment="End" HintText="{Binding InputError.Value}" />
+            </sv:Section>
+            
+           <sv:Section Title="Security" FooterText="">
+                <sv:EntryCell Title="SSN" ValueText="{Binding InputText.Value}" 
+                              Placeholder="Social Security Number" Keyboard="Email" 
+                              TextAlignment="End" HintText="{Binding InputError.Value}" /> 
+                <sv:EntryCell Title="Phone number" ValueText="{Binding InputText.Value}" 
+                              Placeholder="626 566 0781" Keyboard="Email" 
+                              TextAlignment="End" HintText="{Binding InputError.Value}" /> 
+                <sv:PickerCell Title="Reset Password" Tapped="Handle_ResetPassword" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+                              SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+    
+            </sv:Section>
+                
+              <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
+                     <sv:ButtonCell Title="Save" TitleColor="White" BackgroundColor="#FE5121" TitleFontSize="Large"
+                     TitleAlignment="Center" Command="{Binding SectionToggleCommand}" Tapped="Handle_Saved"/>
+              </sv:Section>
+        </sv:SettingsView>
+</ContentPage>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.TrustedContactsPage">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="20" Clicked="Handle_Canceled"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+         <sv:SettingsView x:Name="settings"
+                     HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
+                     HasUnevenRows="true">
+    
+   <sv:Section Title="Police Department" FooterText="">
+            <sv:EntryCell ValueText="{Binding InputText.Value}" Title="Auto call" 
+                          Placeholder="911" Keyboard="Email" 
+                          TextAlignment="End" HintText="{Binding InputError.Value}"/>
+           <sv:SwitchCell On="true" 
+            Description="Automatic calling 911."/>
+
+
+    </sv:Section>
+            
+    <sv:Section Title="Emergency Contacts" FooterText="">
+            <sv:EntryCell Title="Priority number" ValueText="{Binding InputText.Value}" 
+                          Placeholder="000 000 0000" Keyboard="Email" 
+                          TextAlignment="End" HintText="{Binding InputError.Value}" /> 
+            <sv:EntryCell Title="Second number" ValueText="{Binding InputText.Value}" 
+                          Placeholder="000 000 0000" Keyboard="Email" 
+                          TextAlignment="End" HintText="{Binding InputError.Value}" />
+    </sv:Section>
+    
+    <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
+             <sv:ButtonCell Title="Save" TitleColor="White" BackgroundColor="#FE5121" TitleFontSize="Large"
+             TitleAlignment="Center" Command="{Binding SectionToggleCommand}" Tapped="Handle_Saved" />
+    </sv:Section>
+    
+    </sv:SettingsView>
+    </ContentPage.Content>
+</ContentPage>

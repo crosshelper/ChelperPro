@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.AboutUsPage">
+        <NavigationPage.TitleView>
+        <Grid>
+            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Margin="20,25,20,0">
+            <Label Text="Crosshelper" FontAttributes="Bold" FontSize="22" HorizontalOptions="Center"></Label>
+            <Label Text="Version beta 1.0" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
+            <Image Source="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" HeightRequest="80"/>
+            <StackLayout>
+                <Label Text="Feedback"></Label>
+                <Editor Placeholder="leave feedback here" HeightRequest="200" ></Editor>
+                <Button BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" Text="Submit" Clicked="Handle_Submit"/>
+            </StackLayout>
+            <Label Text="Contact us: bo.chen@crosshelper.com"/>
+            <Label Text="© 2019-Present, Crosshelper, Inc. " FontSize="16" Margin="20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

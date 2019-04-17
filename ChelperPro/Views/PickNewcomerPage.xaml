@@ -6,8 +6,8 @@
              Title="Help other">
        <NavigationPage.TitleView>
         <Grid>
-            <Button Text="1234 Broadway Ave ▼" TextColor="White" FontSize="17" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Button Text="Alert" TextColor="White" HorizontalOptions="End" FontSize="17"/>
+            <Button Text="1234 Broadway Ave ▼" Grid.Row="0" TextColor="White" FontSize="17" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Button Text="Alert" Grid.Row="0" TextColor="White" HorizontalOptions="End" FontSize="17"/>
         </Grid>
     </NavigationPage.TitleView>
        <ContentPage.Resources>

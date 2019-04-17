@@ -23,8 +23,10 @@ namespace ChelperPro.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            AiForms.Renderers.iOS.SettingsViewInit.Init(); //need to write here
 
+            LoadApplication(new App());
+            UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(255, 78, 24);
             return base.FinishedLaunching(app, options);
         }
     }

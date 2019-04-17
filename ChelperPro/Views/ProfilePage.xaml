@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
+             x:Class="ChelperPro.Views.ProfilePage">
+    <sv:SettingsView x:Name="settings" HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}" HasUnevenRows="true">
+    
+    <sv:Section Title="Account" FooterText="">
+            <sv:CommandCell x:Name="commandcell" Tapped="Handle_Account" IconSource="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" 
+            IconSize="60,60" IconRadius="30" Title="William Liang" Description="william.liang@crosshelper.com"
+            Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
+            <sv:PickerCell Title="Helper background" Tapped="Handle_HelperBackGround" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+            SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+    </sv:Section>
+
+    <sv:Section Title="Helper Info" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="Specialities"  ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+        <sv:PickerCell Title="Bank" Tapped="Handle_Bank" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+    </sv:Section>
+        
+    <sv:Section Title="Privacy" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="Trusted Contacts" Tapped="Handle_TrustedContacts"  ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+        <sv:PickerCell Title="Privacy" Tapped="Handle_PrivacyPage" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+        <sv:PickerCell Title="Agreement" Tapped="Handle_AgreementPage" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+    </sv:Section>
+        
+    <sv:Section Title="About" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="About us" Tapped="Handle_AboutUsPage" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+    </sv:Section>
+    
+    <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
+             <sv:ButtonCell Title="Sign out" TitleColor="Red" 
+             TitleAlignment="Center" Command="{Binding SectionToggleCommand}" />
+    </sv:Section>
+    
+    </sv:SettingsView>
+</ContentPage>
