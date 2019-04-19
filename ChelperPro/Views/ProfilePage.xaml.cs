@@ -35,6 +35,10 @@ namespace ChelperPro.Views
         {
             Navigation.PushAsync(new AboutUsPage());
         }
+        void Handle_MySpecicalPage(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new MySpecialitiesPage());
+        }
 
         public ProfilePage()
         {

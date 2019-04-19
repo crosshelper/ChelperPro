@@ -8,7 +8,7 @@
             <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
         </Grid>
     </NavigationPage.TitleView>
-        <sv:SettingsView >
+        <sv:SettingsView x:Name="settings" HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}" HasUnevenRows="true"  >
             <sv:Section>
              <sv:CommandCell x:Name="commandcell" IconSource="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" 
                              IconSize="60,60" IconRadius="30"

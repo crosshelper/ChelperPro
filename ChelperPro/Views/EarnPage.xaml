@@ -4,5 +4,30 @@
              x:Class="ChelperPro.Views.EarnPage"
              Title="Earn">
     <ContentPage.Content>
+    <!--Project view -->
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Grid.Row="4"  Margin="16,15,16,0"
+                             Padding="2"
+                             VerticalOptions="Start" 
+                             BackgroundColor="#F4F4F4"
+                             x:Name="HPProject">
+                    <Label Text="Current Balance" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#515151"></Label>
+                    <StackLayout BackgroundColor="White" Padding="15" VerticalOptions="FillAndExpand">
+                            <Label Text="$2380"  HorizontalOptions="Center" FontSize="Large" TextColor="#FF4E18" FontAttributes="Bold"></Label>   
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Margin="16,20,16,20" VerticalOptions="StartAndExpand">
+                    <Button x:Name="qwe "
+                            Text="Transfer to Bank"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            BackgroundColor="#FF4E18"
+                            Clicked="Handle_TransferToBank"
+                            Margin="0,0,0,0"
+                            />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

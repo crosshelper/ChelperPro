@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tv="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"  
+             x:Class="ChelperPro.Views.HistoryPage"
+             Title="History">
+ <ContentPage.Content>
+         <tv:TabViewControl HeaderTabTextFontSize="Default" HeaderBackgroundColor="White">
+            <tv:TabViewControl.ItemSource>
+                <!-- Current -->
+                <tv:TabItem x:Name="currentTab" HeaderText="Current" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#FF4E18">
+            <StackLayout>
+                        <ListView x:Name="currentList" HasUnevenRows="true" ItemSelected="Handle_CurrentItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell x:Name="PHPPickNewcomeButton">
+                                <StackLayout Padding="15">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label 
+                                               TextColor="Red"
+                                               Text="dkfjvndifuvneivn"/>
+                                        <StackLayout HorizontalOptions="EndAndExpand">
+                                        <Label 
+                                               TextColor="#393939"
+                                               Text="idvmodfmvodfkmv}"
+                                               VerticalOptions="End" />
+                                        <Label
+                                               TextColor="#393939"
+                                               Text="sdimokdmvok"
+                                               VerticalOptions="End" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout>
+                                    <Label Text="Problem description" FontSize="Medium"></Label>
+                                    <Label 
+                                           TextColor="#393939"
+                                           Text="kivmodfkmvedfvm}"
+                                           VerticalOptions="End" />   
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+               
+        </StackLayout>
+                </tv:TabItem>
+                
+                <!-- Past -->
+        <tv:TabItem x:Name="pastTab" HeaderText="Past" HeaderTextColor="#FF4E18" HeaderTabTextFontAttributes="Bold" HeaderSelectionUnderlineColor="#999999">
+                        <StackLayout>
+                <ListView x:Name="pastList" HasUnevenRows="true" ItemSelected="Handle_PastItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell x:Name="PHPPickNewcomeButton">
+                                <StackLayout Padding="15">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label 
+                                               Text="{Binding Emergency}"/>
+                                        <StackLayout HorizontalOptions="EndAndExpand">
+                                        <Label 
+                                               TextColor="#393939"
+                                               Text="{Binding Date}"
+                                               VerticalOptions="End" />
+                                        <Label
+                                               TextColor="#393939"
+                                               Text="{Binding Language}"
+                                               VerticalOptions="End" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout>
+                                    <Label Text="Problem description" FontSize="Medium"></Label>
+                                    <Label 
+                                           TextColor="#393939"
+                                           Text="{Binding Description}"
+                                           VerticalOptions="End" />   
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+        </StackLayout>
+                </tv:TabItem>
+               
+            </tv:TabViewControl.ItemSource>
+        </tv:TabViewControl>         
+    </ContentPage.Content>
+</ContentPage>

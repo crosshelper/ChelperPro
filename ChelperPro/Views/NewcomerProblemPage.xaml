@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.NewcomerProblemPage">
+     <NavigationPage.TitleView>
+        <Grid>
+            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+         <StackLayout>
+                <StackLayout Margin="20,20,20,0">
+                        <StackLayout>
+                                <Image
+                                    Source="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
+                                    Aspect="AspectFill"
+                                    WidthRequest="80" 
+                                    HorizontalOptions="Center"
+                                    HeightRequest="80"
+                                    />
+                        <Label Text="Gwen Stephane" HorizontalOptions="Center" Grid.ColumnSpan="3" FontAttributes="Bold" FontSize="20" TextColor="#575656" x:Name="NHPPHelperName"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                               <Label Text="Language:" FontSize="15" TextColor="#575656"></Label>
+                               <Label Text="English," FontSize="15" TextColor="#575656" x:Name="NHPPHelperLanguage"></Label>
+                               <Label Text="Chinese" FontSize="15" TextColor="#575656"></Label>
+                        </StackLayout>
+        
+                        <StackLayout>
+                            <Label Text="Problem type" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,20,0,0"></Label>
+                            <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Language," FontSize="15" TextColor="#575656" x:Name="NHPPSpecialities"></Label>
+                                <Label Text="Daily life," FontSize="15" TextColor="#575656"></Label>
+                                <Label Text="Health," FontSize="15" TextColor="#575656"></Label>
+                                <Label Text="Pets" FontSize="15" TextColor="#575656"></Label>
+                            </StackLayout>
+                            <Label Text="Problem description" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
+                            <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
+                            <Label FontSize="15" TextColor="#575656" x:Name="NHPPAboutMyself" Text="Hello, I am Gwen Stephanie, I have been here for 6 years. I am very happy to help people solve newcomers and immigrants’ problems."></Label>
+                        </StackLayout>
+                    </StackLayout>
+                             <Button  
+                                Grid.Row="1"  Grid.ColumnSpan="1"
+                                Text="Confirm"
+                                TextColor="White"
+                                FontSize="16"
+                                VerticalOptions="EndAndExpand"
+                                FontAttributes="Bold"
+                                BackgroundColor="#FF4E18"
+                                Clicked="NHPPConfirm"
+                                Margin="16,0,16,20"/>
+                </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -6,14 +6,14 @@
              Title="Help other">
        <NavigationPage.TitleView>
         <Grid>
-            <Button Text="1234 Broadway Ave ▼" Grid.Row="0" TextColor="White" FontSize="17" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Button Text="1234 Broadway Ave ▼" Grid.Row="0" TextColor="White" FontSize="17" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Handle_location"/>
             <Button Text="Alert" Grid.Row="0" TextColor="White" HorizontalOptions="End" FontSize="17"/>
         </Grid>
     </NavigationPage.TitleView>
        <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="firstItemTemplate">
-            <ViewCell >  
+            <ViewCell >
                 <StackLayout>
                         <StackLayout Orientation="Horizontal" Margin="10,10,10,10">
                         <Label Text="Problem list" FontSize="19" TextColor="#4B4B4B" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>

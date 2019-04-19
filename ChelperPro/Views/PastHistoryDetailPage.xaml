@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="ChelperPro.Views.PastHistoryDetailPage"
+             Title="History detail">
+<ContentPage.Content>
+            <StackLayout>
+            <ScrollView>
+                 <StackLayout Padding="15">
+                    <!-- Case detial -->
+                    <Label Text="Case Info" FontSize="Medium" FontAttributes="Bold" Margin="0,5,0,0"></Label>
+                    <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
+                            <StackLayout 
+                                     VerticalOptions="FillAndExpand" 
+                                     BackgroundColor="#F4F4F4">
+                            <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout >
+                                              <Label Text="Emergency" TextColor="Red" FontSize="Default" FontAttributes="Bold"></Label>
+                                            </StackLayout>
+                                              <StackLayout HorizontalOptions="EndAndExpand">
+                                                    <Label Text="09/29/2018" FontSize="Default" TextColor="#242424" x:Name="CaseDate"></Label>
+                                                    <Label Text="Chinese" FontSize="Default" TextColor="#242424"></Label>
+                                               </StackLayout>
+                            </StackLayout>
+                        <StackLayout>
+                            <Label Text="Problem description" FontSize="Default" Margin="0,5,0,0"></Label>
+                            <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
+                                <Label Text="I lost my langage atPairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it."
+                                    FontSize="Small" TextColor="#242424" ></Label>
+                        </StackLayout>
+                            <Label Text="Helper" FontSize="Default" Margin="0,5,0,0"></Label>
+                            <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
+                            <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                            <Button
+                                Text="Helper"
+                                FontSize="Default"
+                                TextColor="White"
+                                BackgroundColor="Gray"
+                                HeightRequest="50" 
+                                WidthRequest="50" 
+                                HorizontalOptions="Start"/>
+                                <StackLayout>
+                            <Label Text="Bo Chen" FontSize="Default"></Label>
+                            <Label Text="Rating" FontSize="Default"></Label>
+                                    </StackLayout>
+                                <Label Text="Chinese" HorizontalOptions="EndAndExpand" FontSize="Default"></Label>
+                                </StackLayout>
+                <!--Receipt-->
+                        
+                        <Label Text="Receipt" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" ></Label>
+                        <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Label Text="Service Fee:" FontSize="Small"></Label>
+                                <Label Text="$120" FontSize="Small" TextColor="#242424"></Label>
+                        </StackLayout>  
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Label Text="Equipment Fee:" FontSize="Small"></Label>
+                            <Label Text="$65" FontSize="Small" TextColor="#242424"></Label>
+                        </StackLayout> 
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Label Text="Cycbis fee:" FontSize="Small"></Label>
+                            <Label Text="$27.75" FontSize="Small" TextColor="#242424"></Label>
+                        </StackLayout> 
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Label Text="Tax:" FontSize="Small"></Label>
+                            <Label Text="$16.65" FontSize="Small" TextColor="#242424"></Label>
+                        </StackLayout> 
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Label Text="Total:" FontSize="Small"></Label>
+                            <Label Text="$229.4" FontSize="Small" TextColor="#242424"></Label>
+                        </StackLayout>
+                <!--Receipt-->   
+                <Label Text="Payment info" FontSize="Default" Margin="0,5,0,0"></Label>
+                <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Label Text="Visa:" FontSize="Small"></Label>
+                            <Label Text="8866" FontSize="Small" TextColor="#242424"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Label Text="09/28/2018, 1:04 PM" FontSize="Small" TextColor="Gray"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -7,24 +7,20 @@ namespace ChelperPro.Views
 {
     public partial class PickNewcomerPage : ContentPage
     {
+        void Handle_location(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new CurrentLocationPage());
+        }
+
         public IList<PickNewcomerViewcellItem> PanelContent { get; set; }
         public PickNewcomerPage()
         {
             InitializeComponent();
             PanelContent = new List<PickNewcomerViewcellItem>();
-            PanelContent.Add(new PickNewcomerViewcellItem
-            {
-                PanelID = 1,
-                Name = "Baboon",
-                Language = "Language: Chinese/English",
-                Status = "Emergency",
-                Location = "8 miles away from me",
-                ImageUrl = ""
-            });
 
             PanelContent.Add(new PickNewcomerViewcellItem
             {
-                PanelID = 0,
+                PanelID = 1,
                 Name = "Foothill center",
                 Language = "Language: Chinese/English",
                 Status = "Emergency",
@@ -55,12 +51,12 @@ namespace ChelperPro.Views
 
             listView.ItemsSource = PanelContent;
             listView.BackgroundColor = Color.Transparent;
-            listView.SelectionMode = ListViewSelectionMode.None;
+            //listView.SelectionMode = ListViewSelectionMode.None;
         }
+
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            //if (e.SelectedItem == null) return;
-            //((ListView)sender).SelectedItem = null;
+            Navigation.PushAsync(new NewcomerProblemPage());
         }
     }
 }

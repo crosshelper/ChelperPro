@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.TransferSuccessPage">
+    <ContentPage.Content>
+        <StackLayout Margin="16,20,16,0">
+            <Label Text="Transfer completed!" FontSize="Large" TextColor="#FF4E18" FontAttributes="Bold"></Label>
+            <Label Text="The transaction will be available" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#515151" Margin="0,20,0,0"></Label>
+            <Label Text="within" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#515151"></Label>
+            <Label Text="3-5 business days." HorizontalOptions="Center" FontAttributes="Bold" TextColor="#515151"></Label>
+                <Button x:Name="qwe "
+                Text="Done"
+                TextColor="White"
+                FontAttributes="Bold"
+                BackgroundColor="#FF4E18"
+                Margin="0,0,0,20"
+                VerticalOptions="EndAndExpand"
+                Clicked="Handle_Done"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
