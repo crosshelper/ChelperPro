@@ -29,26 +29,22 @@
                                 <Label Text="I lost my langage atPairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it."
                                     FontSize="Small" TextColor="#242424" ></Label>
                         </StackLayout>
-                            <Label Text="Helper" FontSize="Default" Margin="0,5,0,0"></Label>
+                            <Label Text="Guest info" FontSize="Default" Margin="0,5,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                             <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
-                            <Button
-                                Text="Helper"
-                                FontSize="Default"
-                                TextColor="White"
-                                BackgroundColor="Gray"
-                                HeightRequest="50" 
-                                WidthRequest="50" 
-                                HorizontalOptions="Start"/>
-                                <StackLayout>
-                            <Label Text="Bo Chen" FontSize="Default"></Label>
-                            <Label Text="Rating" FontSize="Default"></Label>
-                                    </StackLayout>
-                                <Label Text="Chinese" HorizontalOptions="EndAndExpand" FontSize="Default"></Label>
+                                <Image 
+                                HeightRequest="50"
+                                WidthRequest="50"
+                                Source="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png"></Image>
+                                <StackLayout Margin="5,0,0,0">
+                                <Label Text="Bo Chen" FontSize="Medium"></Label>
+                                <Label Text="★★★★☆" TextColor="#FFC834" FontSize="Large"></Label>
                                 </StackLayout>
+                                <Label Text="Chinese" HorizontalOptions="EndAndExpand" FontSize="Medium"></Label>
+                        </StackLayout>
                 <!--Receipt-->
                         
-                        <Label Text="Receipt" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" ></Label>
+                        <Label Text="Transaction" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" ></Label>
                         <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
                             <Label Text="Service Fee:" FontSize="Small"></Label>
@@ -69,16 +65,6 @@
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
                             <Label Text="Total:" FontSize="Small"></Label>
                             <Label Text="$229.4" FontSize="Small" TextColor="#242424"></Label>
-                        </StackLayout>
-                <!--Receipt-->   
-                <Label Text="Payment info" FontSize="Default" Margin="0,5,0,0"></Label>
-                <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Visa:" FontSize="Small"></Label>
-                            <Label Text="8866" FontSize="Small" TextColor="#242424"></Label>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="09/28/2018, 1:04 PM" FontSize="Small" TextColor="Gray"></Label>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>

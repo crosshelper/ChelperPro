@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-              xmlns:local="clr-namespace:ChelperPro.Models;" 
-             x:Class="ChelperPro.Views.PickNewcomerPage"
-             Title="Help other">
-       <NavigationPage.TitleView>
-        <Grid>
-            <Button Text="1234 Broadway Ave ▼" Grid.Row="0" TextColor="White" FontSize="17" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Handle_location"/>
-            <Button Text="Alert" Grid.Row="0" TextColor="White" HorizontalOptions="End" FontSize="17"/>
-        </Grid>
-    </NavigationPage.TitleView>
-       <ContentPage.Resources>
-        <ResourceDictionary>
-            <DataTemplate x:Key="firstItemTemplate">
-            <ViewCell >
-                <StackLayout>
-                        <StackLayout Orientation="Horizontal" Margin="10,10,10,10">
-                        <Label Text="Problem list" FontSize="19" TextColor="#4B4B4B" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
-                        <Label Text="Auto Match" FontSize="19" TextColor="#4B4B4B" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"></Label>
-                        <Switch></Switch>
-                    </StackLayout>
-                </StackLayout>
-            </ViewCell>
-            </DataTemplate>
-            
-            <DataTemplate x:Key="otherItemTemplate">
-            <ViewCell>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.ViewModels.PickGuestOtherItemCell">
+    <ViewCell.View>
+        <StackLayout>
                 <Grid Padding="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20" />
@@ -82,16 +58,6 @@
                            HorizontalOptions="End"
                            Text="{Binding Location}"/>
                 </Grid> 
-            </ViewCell>
-            </DataTemplate>
-            
-           <local:ItemsDataTemplateSelector x:Key="itemDataTemplateSelector" FirstItemTemplate="{StaticResource firstItemTemplate}" OtherItemTemplate="{StaticResource otherItemTemplate}"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    
-    <ContentPage.Content>
-         <StackLayout>
-            <ListView x:Name="listView" ItemSelected="Handle_ItemSelected" HasUnevenRows="true" ItemTemplate="{StaticResource itemDataTemplateSelector}"/> 
-        </StackLayout>        
-    </ContentPage.Content>
-</ContentPage>
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>

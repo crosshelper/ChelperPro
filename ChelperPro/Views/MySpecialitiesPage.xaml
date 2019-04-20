@@ -17,9 +17,9 @@
                 <Entry></Entry>
             </StackLayout>
             <StackLayout>
-                <Label Text="About me" FontAttributes="Bold" FontSize="20" TextColor="#575656" Margin="0,10,0,0"></Label>
+                <Label Text="Bio" FontAttributes="Bold" FontSize="20" TextColor="#575656" Margin="0,10,0,0"></Label>
                 <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
-                <Editor Placeholder="Leave sentence here" HeightRequest="200" ></Editor>
+                <Editor Placeholder="Tell something about yourself" HeightRequest="200" ></Editor>
                 <Button BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" Text="Save" Clicked="Handle_Save"/>
             </StackLayout>
         </StackLayout>

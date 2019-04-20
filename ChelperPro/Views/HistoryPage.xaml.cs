@@ -16,11 +16,13 @@ namespace ChelperPro.Views
             {
                 PanelID = 1,
                 Rating = 55555,
+                GuestName = "Mike GG",
                 Language = "Chinese/English",
                 Emergency = "Emergency",
                 Date = "09/20/2018",
                 Description = "I lost my langage at Pairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it.",
-                Status = "Open",
+                Status = "● Open",
+                Location = "3 miles way from me",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
             });
 
@@ -28,22 +30,26 @@ namespace ChelperPro.Views
             {
                 PanelID = 4124,
                 Rating = 53251555,
+                GuestName = "Mike GG",
                 Language = "Chinese/English",
                 Emergency = "Emergency",
                 Date = "09/20/2018",
                 Description = "I lost my langage at Pairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it.",
-                Status = "Open",
+                Status = "● Open",
+                Location = "3 miles way from me",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
             });
             Project.Add(new HistorypageViewcellItem
             {
                 PanelID = 23,
                 Rating = 551231555,
+                GuestName = "Mike GG",
                 Language = "Chinese/English",
                 Emergency = "Emergency",
                 Date = "09/20/2018",
                 Description = "I lost my langage at Pairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it.",
-                Status = "Open",
+                Status = "● Open",
+                Location = "3 miles way from me",
                 ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
             });
             currentList.ItemsSource = Project;
@@ -54,12 +60,12 @@ namespace ChelperPro.Views
         }
         void Handle_CurrentItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            //Navigation.PushAsync(new PickHelperPage());
+            Navigation.PushAsync(new NewcomerProblemPage());
             //((ListView)sender).SelectedItem = null;
         }
         void Handle_PastItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            //Navigation.PushAsync(new PastHistoryDetailPage());
+            Navigation.PushAsync(new PastHistoryDetailPage());
             //((ListView)sender).SelectedItem = null;
         }
     }

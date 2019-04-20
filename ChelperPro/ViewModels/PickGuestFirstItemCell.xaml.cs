@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ChelperPro.Models;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace ChelperPro.ViewModels
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MyViewCell : ViewCell
+    public partial class PickGuestFirstItemCell : ViewCell
     {
-        public MyViewCell()
+        public PickGuestFirstItemCell()
         {
             InitializeComponent();
+
         }
     }
 }
