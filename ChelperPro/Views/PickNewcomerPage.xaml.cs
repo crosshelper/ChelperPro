@@ -12,13 +12,13 @@ namespace ChelperPro.Views
             Navigation.PushAsync(new CurrentLocationPage());
         }
 
-        public IList<PickNewcomerViewcellItem> PanelContent { get; set; }
+        public IList<PickNewcomerViewcellItem> Helpers { get; private set; }
         public PickNewcomerPage()
         {
             InitializeComponent();
-            PanelContent = new List<PickNewcomerViewcellItem>();
 
-            PanelContent.Add(new PickNewcomerViewcellItem
+            Helpers = new List<PickNewcomerViewcellItem>();
+            Helpers.Add(new PickNewcomerViewcellItem
             {
                 PanelID = 1,
                 Name = "Foothill center",
@@ -28,30 +28,18 @@ namespace ChelperPro.Views
                 ProblemdDscription = "I love youI love youI love youI love youI love youI love youI love youI love youI love you love youI love youlove youI love you love you I love you love you",
                 ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
             });
-            PanelContent.Add(new PickNewcomerViewcellItem
-            {
-                PanelID = 0,
-                Name = "Foothill center",
-                Language = "Language: Chinese/English",
-                Status = "Emergency",
-                Location = "8 miles away from me",
-                ProblemdDscription = "I love youI love youI love youI love youI love youI love youI love youI love youI love you love youI love youlove youI love you love you I love you love you",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
-            });
-            PanelContent.Add(new PickNewcomerViewcellItem
-            {
-                PanelID = 0,
-                Name = "Foothill center",
-                Language = "Language: Chinese/English",
-                Status = "Emergency",
-                Location = "8 miles away from me",
-                ProblemdDscription = "I love youI love youI love youI love youI love youI love youI love youI love youI love you love youI love youlove youI love you love you I love you love you",
-                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
-            });
 
-            listView.ItemsSource = PanelContent;
-            listView.BackgroundColor = Color.Transparent;
-            //listView.SelectionMode = ListViewSelectionMode.None;
+            Helpers.Add(new PickNewcomerViewcellItem
+            {
+                PanelID = 2,
+                Name = "Foothill center",
+                Language = "Language: Chinese/English",
+                Status = "Emergency",
+                Location = "8 miles away from me",
+                ProblemdDscription = "I love youI love youI love youI love youI love youI love youI love youI love youI love you love youI love youlove youI love you love you I love you love you",
+                ImageUrl = "https://s3-us-west-1.amazonaws.com/image.cycbis.com/recommendation/recom001.png"
+            });
+            BindingContext = this;
         }
 
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
