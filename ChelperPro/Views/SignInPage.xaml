@@ -3,42 +3,52 @@
         <ContentPage.Content>
             <StackLayout Margin="20,35,20,25"> 
              <!--登入 Sign In lable -->
-                    <Label Margin="0,0,16,30"
+                    <Label Margin="0,20,16,0"
                            Text="Sign In"
                            TextColor="#FF4E17"
-                           FontSize="30"
+                           FontSize="28"
                            FontAttributes="Bold"
                            HorizontalOptions="End"/>
             <!--标签语love label -->
                     <Label Text="Help people"
                            TextColor="#888888"
-                           FontSize="18"
-                           FontAttributes="Bold" />
+                           FontSize="17"
+                           Margin="0,0,0,10"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start"/>
             <!--邮箱密码 Email&password input -->
-                       <StackLayout VerticalOptions="CenterAndExpand">
-                            <Entry Placeholder="Email"
-                                   FontSize="28"
+                       <StackLayout VerticalOptions="Start">
+                            <Label Text="Email" TextColor="#666666" FontAttributes="Bold"/>
+                            <Entry Placeholder="Enter your email address"
+                                   FontSize="20"
+                                   HeightRequest="45"
                                    Completed="SIPSignInEmailCompleted"
                                    x:Name="uNameEntry"/>
-                            <Entry Placeholder="Password"
-                                   FontSize="28"
+                            <Label Text="Password" TextColor="#666666" FontAttributes="Bold"/>
+                            <Entry Placeholder="Enter your email Password"
+                                   FontSize="20"
+                                   HeightRequest="45"
                                    Completed="SIPSignInPasswordCompleted"
                                    x:Name="pwdEntry"/>
                             <Label Text="" x:Name="signInTest"></Label>
                         </StackLayout >
-           <!--登入按钮 Sign in Button -->   
-                    <StackLayout VerticalOptions="EndAndExpand">
+            
+           <!--登入按钮 Sign in Button --> 
+            <StackLayout VerticalOptions="StartAndExpand">
+                    <StackLayout VerticalOptions="EndAndExpand" Margin="0,0,0,10">
                             <Button  
                                     Text="Sign In"
                                     TextColor="White"
                                     FontSize="Medium"
                                     FontAttributes="Bold"
+                                    HeightRequest="45"
                                     BackgroundColor="#FF4E18"
-                                    Margin="0,20,0,10"
-                                    Clicked="SIPSignIn"/>
+                                    Margin="0,20,0,0"
+                                    Clicked="Handle_SignIn"/>
                     </StackLayout>
+                    <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
             <!-- 第三次登入 Third party sign in -->  
-                    <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                    <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" Margin="0,10,0,0">
                         <Button Text="Google" 
                                 BorderColor="#575656" 
                                 BorderWidth="1" 
@@ -69,15 +79,32 @@
                     </StackLayout>
               <!-- 忘记和创建 forgot&create -->  
                     <StackLayout Margin="10,0,10,0" VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                <Button Text="Forgot password" 
-                        FontSize="Small" 
-                        HorizontalOptions="StartAndExpand"
-                        Clicked="SIPForgotPassword"/>
-                <Button Text="Create account" 
-                        FontSize="Small" 
-                        HorizontalOptions="EndAndExpand"
-                        Button ="Handle_CreateAccount"/>
+                        <Button Text="Forgot password" 
+                                FontSize="Small" 
+                                HorizontalOptions="StartAndExpand"
+                                Clicked="SIPForgotPassword"/>
+                        <Button Text="Create account" 
+                                FontSize="Small" 
+                                HorizontalOptions="EndAndExpand"
+                                Clicked="Handle_CreateAccount"/>
                     </StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" Margin="0,0,0,0">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="By continuing, I accept the" 
+                       FontSize="10" TextColor="#999999" HorizontalTextAlignment="Center"/>
+                        <Label Text="Cycbis Terms" 
+                       FontSize="10" TextColor="Blue" Margin="-3,0,0,0" HorizontalTextAlignment="Center"/>
+                        <Label Text="of service" 
+                       FontSize="10" TextColor="#999999" Margin="-3,0,0,0" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="and have read the helper"  
+                        FontSize="10" TextColor="#999999" Margin="0,-5,0,0" HorizontalTextAlignment="Center"/>
+                        <Label Text="privacy policy."
+                        FontSize="10" TextColor="Blue" Margin="-3,-5,0,0" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+            </StackLayout>
+                </StackLayout>
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>

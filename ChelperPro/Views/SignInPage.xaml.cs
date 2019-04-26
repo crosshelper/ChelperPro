@@ -11,12 +11,12 @@ namespace ChelperPro.Views
         {
             InitializeComponent();
         }
-        //返回按钮 Go Back
-        void SIPSignInGoBack(object sender, EventArgs e)
+        //登入
+        void Handle_SignIn(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            Application.Current.MainPage = new MainPage();
         }
-        //登入按钮 Sign In
+        //注册按钮 Sign Up
         void Handle_CreateAccount(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SignUpPage());
@@ -48,6 +48,5 @@ namespace ChelperPro.Views
         {
             string text = ((Entry)sender).Text;
         }
-    }
     }
 }

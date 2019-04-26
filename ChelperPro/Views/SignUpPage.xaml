@@ -12,15 +12,18 @@
                            FontSize="30"
                            FontAttributes="Bold"
                            HorizontalOptions="End"/>
-            <!--标签语love label -->
-                    <Label Text="Sign up helping people"
+            <!--标签语-->
+                    <Label Text="Step 1"
                            TextColor="#888888"
-                           FontSize="20"
+                           FontSize="25"
                            FontAttributes="Bold"
-                           HorizontalOptions="End"/>
+                           HorizontalOptions="Start"/>
             <!--邮箱密码 Email&password input -->
                        <StackLayout VerticalOptions="CenterAndExpand">
                             <Entry Placeholder="Email"
+                                   FontSize="28"
+                                   Completed="SUPEmailCompleted"/>
+                            <Entry Placeholder="Phone number"
                                    FontSize="28"
                                    Completed="SUPEmailCompleted"/>
                             <Entry Placeholder="Password"

@@ -14,7 +14,7 @@ namespace ChelperPro
             InitializeComponent();
 
            // DependencyService.Register<MockDataStore>();
-            MainPage = new MainPage();
+            MainPage = new SignInPage();
         }
 
         protected override void OnStart()
