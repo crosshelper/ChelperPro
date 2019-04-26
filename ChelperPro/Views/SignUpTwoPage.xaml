@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.SignUpTwoPage">
+     <NavigationPage.TitleView>
+        <Button Text="Cancel" TextColor="White" HorizontalOptions="End" Clicked="Handle_Canceled" FontSize="20"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+           <StackLayout Margin="20,35,20,25">
+                  <!--登入 Sign In lable -->
+                    <Label Margin="0,0,16,30"
+                           Text="Sign Up"
+                           TextColor="#FF4E17"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           HorizontalOptions="End"/>
+            <!--标签语love label -->
+                    <Label Text="Sign up as helper"
+                           TextColor="#888888"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           HorizontalOptions="End"/>
+            <!--邮箱密码 Email&password input -->
+                       <StackLayout VerticalOptions="CenterAndExpand">
+                            <Entry Placeholder="Email"
+                                   FontSize="28"
+                                   Completed="SUPEmailCompleted"/>
+                            <Entry Placeholder="Password"
+                                   FontSize="28"
+                                   Completed="SUPPasswordCompleted"/>
+                            <Entry Placeholder="Comfirm Password"
+                                   FontSize="28"
+                                   Completed="SUPComfirmPasswordCompleted"/>
+                        </StackLayout >
+           <!--登入按钮 Sign in Button -->   
+                    <StackLayout VerticalOptions="EndAndExpand">
+                            <Button  
+                                    Text="Next"
+                                    TextColor="White"
+                                    FontSize="Medium"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#FF4E18"
+                                    Margin="0,20,0,0"
+                                    Clicked="Handle_Next"/>
+                    </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

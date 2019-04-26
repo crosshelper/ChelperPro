@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.SignInPage">
+        <ContentPage.Content>
+            <StackLayout Margin="20,35,20,25"> 
+             <!--登入 Sign In lable -->
+                    <Label Margin="0,0,16,30"
+                           Text="Sign In"
+                           TextColor="#FF4E17"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           HorizontalOptions="End"/>
+            <!--标签语love label -->
+                    <Label Text="Help people"
+                           TextColor="#888888"
+                           FontSize="18"
+                           FontAttributes="Bold" />
+            <!--邮箱密码 Email&password input -->
+                       <StackLayout VerticalOptions="CenterAndExpand">
+                            <Entry Placeholder="Email"
+                                   FontSize="28"
+                                   Completed="SIPSignInEmailCompleted"
+                                   x:Name="uNameEntry"/>
+                            <Entry Placeholder="Password"
+                                   FontSize="28"
+                                   Completed="SIPSignInPasswordCompleted"
+                                   x:Name="pwdEntry"/>
+                            <Label Text="" x:Name="signInTest"></Label>
+                        </StackLayout >
+           <!--登入按钮 Sign in Button -->   
+                    <StackLayout VerticalOptions="EndAndExpand">
+                            <Button  
+                                    Text="Sign In"
+                                    TextColor="White"
+                                    FontSize="Medium"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#FF4E18"
+                                    Margin="0,20,0,10"
+                                    Clicked="SIPSignIn"/>
+                    </StackLayout>
+            <!-- 第三次登入 Third party sign in -->  
+                    <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                        <Button Text="Google" 
+                                BorderColor="#575656" 
+                                BorderWidth="1" 
+                                WidthRequest="90" 
+                                FontSize="Micro" 
+                                TextColor="#575656" 
+                                FontAttributes="Bold" 
+                                BackgroundColor="White" 
+                                HorizontalOptions="StartAndExpand"
+                                Clicked="SIPGoogleSignInIcon"/>
+                        <Button Text="Wechat" 
+                                WidthRequest="90" 
+                                FontSize="Micro" 
+                                TextColor="White" 
+                                BackgroundColor="#09B83E" 
+                                FontAttributes="Bold" 
+                                HorizontalOptions="CenterAndExpand"
+                                Clicked="SIPWechatSignInIcon"/>
+                       <Button 
+                                Text="Facebook" 
+                                WidthRequest="90" 
+                                FontSize="Micro" 
+                                TextColor="White" 
+                                BackgroundColor="#3B5998" 
+                                FontAttributes="Bold" 
+                                HorizontalOptions="EndAndExpand"
+                                Clicked="SIPFaceBookSignInIcon"/>
+                    </StackLayout>
+              <!-- 忘记和创建 forgot&create -->  
+                    <StackLayout Margin="10,0,10,0" VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                <Button Text="Forgot password" 
+                        FontSize="Small" 
+                        HorizontalOptions="StartAndExpand"
+                        Clicked="SIPForgotPassword"/>
+                <Button Text="Create account" 
+                        FontSize="Small" 
+                        HorizontalOptions="EndAndExpand"
+                        Button ="Handle_CreateAccount"/>
+                    </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
