@@ -31,10 +31,7 @@
                             <Label Text="Problem type" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,20,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Language," FontSize="15" TextColor="#575656" x:Name="NHPPSpecialities"></Label>
-                                <Label Text="Daily life," FontSize="15" TextColor="#575656"></Label>
-                                <Label Text="Health," FontSize="15" TextColor="#575656"></Label>
-                                <Label Text="Pets" FontSize="15" TextColor="#575656"></Label>
+                                <Label Text="Language, Daily life, Health, Pets" FontSize="15" TextColor="#575656" x:Name="NHPPSpecialities"></Label>
                             </StackLayout>
                             <Label Text="Problem description" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>

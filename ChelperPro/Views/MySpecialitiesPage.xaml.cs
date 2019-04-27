@@ -20,11 +20,11 @@ namespace ChelperPro.Views
        void Tagload(List<String> ts)
         {
 
-            sl.RowDefinitions = new RowDefinitionCollection{
+           /* sl.RowDefinitions = new RowDefinitionCollection{
                 new RowDefinition { Height = GridLength.Auto },
                 new RowDefinition { Height = GridLength.Auto }
             };
-            sl.ColumnDefinitions = new ColumnDefinitionCollection
+            //sl.ColumnDefinitions = new ColumnDefinitionCollection
             {
                 new ColumnDefinition { Width = GridLength.Auto },
                 new ColumnDefinition { Width = GridLength.Auto },
@@ -106,7 +106,7 @@ namespace ChelperPro.Views
                     FontSize = 16
                     //Margin = new Thickness(10),
                 };
-                sl.Children.Add(lb);
+               // sl.Children.Add(lb);
                 //sl.SetRow(lb, 0);
                 //sl.SetColume(lb,1);
 

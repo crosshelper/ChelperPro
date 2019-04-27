@@ -6,22 +6,57 @@
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Margin="20,25,20,0">
             <Label Text="Specialities" FontAttributes="Bold" FontSize="20" TextColor="#575656" HorizontalOptions="Start"></Label>
             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
-            <Grid x:Name="sl">
-              
-            </Grid>
-            <Label Text="One for each adding"></Label>
             <StackLayout>
-                <Entry></Entry>
+                <Label Text="Language, Daily life, Health, Pets" Margin="0,10,0,0"></Label>
+                <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,10,0,0"></BoxView>
+            </StackLayout>
+            <Label Text="My skills" Margin="0,10,0,0"></Label>
+            <Picker x:Name="SelectSkills"
+                    Title="Select a Skills"
+                    HeightRequest="35"
+                    TitleColor="#666666">
+              <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                  <x:String>Baboon</x:String>
+                  <x:String>Capuchin Monkey</x:String>
+                  <x:String>Blue Monkey</x:String>
+                  <x:String>Squirrel Monkey</x:String>
+                  <x:String>Golden Lion Tamarin</x:String>
+                  <x:String>Howler Monkey</x:String>
+                  <x:String>Japanese Macaque</x:String>
+                </x:Array>
+              </Picker.ItemsSource>
+            </Picker>
+             <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,5,0,0"></BoxView>
+            <Label Text="Or add one(One for each adding)"></Label>
+            <StackLayout Orientation="Horizontal">
+                <Entry WidthRequest="150" HeightRequest="40"></Entry>
+                <Button Text="Add" BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" WidthRequest="65" HeightRequest="35" />
             </StackLayout>
             <StackLayout>
+                <Label TextColor="Gray"
+                       FontSize="Medium">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="This sentence contains " />
+                            
+                            <Span Text="words that are emphasized, "
+                                  FontAttributes="Italic" />
+                            <Span Text="and underlined."
+                                  TextDecorations="Underline" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
                 <Label Text="Bio" FontAttributes="Bold" FontSize="20" TextColor="#575656" Margin="0,10,0,0"></Label>
                 <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                 <Editor Placeholder="Tell something about yourself" HeightRequest="200" ></Editor>
                 <Button BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" Text="Save" Clicked="Handle_Save"/>
             </StackLayout>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
