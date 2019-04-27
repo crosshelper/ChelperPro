@@ -13,7 +13,7 @@ namespace ChelperPro.Views
         }
         void Handle_Canceled(object sender, EventArgs e)
         {
-            Navigation.PopToRootAsync(false);
+            Application.Current.MainPage = new SignInPage();
         }
         //返回按钮 Go Back
         void SUPGoBack(object sender, EventArgs e)
@@ -34,13 +34,9 @@ namespace ChelperPro.Views
             string text = ((Entry)sender).Text;
         }
         //注册按钮 Sign Up
-        void Handle_Next(object sender, EventArgs e)
+        void Handle_CreateAccount(object sender, EventArgs e)
         {
-            Navigation.PopAsync(false);
-        }
-        void SUPSignUpAsHelper(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new SignUpTwoPage());
+            Application.Current.MainPage = new SignUpThreePage();
         }
     }
 }

@@ -40,6 +40,10 @@ namespace ChelperPro.Views
             Navigation.PushAsync(new MySpecialitiesPage());
         }
 
+        void Handle_SignOutPage(object sender, System.EventArgs e)
+        {
+            Application.Current.MainPage = new SignInPage();
+        }
         public ProfilePage()
         {
             InitializeComponent();

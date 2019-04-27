@@ -19,7 +19,7 @@ namespace ChelperPro.Views
         //注册按钮 Sign Up
         void Handle_CreateAccount(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignUpPage());
+            Application.Current.MainPage = new SignUpPage();
         }
         //第三次登入 Third party sign in
         void SIPGoogleSignInIcon(object sender, EventArgs e)
@@ -35,9 +35,9 @@ namespace ChelperPro.Views
             (sender as Button).Text = "Click me again!";
         }
         //忘记密码 forgot password
-        void SIPForgotPassword(object sender, EventArgs e)
+        void Handle_ForgotPassword(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ForgotPasswordPage());
+            Application.Current.MainPage = new ForgotPasswordPage();
         }
         //登入邮箱&密码输入框 Sign in email&password input box
         void SIPSignInEmailCompleted(object sender, EventArgs e)

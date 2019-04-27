@@ -14,7 +14,7 @@ namespace ChelperPro.Views
         //取消按钮 Cancel
         void Handle_Canceled(object sender, EventArgs e)
         {
-            Navigation.PopToRootAsync(false);
+            Application.Current.MainPage = new SignInPage();
         }
         //返回按钮 Go Back
         void SUPGoBack(object sender, EventArgs e)
@@ -37,11 +37,7 @@ namespace ChelperPro.Views
         //注册按钮 Sign Up
         void Handle_Next(object sender, EventArgs e)
         {
-            Navigation.PopAsync(false);
-        }
-        void SUPSignUpAsHelper(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new SignUpTwoPage());
+            Application.Current.MainPage = new SignUpTwoPage();
         }
     }
 }

@@ -15,13 +15,18 @@
     <sv:Section Title="Background" FooterText="">
             <sv:EntryCell Title="From" ValueText="{Binding InputText.Value}" 
                           Placeholder="China" Keyboard="Email" 
-                          TextAlignment="End" HintText="{Binding InputError.Value}" /> 
+                          TextAlignment="End" HintText="{Binding InputError.Value}" />
+            <sv:EntryCell Title="Enter Year" ValueText="{Binding InputText.Value}" 
+                          Placeholder="6" Keyboard="Email" 
+                          Description="How long have you been living here?"
+                          DescriptionColor="#999999"
+                          TextAlignment="End" HintText="{Binding InputError.Value}" />
 
     </sv:Section>
             
     <sv:Section Title="Language Preference" FooterText="">
             <sv:EntryCell Title="Priority language" ValueText="{Binding InputText.Value}" 
-                          Placeholder="China" Keyboard="Email" 
+                          Placeholder="English" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" /> 
             <sv:EntryCell Title="Second language" ValueText="{Binding InputText.Value}" 
                           Placeholder="Chinese" Keyboard="Email" 

@@ -11,7 +11,7 @@
         </Grid>
     </NavigationPage.TitleView>
         <ContentPage.Content>
-            <StackLayout Margin="15">
+            <StackLayout Margin="10">
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Problem List" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center"/>
                     <Label Text="Auto match" FontSize="18" HorizontalOptions="EndAndExpand" VerticalOptions="Center"></Label>
@@ -22,7 +22,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">
-                                <Grid Padding="10">
+                                <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="20" />
                                         <RowDefinition Height="20" />

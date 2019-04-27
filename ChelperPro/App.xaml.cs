@@ -13,7 +13,10 @@ namespace ChelperPro
         {
             InitializeComponent();
 
-           // DependencyService.Register<MockDataStore>();
+            //MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(SignInPage))) {
+            //BarBackgroundColor = Color.FromHex("#FF4E18"),
+            //BarTextColor = Color.White };
+            //DependencyService.Register<MockDataStore>();
             MainPage = new SignInPage();
         }
 

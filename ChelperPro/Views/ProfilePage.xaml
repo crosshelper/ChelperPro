@@ -36,7 +36,7 @@
     </sv:Section>
     
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-             <sv:ButtonCell Title="Sign out" TitleColor="Red" 
+             <sv:ButtonCell Title="Sign out" TitleColor="Red" Tapped="Handle_SignOutPage"
              TitleAlignment="Center" Command="{Binding SectionToggleCommand}" />
     </sv:Section>
     

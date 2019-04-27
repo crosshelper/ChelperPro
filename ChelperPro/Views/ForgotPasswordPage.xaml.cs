@@ -14,7 +14,7 @@ namespace ChelperPro.Views
         }
         void Handle_Reset(object sender, System.EventArgs e)
         {
-            //Navigation.PopAsync(false);
+            Application.Current.MainPage = new SignInPage();
         }
         void Handle_Sent(object sender, System.EventArgs e)
         {

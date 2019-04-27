@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.SignUpThreePage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+                <Label Margin="0,150,16,10"
+                   Text="Thank you for Becoming a helper."
+                   TextColor="#FF4E17"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"/>
+            <StackLayout>
+            <Label TextColor="Gray"
+                   FontSize="18">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Wait for background check The background check will be completed within 3-5 business day. You will notified by email after check is done."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            </StackLayout>
+    <!--登入按钮 Sign in Button -->   
+            <StackLayout VerticalOptions="StartAndExpand">
+                    <Button  
+                    Text="Done"
+                    TextColor="White"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    BackgroundColor="#FF4E18"
+                    Margin="0,30,0,0"
+                    Clicked="Handle_Done"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
