@@ -13,21 +13,18 @@
                      HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
                      HasUnevenRows="true">
     <sv:Section Title="Background" FooterText="">
-            <sv:EntryCell Title="From" ValueText="{Binding InputText.Value}" 
-                          Placeholder="China" Keyboard="Email" 
-                          TextAlignment="End" HintText="{Binding InputError.Value}" />
-            <sv:PickerCell Title="Favorites" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
-        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+            <sv:PickerCell Title="Home Land" 
+                        ItemsSource="{Binding HomeLandItemsSource}" 
+                        SelectedItems="{Binding HomeLandSelectedItems}" 
+                        DisplayMember="Name"
+                        TitleFontSize="18" 
+                        ValueTextFontSize="16"
+                        MaxSelectedNumber="2"/>
     </sv:Section>
             
     <sv:Section Title="Language Preference" FooterText="">
-            <sv:EntryCell Title="Priority language" ValueText="{Binding InputText.Value}" 
-                          Placeholder="English" Keyboard="Email" 
-                          TextAlignment="End" HintText="{Binding InputError.Value}" /> 
-            
-            <sv:EntryCell Title="Second language" ValueText="{Binding InputText.Value}" 
-                          Placeholder="Chinese" Keyboard="Email" 
-                          TextAlignment="End" HintText="{Binding InputError.Value}" />
+            <sv:TextPickerCell Title="Priority language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16"/>
+                <sv:TextPickerCell Title="Second language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16" />
     </sv:Section>
     
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
