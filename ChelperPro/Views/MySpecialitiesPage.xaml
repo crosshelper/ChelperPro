@@ -15,26 +15,30 @@
                 <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,10,0,0"></BoxView>
             </StackLayout>
             <Label Text="My skills" Margin="0,10,0,0"></Label>
-            <Picker x:Name="SelectSkills"
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="SelectSkills"
                     Title="Select a Skills"
                     HeightRequest="35"
+                    HorizontalOptions="FillAndExpand"
                     TitleColor="#666666">
-              <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                  <x:String>Baboon</x:String>
-                  <x:String>Capuchin Monkey</x:String>
-                  <x:String>Blue Monkey</x:String>
-                  <x:String>Squirrel Monkey</x:String>
-                  <x:String>Golden Lion Tamarin</x:String>
-                  <x:String>Howler Monkey</x:String>
-                  <x:String>Japanese Macaque</x:String>
-                </x:Array>
-              </Picker.ItemsSource>
-            </Picker>
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                          <x:String>Baboon</x:String>
+                          <x:String>Capuchin Monkey</x:String>
+                          <x:String>Blue Monkey</x:String>
+                          <x:String>Squirrel Monkey</x:String>
+                          <x:String>Golden Lion Tamarin</x:String>
+                          <x:String>Howler Monkey</x:String>
+                          <x:String>Japanese Macaque</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                    <Button Text="Add" BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" WidthRequest="65" HeightRequest="35" HorizontalOptions="End" />
+            </StackLayout>
              <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,5,0,0"></BoxView>
-            <Label Text="Or add one(One for each adding)"></Label>  
+            <Label Text="No above? add one. (One for each adding)" FontSize="11"></Label>  
             <StackLayout Orientation="Horizontal">
-                <Entry HeightRequest="40" HorizontalOptions="FillAndExpand"></Entry>
+                <Entry HeightRequest="35" HorizontalOptions="FillAndExpand"></Entry>
                 <Button Text="Add" BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" WidthRequest="65" HeightRequest="35" HorizontalOptions="End" />
             </StackLayout>
             <StackLayout>
