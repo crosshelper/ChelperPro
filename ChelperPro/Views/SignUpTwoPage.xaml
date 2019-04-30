@@ -16,13 +16,8 @@
                                    FontSize="16"
                                    HeightRequest="45"
                                    Completed="SUPComfirmPasswordCompleted"/>
-                            <Label Text="How long have you been living here?" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry Placeholder="Enter years"
-                                   FontSize="16"
-                                   HeightRequest="45"
-                                   Completed="SUPComfirmPasswordCompleted"/>
                     <StackLayout>
-                            <Label Text="Address" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                            <Label Text="Address" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
                             <Entry Placeholder="260 N Sunnyvale Ave"
                                    FontSize="16"
                                    HeightRequest="45"
@@ -52,7 +47,12 @@
                                    Completed="SUPComfirmPasswordCompleted"/>
                         </StackLayout>
                     </StackLayout>
-                            <Label Text="SSN" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                            <Label Text="Photo ID" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="Upload your ID here" Clicked="Handle_Upload" HorizontalOptions="Start" VerticalOptions="Center"  BorderColor="#666666" BorderWidth="1" TextColor="#666666" FontAttributes="Bold" FontSize="12" WidthRequest="135" HeightRequest="35" />
+                            <Label Text="Upload completed" TextColor="#79B563" HorizontalOptions="End" VerticalOptions="End" FontSize="13" FontAttributes="Italic" TextDecorations="Underline" Margin="5,0,0,0"/>
+                        </StackLayout>
+                            <Label Text="SSN" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
                             <Entry Placeholder="5 years"
                                    FontSize="16"
                                    HeightRequest="45"

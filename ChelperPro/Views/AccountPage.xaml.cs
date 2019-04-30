@@ -19,6 +19,10 @@ namespace ChelperPro.Views
         {
             Navigation.PushAsync(new ProfilePage());
         }
+        async void Handle_ChangePhoto(object sender, EventArgs e)
+        {
+            string action = await DisplayActionSheet("Upload Photo", "Cencel", null, "Take photo", "From album");
+        }
         public AccountPage()
         {
             InitializeComponent();

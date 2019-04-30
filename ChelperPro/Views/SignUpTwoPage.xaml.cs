@@ -38,5 +38,9 @@ namespace ChelperPro.Views
         {
             Application.Current.MainPage = new SignUpThreePage();
         }
+        async void Handle_Upload(object sender, EventArgs e)
+        {
+            string action = await DisplayActionSheet("Upload ID", "Cencel", null, "Take photo", "From album");
+        }
     }
 }

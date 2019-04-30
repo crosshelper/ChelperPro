@@ -44,7 +44,7 @@
                         </StackLayout >
            <!--登入按钮 Sign in Button -->   
                     <StackLayout VerticalOptions="Start">
-                            <Button  
+                            <Button Margin="0,10,0,0"
                                     Text="Next"
                                     TextColor="White"
                                     FontSize="Medium"

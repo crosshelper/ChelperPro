@@ -18,10 +18,13 @@
                           Placeholder="11/20" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
             <sv:EntryCell Title="Card Holder" ValueText="{Binding InputText.Value}" 
-                          Placeholder="BO CHEN" Keyboard="Email" 
+                          Placeholder="Name" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
-            <sv:EntryCell Title="SSV" ValueText="{Binding InputText.Value}" 
+            <sv:EntryCell Title="CVV" ValueText="{Binding InputText.Value}" 
                           Placeholder="***" Keyboard="Email" 
+                          TextAlignment="End" HintText="{Binding InputError.Value}" />
+            <sv:EntryCell Title="Zip Code" ValueText="{Binding InputText.Value}" 
+                          Placeholder="95136" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
         </sv:Section>
             

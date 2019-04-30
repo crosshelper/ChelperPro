@@ -14,7 +14,7 @@
                      HasUnevenRows="true">
     
         <sv:Section Title="Bank Info" FooterText="">
-            <sv:EntryCell Title="Credit" ValueText="{Binding InputText.Value}" 
+            <sv:EntryCell Title="Account number" ValueText="{Binding InputText.Value}" 
                           Placeholder="0000 0000 0000 0000" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" /> 
             <sv:EntryCell Title="Expiry Date" ValueText="{Binding InputText.Value}" 
@@ -23,7 +23,7 @@
             <sv:EntryCell Title="Card Holder" ValueText="{Binding InputText.Value}" 
                           Placeholder="BO CHEN" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
-            <sv:EntryCell Title="SSV" ValueText="{Binding InputText.Value}" 
+            <sv:EntryCell Title="CVV" ValueText="{Binding InputText.Value}" 
                           Placeholder="***" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
         </sv:Section>

@@ -16,18 +16,15 @@
             <sv:EntryCell Title="From" ValueText="{Binding InputText.Value}" 
                           Placeholder="China" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
-            <sv:EntryCell Title="Enter Year" ValueText="{Binding InputText.Value}" 
-                          Placeholder="6" Keyboard="Email" 
-                          Description="How long have you been living here?"
-                          DescriptionColor="#999999"
-                          TextAlignment="End" HintText="{Binding InputError.Value}" />
-
+            <sv:PickerCell Title="Favorites" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
             
     <sv:Section Title="Language Preference" FooterText="">
             <sv:EntryCell Title="Priority language" ValueText="{Binding InputText.Value}" 
                           Placeholder="English" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" /> 
+            
             <sv:EntryCell Title="Second language" ValueText="{Binding InputText.Value}" 
                           Placeholder="Chinese" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
