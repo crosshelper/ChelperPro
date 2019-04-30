@@ -11,10 +11,13 @@
             <Label Text="Specialities" FontAttributes="Bold" FontSize="20" TextColor="#575656" HorizontalOptions="Start"></Label>
             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
             <StackLayout>
-                <Label Text="Language, Daily life, Health, Pets, Pets" Margin="0,10,0,0" ></Label>
-                <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,10,0,0"></BoxView>
+                <Label Text="Language, Daily life, Health, Pets" Margin="0,10,0,0" ></Label>
             </StackLayout>
-            <Label Text="My skills" Margin="0,10,0,0"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="My skills" Margin="0,10,0,0"  FontAttributes="Bold" FontSize="20" TextColor="#575656" HorizontalOptions="Start"></Label>
+                    <Label Text="(One for each adding)" VerticalOptions="End" FontSize="13"/>
+                </StackLayout>
+            <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,0,0,5"></BoxView>
             <StackLayout Orientation="Horizontal">
                 <Picker x:Name="SelectSkills"
                     Title="Select a Skills"
@@ -35,8 +38,7 @@
                 </Picker>
                     <Button Text="Add" BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" WidthRequest="65" HeightRequest="35" HorizontalOptions="End" />
             </StackLayout>
-             <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,5,0,0"></BoxView>
-            <Label Text="No above? add one. (One for each adding)" FontSize="11"></Label>  
+            <Label Text="No above? add one." FontSize="13"></Label>  
             <StackLayout Orientation="Horizontal">
                 <Entry HeightRequest="35" HorizontalOptions="FillAndExpand"></Entry>
                 <Button Text="Add" BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" WidthRequest="65" HeightRequest="35" HorizontalOptions="End" />
