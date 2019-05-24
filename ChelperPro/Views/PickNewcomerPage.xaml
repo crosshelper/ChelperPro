@@ -18,7 +18,7 @@
                     <Switch HorizontalOptions="End" VerticalOptions="Center"></Switch>
                 </StackLayout>
             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
-                <ListView ItemsSource="{Binding Helpers}" HasUnevenRows="true" ItemSelected="Handle_ItemSelected">
+                <ListView ItemsSource="{Binding Topics}" HasUnevenRows="true" ItemSelected="Handle_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">
@@ -42,7 +42,7 @@
                                     <Image Grid.RowSpan="3"
                                            Grid.Row="0"
                                            Grid.ColumnSpan="1"
-                                           Source="{Binding ImageUrl}"
+                                           Source="{Binding Icon}"
                                            Aspect="AspectFill"/>
                                     <Label Grid.Column="1"
                                            Grid.Row="0"
@@ -69,14 +69,14 @@
                                            Grid.ColumnSpan="5"
                                            FontSize="17"
                                            Grid.RowSpan="4"
-                                           Text="{Binding ProblemdDscription}"/>
+                                           Text="{Binding Description}"/>
                                     <Label Grid.Row="7"
                                            Grid.Column="2"
                                            TextColor="#393939"
                                            Grid.ColumnSpan="3"
                                            FontSize="18"
                                            HorizontalOptions="End"
-                                           Text="{Binding Location}"/> 
+                                           Text="{Binding Zipcode}"/> 
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

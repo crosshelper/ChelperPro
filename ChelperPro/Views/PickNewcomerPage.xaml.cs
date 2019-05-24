@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ChelperPro.Helpers;
 using ChelperPro.Models;
 using Xamarin.Forms;
 
@@ -12,12 +13,13 @@ namespace ChelperPro.Views
             Navigation.PushAsync(new CurrentLocationPage());
         }
 
-        public IList<PickNewcomerViewcellItem> Helpers { get; private set; }
+        public List<TopicInfoLabel> Topics { get; private set; }
+        TopicInfoHelper tih = new TopicInfoHelper();
+
         public PickNewcomerPage()
         {
             InitializeComponent();
-            Helpers = new List<PickNewcomerViewcellItem>();
-
+            Topics = tih.GetMyTopicList("95131");
             BindingContext = this;
         }
 

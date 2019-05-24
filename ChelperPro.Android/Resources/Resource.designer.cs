@@ -2316,6 +2316,10 @@ namespace ChelperPro.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_id = global::ChelperPro.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_inflatedId = global::ChelperPro.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_layout = global::ChelperPro.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::PCLCrypto.Resource.String.ApplicationName = global::ChelperPro.Droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::ChelperPro.Droid.Resource.String.Hello;
+			global::PCLStorage.Resource.String.ApplicationName = global::ChelperPro.Droid.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::ChelperPro.Droid.Resource.String.Hello;
 			global::AiForms.Renderers.Droid.Resource.Animation.abc_fade_in = global::ChelperPro.Droid.Resource.Animation.abc_fade_in;
 			global::AiForms.Renderers.Droid.Resource.Animation.abc_fade_out = global::ChelperPro.Droid.Resource.Animation.abc_fade_out;
 			global::AiForms.Renderers.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::ChelperPro.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -12019,6 +12023,12 @@ namespace ChelperPro.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f0a0050
+			public const int ApplicationName = 2131361872;
+			
+			// aapt resource value: 0x7f0a004f
+			public const int Hello = 2131361871;
 			
 			// aapt resource value: 0x7f0a0018
 			public const int abc_action_bar_home_description = 2131361816;

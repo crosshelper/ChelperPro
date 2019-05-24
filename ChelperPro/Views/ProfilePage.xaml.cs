@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using ChelperPro.Helpers;
+using ChelperPro.Models;
 using Xamarin.Forms;
 
 namespace ChelperPro.Views
@@ -9,11 +10,11 @@ namespace ChelperPro.Views
     {
         void Handle_Account(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new AccountPage());
+            Navigation.PushAsync(new AccountPage(_currentUser));
         }
         void Handle_HelperBackGround(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new HelperBackgroundPage());
+            Navigation.PushAsync(new HelperBackgroundPage(_currentUser));
         }
         void Handle_Bank(object sender, System.EventArgs e)
         {
@@ -21,7 +22,7 @@ namespace ChelperPro.Views
         }
         void Handle_TrustedContacts(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new TrustedContactsPage());
+            Navigation.PushAsync(new TrustedContactsPage(_currentUser));
         }
         void Handle_PrivacyPage(object sender, System.EventArgs e)
         {
@@ -44,9 +45,16 @@ namespace ChelperPro.Views
         {
             Application.Current.MainPage = new SignInPage();
         }
+
+        private UserInfo _currentUser;
+        UserInfoHelper uih = new UserInfoHelper();
+
         public ProfilePage()
         {
             InitializeComponent();
+            _currentUser = uih.GetUserInfoByID(Settings.UserId);
+            UserCell.Title = _currentUser.FirstName + " " + _currentUser.LastName;
+            UserCell.IconSource = _currentUser.Icon;
         }
     }
 }
