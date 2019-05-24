@@ -10,7 +10,7 @@ namespace ChelperPro.Models
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
             DataTemplate _returnTemplate = new DataTemplate();
-            _returnTemplate = ((PickNewcomerViewcellItem)item).PanelID > 0 ? FirstItemTemplate : OtherItemTemplate;
+            //_returnTemplate = ((PickNewcomerViewcellItem)item).PanelID > 0 ? FirstItemTemplate : OtherItemTemplate;
             return _returnTemplate;
         }
     }

@@ -24,10 +24,7 @@ namespace ChelperPro.Views
         {
             Navigation.PushAsync(new TrustedContactsPage(_currentUser));
         }
-        void Handle_PrivacyPage(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new PrivacyPage());
-        }
+
         void Handle_AgreementPage(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new AgreementPage());

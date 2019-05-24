@@ -11,10 +11,7 @@ namespace ChelperPro.Views
         {
             Navigation.PopToRootAsync(false);
         }
-        void Handle_AddPaymentMethod(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new AddBankPage());
-        }
+
         void Handle_EditPaymentMethod(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new EditBankPage());

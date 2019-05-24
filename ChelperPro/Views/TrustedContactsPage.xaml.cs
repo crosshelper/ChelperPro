@@ -16,7 +16,7 @@ namespace ChelperPro.Views
             Navigation.PopAsync(false);
         }
 
-        public TrustedContactsPage()
+        public TrustedContactsPage(Models.UserInfo _currentUser)
         {
             InitializeComponent();
         }

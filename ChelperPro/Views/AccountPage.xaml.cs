@@ -62,10 +62,6 @@ namespace ChelperPro.Views
         {
             Navigation.PopToRootAsync(false);
         }
-        void Handle_ResetPassword(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new ProfilePage());
-        }
 
         void Handle_Saved(object sender, System.EventArgs e)
         {

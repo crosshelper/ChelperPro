@@ -21,13 +21,6 @@
                                KeepSelectedUntilBack="true" 
                                PageTitle="select 3 items"
                                Tapped="Handle_EditPaymentMethod"/>
-                <sv:PickerCell Title="Add Payment Method" 
-                               ItemsSource="{Binding ItemsSource}" 
-                               DisplayMember="Name" 
-                               MaxSelectedNumber="3" 
-                               Tapped="Handle_AddPaymentMethod" 
-                               KeepSelectedUntilBack="true" 
-                               PageTitle="select 3 items"  />
             </sv:Section>
             </sv:SettingsView>
     </ContentPage.Content>

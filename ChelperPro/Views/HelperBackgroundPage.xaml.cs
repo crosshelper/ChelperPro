@@ -23,7 +23,7 @@ namespace ChelperPro.Views
         public ObservableCollection<HomeLandPickerItem> HomeLandSelectedItems { get; set; } = new ObservableCollection<HomeLandPickerItem>();
 
 
-        public HelperBackgroundPage()
+        public HelperBackgroundPage(Models.UserInfo _currentUser)
         {
             InitializeComponent();
             List<string> list = new List<string>
