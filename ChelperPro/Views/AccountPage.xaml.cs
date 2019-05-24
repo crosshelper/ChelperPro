@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Amazon;
+using Amazon.CognitoIdentity;
+using Amazon.S3;
+using Amazon.S3.Transfer;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
 using Plugin.Media;
@@ -29,10 +33,10 @@ namespace ChelperPro.Views
             _usr = currentUser;
             InitializeComponent();
             NameCell.Title = _usr.FirstName + " " + _usr.LastName;
-            NameCell.IconSource = user.Icon;
+            NameCell.IconSource = _usr.Icon;
             FirstName = _usr.FirstName;
             LastName = _usr.LastName;
-            _ac = ush.GetUacByID(user.UserID);
+            _ac = ush.GetUacByID(_usr.UserID);
             Email = _ac.Email;
             PhoneNumber = _ac.ContactNo;
             BindingContext = this;
@@ -115,10 +119,6 @@ namespace ChelperPro.Views
                         Key = string.Format("Login Picture"),
                         ContentType = "image/png"
                     };
-
-                //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
-                //CancellationToken cancellationToken = new CancellationToken();
-
                 await this.s3transferUtility.UploadAsync(request).ContinueWith(((x) =>
                 {
                     Debug.WriteLine("Image Uploaded");
