@@ -10,7 +10,7 @@ namespace ChelperPro.Views
     {
         void Handle_location(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CurrentLocationPage());
+            //Navigation.PushAsync(new CurrentLocationPage());
         }
         public string _currentZipCode { get; private set; } = "95131";
         private List<string> _currentZipCodeList { get; set; }

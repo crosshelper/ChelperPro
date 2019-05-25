@@ -21,10 +21,10 @@
     </sv:Section>
             
     <sv:Section Title="Emergency Contacts" FooterText="">
-            <sv:EntryCell Title="Priority number" ValueText="{Binding InputText.Value}" 
+            <sv:EntryCell Title="Priority number" ValueText="{Binding FENo}" 
                           Placeholder="000 000 0000" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" /> 
-            <sv:EntryCell Title="Second number" ValueText="{Binding InputText.Value}" 
+            <sv:EntryCell Title="Second number" ValueText="{Binding SENo}" 
                           Placeholder="000 000 0000" Keyboard="Email" 
                           TextAlignment="End" HintText="{Binding InputError.Value}" />
     </sv:Section>

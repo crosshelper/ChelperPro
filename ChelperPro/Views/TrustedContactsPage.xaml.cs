@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using ChelperPro.Helpers;
+using ChelperPro.Models;
 using Xamarin.Forms;
 
 namespace ChelperPro.Views
@@ -13,12 +14,24 @@ namespace ChelperPro.Views
         }
         void Handle_Saved(object sender, System.EventArgs e)
         {
+            _usr.FENo = FENo;
+            _usr.SENo = SENo;
+            uih.UpdateUserInfo(_usr);
             Navigation.PopAsync(false);
         }
 
-        public TrustedContactsPage(Models.UserInfo _currentUser)
+        UserInfoHelper uih = new UserInfoHelper();
+        public string FENo { get; set; }
+        public string SENo { get; set; }
+        UserInfo _usr;
+
+        public TrustedContactsPage(UserInfo _currentUser)
         {
             InitializeComponent();
+            _usr = _currentUser;
+            FENo = _currentUser.FENo;
+            SENo = _currentUser.SENo;
+            BindingContext = this;
         }
     }
 }

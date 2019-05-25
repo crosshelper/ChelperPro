@@ -71,7 +71,7 @@ namespace ChelperPro.Views
             _ac.ContactNo = PhoneNumber;
 
             uih.UpdateUserInfo(_usr);
-            uih.UpdateUac(_ac);
+            ush.UpdateUac(_ac);
 
             Navigation.PopAsync(false);
         }
