@@ -15,13 +15,15 @@ namespace ChelperPro.Views
         }
         void Handle_Save(object sender, System.EventArgs e)
         {
+            uih.UpdateMySpecialities(BioBox.Text, SelectSkills.Items);
             Navigation.PopAsync(false);
         }
+
+        UserInfoHelper uih = new UserInfoHelper();
 
         public MySpecialitiesPage()
         {
             InitializeComponent();
-            UserInfoHelper uih = new UserInfoHelper();
             var taginfoList = uih.GetMyTagsByID(Settings.UserId);
             SelectSkills.ItemsSource = taginfoList;
 

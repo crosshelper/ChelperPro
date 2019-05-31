@@ -53,6 +53,45 @@ namespace ChelperPro.Helpers
             }
         }
 
+        internal void UpdateMySpecialities(string bio, IList<string> tags)
+        {
+            UpdateHelperBio(bio);
+            UpdateHelperTags(tags);
+        }
+
+        private void UpdateHelperTags(IList<string> tags)
+        {
+            //TODO:更新Tags
+            throw new NotImplementedException();
+        }
+
+        private void UpdateHelperBio(string bio)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                    "UPDATE HelperInfo SET " +
+                    "Bio = @para2" +
+                    " WHERE Uid = @para1";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                cmd.Parameters.AddWithValue("para2", bio);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
         internal string GetChatIDByUid(string userID)
         {
             string chatid = "";
