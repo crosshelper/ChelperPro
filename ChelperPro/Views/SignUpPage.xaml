@@ -24,23 +24,19 @@
                             <Label Text="Email" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter email address"
                                    FontSize="16"
-                                   HeightRequest="45"
-                                   Completed="SUPEmailCompleted"/>
+                                   HeightRequest="45" />
                             <Label Text="Phone number" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter phone number"
                                    FontSize="16"
-                                   HeightRequest="45"
-                                   Completed="SUPEmailCompleted"/>
+                                   HeightRequest="45" />
                             <Label Text="Password" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter password"
                                    FontSize="16"
-                                   HeightRequest="45"
-                                   Completed="SUPPasswordCompleted"/>
+                                   HeightRequest="45" />
                             <Label Text="Comfirm Password" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Comfirm password"
                                    FontSize="16"
-                                   HeightRequest="45"
-                                   Completed="SUPComfirmPasswordCompleted"/>
+                                   HeightRequest="45" />
                         </StackLayout >
            <!--登入按钮 Sign in Button -->   
                     <StackLayout VerticalOptions="Start">

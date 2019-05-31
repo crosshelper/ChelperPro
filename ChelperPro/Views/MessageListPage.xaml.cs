@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using ChelperPro.Helpers;
+using ChelperPro.Models;
+using ChelperPro.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,7 +23,7 @@ namespace ChelperPro.Views
 
         private void LstView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var user = (Models.User)e.SelectedItem;
+            var user = (UserInfo)e.SelectedItem;
             List<string> users = new List<string>() {
                 Settings.ChatID,
                 user.ChatID

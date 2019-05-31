@@ -23,11 +23,14 @@
     <PackageReference Include="AWSSDK.SecurityToken" Version="3.3.101.6" />
     <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.3.100.24" />
     <PackageReference Include="Stripe.net" Version="26.0.0" />
+    <PackageReference Include="Plugins.Forms.ButtonCircle" Version="2.0.3" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
     <Folder Include="Lib\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SendBird">
