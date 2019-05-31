@@ -20,8 +20,8 @@ namespace ChelperPro
         {
             // Handle when your app starts
 
-            SendBirdClient.Init("B0F51364-A66F-4EF8-B6AA-0A61629E45C7");//ChelperPro.Properties.Resources.APP_ID);
-            StripeConfiguration.SetApiKey("sk_live_XXXXXXXXXXXXXXX");
+            SendBirdClient.Init(ChelperPro.Properties.Resources.APP_ID);
+            StripeConfiguration.SetApiKey(ChelperPro.Properties.Resources.PB_KEY);
         }
 
         protected override void OnSleep()
