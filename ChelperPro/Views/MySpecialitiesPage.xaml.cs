@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using ChelperPro.Helpers;
+using ChelperPro.Models;
 using Xamarin.Forms;
 
 namespace ChelperPro.Views
@@ -17,36 +18,19 @@ namespace ChelperPro.Views
             Navigation.PopAsync(false);
         }
 
-       void Tagload(List<String> ts)
-        {
-            for (int i =0; i<ts.Count;i++)
-            {
-                Label lb = new Label
-                {
-                    Text = ts[i],
-                    BackgroundColor = Color.Blue,
-                    FontSize = 16
-                    //Margin = new Thickness(10),
-                };
-            }
-        }
         public MySpecialitiesPage()
         {
-            List <String> Taglist = new List<String>()
-            {
-                "Language",
-                "General",
-                "etnjrtnrnrtn",
-                "wer",
-                "dsfsd",
-                "bergergergergerg",
-                "uwlwl;",
-                "cw",
-                "Pet",
-                "bweij"
-            };
             InitializeComponent();
-            Tagload(Taglist);
+            UserInfoHelper uih = new UserInfoHelper();
+            var taginfoList = uih.GetMyTagsByID(Settings.UserId);
+            SelectSkills.ItemsSource = taginfoList;
+
+            string TagsStr = "";
+            foreach (TagInfo tag in taginfoList)
+            {
+                TagsStr += tag.Pcategory + ", ";
+            }
+            speLabel.Text = TagsStr;
         }
     }
 }

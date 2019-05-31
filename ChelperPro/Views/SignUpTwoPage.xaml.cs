@@ -7,7 +7,7 @@ namespace ChelperPro.Views
 {
     public partial class SignUpTwoPage : ContentPage
     {
-        public SignUpTwoPage()
+        public SignUpTwoPage(string uname, string pwd)
         {
             InitializeComponent();
         }

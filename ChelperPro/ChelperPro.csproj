@@ -22,9 +22,19 @@
     <PackageReference Include="AWSSDK.S3" Version="3.3.102.5" />
     <PackageReference Include="AWSSDK.SecurityToken" Version="3.3.101.6" />
     <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.3.100.24" />
+    <PackageReference Include="Stripe.net" Version="26.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
+    <Folder Include="Lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SendBird">
+      <HintPath>Lib\SendBird.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Lib\websocket-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

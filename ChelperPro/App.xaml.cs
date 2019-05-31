@@ -1,27 +1,23 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using ChelperPro.Views;
+﻿using ChelperPro.Views;
+using SendBird;
+using Stripe;
 
 namespace ChelperPro
 {
-    public partial class App : Application
+    public partial class App : Xamarin.Forms.Application
     {
 
         public App()
         {
             InitializeComponent();
-
-            //MainPage = new NavigationPage((Page)Activator.CreateInstance(typeof(SignInPage))) {
-            //BarBackgroundColor = Color.FromHex("#FF4E18"),
-            //BarTextColor = Color.White };
-            //DependencyService.Register<MockDataStore>();
             MainPage = new SignInPage();
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
+            //SendBirdClient.Init(ChelperPro.Properties.Resources.APP_ID);
+            StripeConfiguration.SetApiKey("sk_live_XXXXXXXXXXXXXXX");
         }
 
         protected override void OnSleep()
