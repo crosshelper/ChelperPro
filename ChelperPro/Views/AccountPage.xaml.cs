@@ -27,7 +27,7 @@ namespace ChelperPro.Views
         public string PhoneNumber { get; set; }
         UserInfoHelper uih = new UserInfoHelper();
         UserSettingHelper ush = new UserSettingHelper();
-
+        
         public AccountPage(UserInfo currentUser)
         {
             _usr = currentUser;
