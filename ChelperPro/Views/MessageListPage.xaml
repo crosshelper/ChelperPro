@@ -19,13 +19,12 @@
                                 <Image Grid.RowSpan="2"
                                            Grid.Row="0"
                                            BackgroundColor="#999999"
-                                           Source="{Binding ImageUrl}"
+                                           Source="{Binding Icon}"
                                            Aspect="AspectFill"
                                            HeightRequest="60"
                                            WidthRequest="60" />
                                 <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalOptions="Center" Margin="5,0,0,0" Grid.ColumnSpan="2">
                                     <Label Text ="{Binding FirstName}" TextColor="Black"  FontSize="18"/>
-                                    <Label Text ="{Binding LastName}" TextColor="Black" FontSize="18"/>
                                 </StackLayout>
                                 <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="End">
                                     <Label Text="May 5" TextColor="#666666" FontSize="14"></Label>

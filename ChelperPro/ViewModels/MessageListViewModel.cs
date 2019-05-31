@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using ChelperPro.Helpers;
 using ChelperPro.Models;
 using ChelperPro.Views;
 using SendBird;
@@ -18,8 +19,31 @@ namespace ChelperPro.ViewModels
         //TODO:刷新真实user
         public MessageListViewModel()
         {
-            Users.Add(new UserInfo { ChatID = "cycbis_001", FirstName = "Thomas", LastName = "Wong" });
-            Users.Add(new UserInfo { ChatID = "cycbis_002", FirstName = "Jim", LastName = "Green" });
+            GroupChannelListQuery mQuery = GroupChannel.CreateMyGroupChannelListQuery();
+            mQuery.IncludeEmpty = true;
+            mQuery.Next((List<GroupChannel> list, SendBirdException e) => {
+                if (e != null)
+                {
+                    // Error.
+                    return;
+                }
+                foreach (GroupChannel channel in list)
+                {
+                    foreach (User user in channel.Members)
+                    {
+                        if (user.UserId != Settings.ChatID)
+                        {
+                            Users.Add(new UserInfo
+                            {
+                                ChatID = user.UserId,
+                                FirstName = user.Nickname,
+                                Icon = user.ProfileUrl
+                            });
+                        }
+                    }
+                }
+            });
+            Users.Add(new UserInfo { ChatID = "cycbis_004", FirstName = "Thomas Wong" });
         }
 
         public async void ConnectToChannel(Models.UserInfo user, List<string> users)
