@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ChelperPro.Models;
+using ChelperPro.Views;
 using SendBird;
 using Xamarin.Forms;
 using static SendBird.SendBirdClient;
@@ -123,6 +124,7 @@ namespace ChelperPro.ViewModels
                     //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
                 });
                 TxtMessage = string.Empty;
+                //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
                 IsBusy = false;
             }
             catch (Exception ex)
