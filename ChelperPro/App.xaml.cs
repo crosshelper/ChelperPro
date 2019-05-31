@@ -1,5 +1,4 @@
 ﻿using ChelperPro.Views;
-using SendBird;
 using Stripe;
 
 namespace ChelperPro
