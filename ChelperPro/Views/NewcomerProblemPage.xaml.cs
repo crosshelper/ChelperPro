@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using ChelperPro.Helpers;
+using ChelperPro.Models;
 using Xamarin.Forms;
+using SendBird;
+using System.Threading.Tasks;
 
 namespace ChelperPro.Views
 {
@@ -16,19 +19,54 @@ namespace ChelperPro.Views
         {
             (sender as Button).Text = "Click me again!";
         }
+        UserInfoHelper uih = new UserInfoHelper();
         //Confirm
         void NHPPConfirm(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            if (Settings.IsLogin)
+            {
+                var user = new UserInfo()
+                {
+                    UserID = uih.GetChatIDByUid(_currentnewcomerlabel.UserID)
+                };
+                List<string> users = new List<string>() {
+                Settings.ChatID,
+                uih.GetChatIDByUid(_currentnewcomerlabel.UserID)
+                };
+                ConnectToChannel(user, users);
+            }
         }
         void Handle_Canceled(object sender, System.EventArgs e)
         {
             Navigation.PopToRootAsync(false);
         }
-        public NewcomerProblemPage()
+
+        TopicInfoLabel _currentnewcomerlabel = new TopicInfoLabel();
+
+        public NewcomerProblemPage(TopicInfoLabel topicInfoLabel)
         {
+            _currentnewcomerlabel = topicInfoLabel;
             InitializeComponent();
 
         }
+
+        async void ConnectToChannel(UserInfo user, List<string> users)
+        {
+            GroupChannel group = null;
+            IsBusy = true;
+
+            GroupChannel.CreateChannelWithUserIds(users, true, (GroupChannel groupChannel, SendBirdException e) => {
+                if (e != null)
+                {
+                    // Error.
+                    return;
+                }
+                group = groupChannel;
+            });
+            await Task.Delay(3000);
+            IsBusy = false;
+            await Navigation.PushAsync(new ChatPage(user, group));
+        }
+
     }
 }

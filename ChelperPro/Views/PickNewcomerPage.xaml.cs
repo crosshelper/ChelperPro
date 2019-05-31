@@ -26,7 +26,8 @@ namespace ChelperPro.Views
 
         void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new NewcomerProblemPage());
+            TopicInfoLabel topicInfoLabel = e.SelectedItem as TopicInfoLabel;
+            Navigation.PushAsync(new NewcomerProblemPage(topicInfoLabel));
         }
 
         void Handle_Toggled(object sender, ToggledEventArgs e)

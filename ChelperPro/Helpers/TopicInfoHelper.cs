@@ -9,7 +9,7 @@ namespace ChelperPro.Helpers
     public class TopicInfoHelper
     {
         private readonly List<TopicInfo> topiclist = new List<TopicInfo>();
-        private readonly List<TopicInfoLabel> topiclabellist;
+        private readonly List<TopicInfoLabel> topiclabellist = new List<TopicInfoLabel>();
         private readonly UserInfoHelper uih= new UserInfoHelper();
 
         private readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
@@ -26,7 +26,7 @@ namespace ChelperPro.Helpers
             foreach(TopicInfo tp in list)
             {
                 var user = uih.GetUserInfoByID(tp.UserID);
-                var tmp = new TopicInfoLabel
+                TopicInfoLabel tmp = new TopicInfoLabel
                 {
                     TopicID = tp.TopicID,
                     UserID = tp.UserID,

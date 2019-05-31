@@ -4,8 +4,7 @@
             xmlns:views="clr-namespace:ChelperPro.Views" 
             x:Class="ChelperPro.Views.MainPage">
     <TabbedPage.Children>
-        
-        <NavigationPage Title="Help">
+         <NavigationPage Title="Help">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_feed.png" />
@@ -15,7 +14,7 @@
                 <views:PickNewcomerPage />
             </x:Arguments>
         </NavigationPage>
-        
+       
         <NavigationPage Title="Earn">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -48,5 +47,6 @@
                 <views:ProfilePage />
             </x:Arguments>
         </NavigationPage>
+        
     </TabbedPage.Children>
 </TabbedPage>

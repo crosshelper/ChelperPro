@@ -53,6 +53,40 @@ namespace ChelperPro.Helpers
             }
         }
 
+        internal string GetChatIDByUid(string userID)
+        {
+            string chatid = "";
+            //并没有建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT ChatID FROM UserInfo WHERE Uid = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userID);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    chatid = reader.GetString(0);
+                }
+                return chatid;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return chatid;
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
         internal void UpdateUserInfo(UserInfo usr)
         {
             //建立数据库连接
