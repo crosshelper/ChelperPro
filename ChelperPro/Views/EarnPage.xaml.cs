@@ -13,6 +13,9 @@ namespace ChelperPro.Views
         }
         void Handle_TransferToBank(object sender, System.EventArgs e)
         {
+
+
+
             Navigation.PushAsync(new TransferBankPage());
         }
 

@@ -18,7 +18,7 @@
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Margin="16,20,16,20" VerticalOptions="StartAndExpand">
-                    <Button x:Name="qwe "
+                    <Button x:Name="EarnBtn"
                             Text="Transfer to Bank"
                             TextColor="White"
                             FontAttributes="Bold"

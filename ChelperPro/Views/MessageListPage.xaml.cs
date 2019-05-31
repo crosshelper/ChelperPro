@@ -21,9 +21,9 @@ namespace ChelperPro.Views
             vm.Navigation = Navigation;
         }
 
-        private void LstView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void LstView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var user = (UserInfo)e.SelectedItem;
+            var user = (UserInfo)e.Item;
             List<string> users = new List<string>() {
                 Settings.ChatID,
                 user.ChatID

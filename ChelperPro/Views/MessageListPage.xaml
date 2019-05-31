@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.MessageListPage">
     <ContentPage.Content>
         <Grid x:Name="LayoutRoot" BackgroundColor="White">
-            <ListView ItemsSource="{Binding Users}" HasUnevenRows="true" ItemTapped="LstView_ItemSelected">
+            <ListView ItemsSource="{Binding Users}" HasUnevenRows="true" ItemTapped="LstView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
