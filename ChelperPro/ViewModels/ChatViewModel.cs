@@ -117,7 +117,8 @@ namespace ChelperPro.ViewModels
                         // Error.
                         return;
                     }
-
+                    //userMessage.Sender.Nickname;
+                    //userMessage.Sender.ProfileUrl;
                     Messages.Add(userMessage);
                     //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
                 });

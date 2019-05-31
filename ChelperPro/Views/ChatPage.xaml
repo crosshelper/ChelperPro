@@ -45,7 +45,7 @@
                                     <ColumnDefinition Width="55" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <circleimage:CircleImage Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/UserProfileIcon/Coral+Martin.jpg"
+                                <circleimage:CircleImage Source="{Binding Sender.ProfileUrl}"
                                                             Margin="0,10,0,0"
                                                             HeightRequest="50"
                                                             WidthRequest="50"
@@ -55,7 +55,7 @@
                                                             HorizontalOptions="Start">
                                     </circleimage:CircleImage>
                                 
-                                <Label Text="Bo Chen" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+                                <Label Text="{Binding Sender.Nickname}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"></Label>
                                <!-- <StackLayout Grid.ColumnSpan="2" 
                                        Padding="5" 
                                        Grid.Column="{Binding Sender, Converter={StaticResource TypeToColumnConverter}}" 
