@@ -105,6 +105,7 @@ namespace ChelperPro.ViewModels
         public void Send()
         {
             IsBusy = true;
+            ChatPage.CurrentActivity.ScrollDown(Messages.Last());
             try
             {
                 if (string.IsNullOrEmpty(TxtMessage))
@@ -124,7 +125,6 @@ namespace ChelperPro.ViewModels
                     //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
                 });
                 TxtMessage = string.Empty;
-                //ChatPage.CurrentActivity.ScrollDown(Messages.Last());
                 IsBusy = false;
             }
             catch (Exception ex)

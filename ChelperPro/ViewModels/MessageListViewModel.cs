@@ -16,7 +16,6 @@ namespace ChelperPro.ViewModels
         public ObservableCollection<UserInfo> Users { get; set; } = new ObservableCollection<UserInfo>();
         public INavigation Navigation;
         #endregion
-        //TODO:刷新真实user
         public MessageListViewModel()
         {
             GroupChannelListQuery mQuery = GroupChannel.CreateMyGroupChannelListQuery();

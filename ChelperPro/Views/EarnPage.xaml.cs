@@ -13,7 +13,7 @@ namespace ChelperPro.Views
         }
         void Handle_TransferToBank(object sender, System.EventArgs e)
         {
-
+            //TODO: Stripe Connect code here
 
 
             Navigation.PushAsync(new TransferBankPage());
