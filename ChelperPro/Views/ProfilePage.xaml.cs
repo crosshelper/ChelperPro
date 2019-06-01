@@ -16,6 +16,10 @@ namespace ChelperPro.Views
         {
             Navigation.PushAsync(new HelperBackgroundPage(_currentUser));
         }
+        void Handle_ServiceArea(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new ServiceAreaPage());
+        }
         void Handle_Bank(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new BankPage());

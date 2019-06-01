@@ -19,7 +19,7 @@
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
         <sv:PickerCell Title="Banking" Tapped="Handle_Bank" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:CommandCell x:Name="ServiceArea" Tapped="Handle_Account" Title="Service Area" 
+        <sv:CommandCell x:Name="ServiceArea" Tapped="Handle_ServiceArea" Title="Service Area" 
         Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
     </sv:Section>
         
