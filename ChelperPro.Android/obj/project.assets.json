@@ -3252,20 +3252,20 @@
     ]
   },
   "packageFolders": {
-    "/Users/william/.nuget/packages/": {}
+    "/Users/bochen/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/william/Projects/ChelperPro/ChelperPro.Android/ChelperPro.Android.csproj",
+      "projectUniqueName": "/Users/bochen/Projects/CHHelper/crosshelper/ChelperPro/ChelperPro.Android/ChelperPro.Android.csproj",
       "projectName": "ChelperPro.Android",
-      "projectPath": "/Users/william/Projects/ChelperPro/ChelperPro.Android/ChelperPro.Android.csproj",
-      "packagesPath": "/Users/william/.nuget/packages/",
-      "outputPath": "/Users/william/Projects/ChelperPro/ChelperPro.Android/obj/",
+      "projectPath": "/Users/bochen/Projects/CHHelper/crosshelper/ChelperPro/ChelperPro.Android/ChelperPro.Android.csproj",
+      "packagesPath": "/Users/bochen/.nuget/packages/",
+      "outputPath": "/Users/bochen/Projects/CHHelper/crosshelper/ChelperPro/ChelperPro.Android/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "/Users/william/.config/NuGet/NuGet.Config"
+        "/Users/bochen/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "monoandroid90"
@@ -3276,8 +3276,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "/Users/william/Projects/ChelperPro/ChelperPro/ChelperPro.csproj": {
-              "projectPath": "/Users/william/Projects/ChelperPro/ChelperPro/ChelperPro.csproj"
+            "/Users/bochen/Projects/CHHelper/crosshelper/ChelperPro/ChelperPro/ChelperPro.csproj": {
+              "projectPath": "/Users/bochen/Projects/CHHelper/crosshelper/ChelperPro/ChelperPro/ChelperPro.csproj"
             }
           }
         }

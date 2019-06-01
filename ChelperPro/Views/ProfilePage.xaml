@@ -7,7 +7,7 @@
     <sv:SettingsView  x:Name="settings" HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}" HasUnevenRows="true">
     
     <sv:Section Title="Account" FooterText="">
-            <sv:CommandCell x:Name="UserCell" Tapped="Handle_Account" IconSource="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" 
+            <sv:CommandCell x:Name="UserCell" Tapped="Handle_Account" 
             IconSize="60,60" IconRadius="30" Title="William Liang" Description="william.liang@crosshelper.com"
             Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
             <sv:PickerCell Title="Helper background" Tapped="Handle_HelperBackGround" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
@@ -36,8 +36,8 @@
     </sv:Section>
     
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-             <sv:ButtonCell Title="Sign out" TitleColor="Red" Tapped="Handle_SignOutPage"
-             TitleAlignment="Center" Command="{Binding SectionToggleCommand}" />
+             <sv:ButtonCell Title="Sign out" Tapped="Handle_SignOutPage"
+             Command="{Binding SectionToggleCommand}" />
     </sv:Section>
     
     </sv:SettingsView>

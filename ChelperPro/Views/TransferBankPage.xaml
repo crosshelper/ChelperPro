@@ -14,8 +14,8 @@
                              HasUnevenRows="true">
             <sv:Section Title="Transfer To Bank" FooterText="">
             <sv:EntryCell Title="$" ValueText="{Binding InputText.Value}" 
-                          Placeholder="$1000" Keyboard="Email" 
-                          TextAlignment="End" HintText="{Binding InputError.Value}" /> 
+                          Placeholder="$1000" 
+                          HintText="{Binding InputError.Value}" /> 
                 </sv:Section>
             <sv:Section Title="Bank Info" FooterText="">
                 <sv:PickerCell Title="**** **** **** 2055" 
@@ -28,8 +28,8 @@
                                Tapped="Handle_EditBankInfo"/>
             </sv:Section>
             <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-                 <sv:ButtonCell Title="Transfer" TitleColor="White" BackgroundColor="#FE5121" TitleFontSize="Large"
-                 TitleAlignment="Center" Tapped="Handle_TransferToBank" Command="{Binding SectionToggleCommand}"  />
+                 <sv:ButtonCell Title="Transfer" TitleFontSize="Large"
+                 Tapped="Handle_TransferToBank" Command="{Binding SectionToggleCommand}"  />
            </sv:Section>
             </sv:SettingsView>
     </ContentPage.Content>

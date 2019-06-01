@@ -12,8 +12,8 @@
     
    <sv:Section Title="Police Department" FooterText="">
             <sv:EntryCell ValueText="{Binding InputText.Value}" Title="Auto call" 
-                          Placeholder="911" Keyboard="Email" 
-                          TextAlignment="End" HintText="{Binding InputError.Value}"/>
+                          Placeholder="911" 
+                          HintText="{Binding InputError.Value}"/>
            <sv:SwitchCell On="true" 
             Description="Automatic calling 911."/>
 
@@ -22,16 +22,16 @@
             
     <sv:Section Title="Emergency Contacts" FooterText="">
             <sv:EntryCell Title="Priority number" ValueText="{Binding FENo}" 
-                          Placeholder="000 000 0000" Keyboard="Email" 
-                          TextAlignment="End" HintText="{Binding InputError.Value}" /> 
+                          Placeholder="000 000 0000" 
+                          HintText="{Binding InputError.Value}" /> 
             <sv:EntryCell Title="Second number" ValueText="{Binding SENo}" 
-                          Placeholder="000 000 0000" Keyboard="Email" 
-                          TextAlignment="End" HintText="{Binding InputError.Value}" />
+                          Placeholder="000 000 0000" 
+                          HintText="{Binding InputError.Value}" />
     </sv:Section>
     
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-             <sv:ButtonCell Title="Save" TitleColor="White" BackgroundColor="#FE5121" TitleFontSize="Large"
-             TitleAlignment="Center" Command="{Binding SectionToggleCommand}" Tapped="Handle_Saved" />
+             <sv:ButtonCell Title="Save" TitleFontSize="Large"
+             Command="{Binding SectionToggleCommand}" Tapped="Handle_Saved" />
     </sv:Section>
     
     </sv:SettingsView>

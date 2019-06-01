@@ -32,7 +32,7 @@ namespace ChelperPro.Views
 
         void Handle_Toggled(object sender, ToggledEventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

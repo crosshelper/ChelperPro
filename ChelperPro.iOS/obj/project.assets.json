@@ -3257,20 +3257,20 @@
     ]
   },
   "packageFolders": {
-    "/Users/william/.nuget/packages/": {}
+    "/Users/bochen/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/william/Projects/ChelperPro/ChelperPro.iOS/ChelperPro.iOS.csproj",
+      "projectUniqueName": "/Users/bochen/Projects/CHHelper/crosshelper/ChelperPro/ChelperPro.iOS/ChelperPro.iOS.csproj",
       "projectName": "ChelperPro.iOS",
-      "projectPath": "/Users/william/Projects/ChelperPro/ChelperPro.iOS/ChelperPro.iOS.csproj",
-      "packagesPath": "/Users/william/.nuget/packages/",
-      "outputPath": "/Users/william/Projects/ChelperPro/ChelperPro.iOS/obj/",
+      "projectPath": "/Users/bochen/Projects/CHHelper/crosshelper/ChelperPro/ChelperPro.iOS/ChelperPro.iOS.csproj",
+      "packagesPath": "/Users/bochen/.nuget/packages/",
+      "outputPath": "/Users/bochen/Projects/CHHelper/crosshelper/ChelperPro/ChelperPro.iOS/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "/Users/william/.config/NuGet/NuGet.Config"
+        "/Users/bochen/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
@@ -3281,8 +3281,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "/Users/william/Projects/ChelperPro/ChelperPro/ChelperPro.csproj": {
-              "projectPath": "/Users/william/Projects/ChelperPro/ChelperPro/ChelperPro.csproj"
+            "/Users/bochen/Projects/CHHelper/crosshelper/ChelperPro/ChelperPro/ChelperPro.csproj": {
+              "projectPath": "/Users/bochen/Projects/CHHelper/crosshelper/ChelperPro/ChelperPro/ChelperPro.csproj"
             }
           }
         }
