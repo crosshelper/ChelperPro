@@ -9,7 +9,7 @@
     
         <sv:Section Title="Priority area" FooterText="">
             <sv:EntryCell 
-                ValueText="{Binding Email}" 
+                ValueText="{Binding ZipCode1}" 
                 Placeholder="00000" 
                 MaxLength="5"
                 TitleFontSize="Medium"
@@ -18,13 +18,13 @@
         </sv:Section>
         <sv:Section Title="Addition area" FooterText="Enter 5 digit code here.(Exp: 95131)">
             <sv:EntryCell 
-                ValueText="{Binding Email}" 
+                ValueText="{Binding ZipCode2}" 
                 Placeholder="00000" 
                 MaxLength="5"
                 ValueTextFontSize="Medium"
                 HintText="{Binding InputError.Value}"/>
             <sv:EntryCell 
-                ValueText="{Binding Email}" 
+                ValueText="{Binding ZipCode3}" 
                 Placeholder="00000" 
                 MaxLength="5"
                 ValueTextFontSize="Medium"
