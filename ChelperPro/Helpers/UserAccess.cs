@@ -13,6 +13,7 @@ namespace ChelperPro.Helpers
 
         readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
         private int currentUid;
+        private int userPermission;
         public int CurrentUid { get { return currentUid; } }
 
         public void UserRegister(string Uname, string Email, string ContactNo, string Pwd)
@@ -45,6 +46,14 @@ namespace ChelperPro.Helpers
             {
                 conn.Close();
             }
+        }
+
+        internal bool CheckPermission()
+        {
+            if (userPermission == 1)
+                return true;
+            else
+                return false;
         }
 
         internal void SetChatID()
@@ -82,7 +91,7 @@ namespace ChelperPro.Helpers
         /// </summary>
         public bool VerifyUser(string username, string password)
         {
-            //并没有建立数据库连接
+            //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
             try
             {   //建立连接，打开数据库
@@ -97,6 +106,7 @@ namespace ChelperPro.Helpers
                 if (reader.Read())
                 {
                     currentUid = reader.GetInt32(0);
+                    userPermission = reader.GetInt32(5);
                     Settings.IsLogin = true;
                     return true;
                 }

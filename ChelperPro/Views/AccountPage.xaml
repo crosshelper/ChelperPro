@@ -4,9 +4,6 @@
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
              x:Class="ChelperPro.Views.AccountPage">
         <NavigationPage.TitleView>
-        <Grid>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
-        </Grid>
     </NavigationPage.TitleView>
         <sv:SettingsView x:Name="settings" HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}" HasUnevenRows="true"  >
             <sv:Section>

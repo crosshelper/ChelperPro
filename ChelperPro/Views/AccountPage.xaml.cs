@@ -58,11 +58,6 @@ namespace ChelperPro.Views
             this.s3transferUtility = new TransferUtility(s3client);
         }
 
-        void Handle_Canceled(object sender, System.EventArgs e)
-        {
-            Navigation.PopToRootAsync(false);
-        }
-
         void Handle_Saved(object sender, System.EventArgs e)
         {
             _usr.FirstName = FirstName;

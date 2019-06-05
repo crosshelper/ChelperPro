@@ -15,6 +15,7 @@ namespace ChelperPro.Views
 
         void Handle_Tapped(object sender, System.EventArgs e)
         {
+            DisplayAlert("Sorry,current unavailable", "It will be suppported later.", "OK");
             //BankingInfo ptmp = e.Item as BankingInfo;
             //((ListView)sender).SelectedItem = null;
             //Navigation.PushAsync(new EditBankPage(ptmp));

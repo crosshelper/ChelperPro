@@ -12,7 +12,7 @@
             <Image Source="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" HeightRequest="80"/>
             <StackLayout>
                 <Label Text="Feedback"></Label>
-                <Editor Placeholder="leave feedback here" HeightRequest="200" ></Editor>
+                <Editor x:Name="emaileditor" Placeholder="leave feedback here" HeightRequest="200" ></Editor>
                 <Button BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" Text="Submit" Clicked="Handle_Submit"/>
             </StackLayout>
             <Label Text="Contact us: bo.chen@crosshelper.com"/>

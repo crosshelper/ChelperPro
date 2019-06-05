@@ -13,7 +13,7 @@
                              HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
                              HasUnevenRows="true">
             <sv:Section Title="Bank Info" FooterText="">
-                <sv:PickerCell x:Name="BankCell" Title="**** **** **** 2055" 
+                <sv:PickerCell x:Name="BankCell" Title="**** **** **** 3306" 
                                ItemsSource="{Binding ItemsSource}" 
                                DisplayMember="Name" 
                                MaxSelectedNumber="3" 

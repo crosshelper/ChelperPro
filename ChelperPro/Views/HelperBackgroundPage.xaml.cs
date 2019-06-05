@@ -19,10 +19,6 @@ namespace ChelperPro.Views
             uih.UpdateUserInfo(_usr);
             Navigation.PopAsync(false);
         }
-        void Handle_Canceled(object sender, System.EventArgs e)
-        {
-            Navigation.PopToRootAsync(false);
-        }
 
         UserInfoHelper uih = new UserInfoHelper();
         public IList LanguageItems { get; }

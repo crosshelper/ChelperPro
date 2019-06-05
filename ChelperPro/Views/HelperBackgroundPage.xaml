@@ -3,10 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
              x:Class="ChelperPro.Views.HelperBackgroundPage">
-         <NavigationPage.TitleView>
-        <Grid>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
-        </Grid>
+    <NavigationPage.TitleView>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <sv:SettingsView x:Name="settings"
@@ -14,7 +11,11 @@
                      HasUnevenRows="true">
     <sv:Section Title="Language Preference" FooterText="">
             <sv:TextPickerCell Title="Priority language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16"/>
-                <sv:TextPickerCell Title="Second language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16" />
+            <sv:TextPickerCell Title="Second language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16" />
+    </sv:Section>
+    <sv:Section Title="Service Area" FooterText="">
+            <sv:TextPickerCell Title="Priority language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16"/>
+            <sv:TextPickerCell Title="Second language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16" />
     </sv:Section>
     
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">

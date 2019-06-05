@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
 using SendBird;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace ChelperPro.Views
@@ -16,35 +17,54 @@ namespace ChelperPro.Views
         //登入
         async void Handle_SignIn(object sender, EventArgs e)
         {
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await DisplayAlert("No Internet", "Try again later!", "OK");
+                return;
+            }
+
             UserAccess userAccess = new UserAccess();
             UserInfo usr = new UserInfo();
 
             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
             {
-                //activity.IsEnabled = true;
-                //activity.IsRunning = true;
-                //activity.IsVisible = true;
-                signInTest.Text = "Sign In Succeeded, Data Loading...";
-                signInTest.TextColor = Color.FromHex("#FF4E18");
-                Settings.UserId = userAccess.CurrentUid.ToString();
-                usr = userAccess.GetUserInfo(userAccess.CurrentUid);
-                Settings.ChatID = usr.ChatID;
-                Name = usr.FirstName + " " + usr.LastName;
-                Icon = usr.Icon;
-                ChatServerConnect();
-                await Task.Delay(3000);
-                Application.Current.MainPage = new MainPage();
-
+                if(userAccess.CheckPermission())
+                {
+                    activity.IsEnabled = true;
+                    activity.IsRunning = true;
+                    activity.IsVisible = true;
+                    signInTest.Text = "Sign In Succeeded, Data Loading...";
+                    signInTest.TextColor = Color.FromHex("#FF4E18");
+                    Settings.UserId = userAccess.CurrentUid.ToString();
+                    usr = userAccess.GetUserInfo(userAccess.CurrentUid);
+                    Settings.ChatID = usr.ChatID;
+                    Name = usr.FirstName + " " + usr.LastName;
+                    ProfileIcon = usr.Icon;
+                    ChatServerConnect();
+                    await Task.Delay(3000);
+                    Application.Current.MainPage = new MainPage();
+                }
+                else
+                {
+                    signInTest.Text = "Permission Denied, Please Signup as a helper.";
+                    activity.IsEnabled = false;
+                    activity.IsRunning = false;
+                    activity.IsVisible = false;
+                    Settings.IsLogin = false;
+                }
             }
             else
             {
                 signInTest.Text = "Sign in Faild";
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
                 Settings.IsLogin = false;
             }
         }
 
         private string Name = "";
-        private string Icon = "";
+        private string ProfileIcon = "";
 
         private void ChatServerConnect()
         {
@@ -55,46 +75,61 @@ namespace ChelperPro.Views
                     return;
                 }
 
-                SendBirdClient.UpdateCurrentUserInfo(Name, Icon, (SendBirdException e1) =>
+                SendBirdClient.UpdateCurrentUserInfo(Name, ProfileIcon, (SendBirdException e1) =>
                 {
                     if (e1 != null)
                     {
                         return;
                     }
                 });
+
+                SendBirdClient.RegisterAPNSPushTokenForCurrentUser(SendBirdClient.GetPendingPushToken(), (SendBirdClient.PushTokenRegistrationStatus status, SendBirdException e1) =>
+                {
+                    if (e1 != null)
+                    {
+                        // Error.
+                        return;
+                    }
+
+                    if (status == SendBirdClient.PushTokenRegistrationStatus.PENDING)
+                    {
+                        // Try registration after connection is established.
+                    }
+                });
             });
             Settings.IsLogin = true;
         }
 
-        //注册按钮 Sign Up
-        void Handle_CreateAccount(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new SignUpPage();
-        }
         //第三次登入 Third party sign in
-        void SIPGoogleSignInIcon(object sender, EventArgs e)
+        void Handle_GoogleSignIn(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            DisplayAlert("Sorry", "It will be suppported later.", "OK");
         }
-        void SIPWechatSignInIcon(object sender, EventArgs e)
+        void Handle_FaceBookSignIn(object sender, EventArgs e)
         {
-            (sender as Button).Text = "Click me again!";
+            DisplayAlert("Sorry", "It will be suppported later.", "OK");
         }
-        void SIPFaceBookSignInIcon(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Click me again!";
-        }
-        //忘记密码 forgot password
+        //创建和忘记 Create&Forgot
         void Handle_ForgotPassword(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new ForgotPasswordPage();
+            Navigation.PushAsync(new ForgotPasswordPage());
+        }
+        void Handle_CreateAccount(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SignUpPage());
+        }
+
+        //取消按钮 Canceled
+        void Handle_Canceled(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
         }
         //登入邮箱&密码输入框 Sign in email&password input box
-        void SIPSignInEmailCompleted(object sender, EventArgs e)
+        void UsernameSignInCompleted(object sender, EventArgs e)
         {
             string text = ((Entry)sender).Text;
         }
-        void SIPSignInPasswordCompleted(object sender, EventArgs e)
+        void PasswordSignInCompleted(object sender, EventArgs e)
         {
             string text = ((Entry)sender).Text;
         }
