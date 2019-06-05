@@ -14,9 +14,12 @@ namespace ChelperPro.Helpers
 
         private readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
-        public List<TopicInfoLabel> GetMyTopicList(string zip)
+        public List<TopicInfoLabel> GetMyTopicList(List<string> ziplist)
         {
-            GetTopicListByZipCode(zip);
+            foreach(string zip in ziplist)
+            {
+                GetTopicListByZipCode(zip);
+            }
             TopicInfoConvertor(topiclist);
             return topiclabellist;
         }

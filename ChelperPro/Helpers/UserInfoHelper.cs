@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using ChelperPro.Models;
 using MySql.Data.MySqlClient;
 
@@ -53,16 +54,109 @@ namespace ChelperPro.Helpers
             }
         }
 
-        internal void UpdateMySpecialities(string bio, IList<string> tags)
+        internal List<string> GetMyServiceArea()
+        {
+            var zipslist = new List<string>();
+            //并没有建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT ServiceZip1,ServiceZip2,ServiceZip3 FROM HelperInfo WHERE Uid = @para1";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    zipslist.Add(reader.GetString(0));
+                    zipslist.Add(reader.GetString(1));
+                    zipslist.Add(reader.GetString(2));
+                }
+                return zipslist;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return zipslist;
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
+        internal void UpdateMySpecialities(string bio, IList<TagInfo> tags)
         {
             UpdateHelperBio(bio);
             UpdateHelperTags(tags);
         }
 
-        private void UpdateHelperTags(IList<string> tags)
+        private void UpdateHelperTags(IList<TagInfo> tags)
         {
-            //TODO:更新Tags
-            throw new NotImplementedException();
+            DeleteTags();
+            foreach(TagInfo taginfo in tags)
+            {
+                InsertTags(taginfo.TagID);
+            }
+        }
+
+        private void InsertTags(int tagid)
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "INSERT INTO HelperTag(Uid,TagID) VALUES(@para1, @para2) ";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                    cmd.Parameters.AddWithValue("para2", tagid);
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void DeleteTags()
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "DELETE From HelperTag Where Uid = @para1";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void UpdateHelperBio(string bio)

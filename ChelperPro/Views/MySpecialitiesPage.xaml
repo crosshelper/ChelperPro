@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.MySpecialitiesPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
+             x:Class="ChelperPro.Views.MySpecialitiesPage">
     <NavigationPage.TitleView>
     </NavigationPage.TitleView>
     <ContentPage.Content>
@@ -16,13 +19,15 @@
                 </StackLayout>
             <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,0,0,5"></BoxView>
             <StackLayout Orientation="Horizontal">
-                <Picker x:Name="SelectSkills"
-                    Title="Select a Skills"
-                    HeightRequest="35"
-                    HorizontalOptions="FillAndExpand"
-                    TitleColor="#666666">
-                </Picker>
-                    <Button Text="Add" BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" WidthRequest="65" HeightRequest="35" HorizontalOptions="End" />
+                <sv:SettingsView>
+                    <sv:Section Title="MySkills" FooterText="">
+                            <sv:PickerCell x:Name="SelectSkills" Title="MySkills" 
+                                           DisplayMember="Name" MaxSelectedNumber="3"
+                                           HeightRequest="35" HorizontalOptions="FillAndExpand"
+                                           TitleColor="#666666"
+                                           KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+                    </sv:Section>    
+                </sv:SettingsView>
             </StackLayout>
             <Label Text="No above? add one." FontSize="13"></Label>  
             <StackLayout Orientation="Horizontal">

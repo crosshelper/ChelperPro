@@ -12,16 +12,15 @@ namespace ChelperPro.Views
         {
             //Navigation.PushAsync(new CurrentLocationPage());
         }
-        //TODO: Get real zip
-        public string _currentZipCode { get; private set; } = "95131";
-        private List<string> _currentZipCodeList { get; set; }
         public List<TopicInfoLabel> Topics { get; private set; }
         TopicInfoHelper tih = new TopicInfoHelper();
+        UserInfoHelper uih = new UserInfoHelper();
 
         public PickNewcomerPage()
         {
             InitializeComponent();
-            Topics = tih.GetMyTopicList(_currentZipCode);
+            var _currentZipCodeList = uih.GetMyServiceArea();
+            Topics = tih.GetMyTopicList(_currentZipCodeList); //_currentZipCode);
             BindingContext = this;
         }
 
