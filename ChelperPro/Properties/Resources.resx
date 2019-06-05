@@ -123,4 +123,7 @@
   <data name="PB_KEY" xml:space="preserve">
     <value>sk_live_XXXXXXXXXXXXXXX</value>
   </data>
+  <data name="S3_BUCKETNAME" xml:space="preserve">
+    <value>imagetest123bibi</value>
+  </data>
 </root>

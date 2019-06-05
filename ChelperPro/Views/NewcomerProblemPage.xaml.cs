@@ -42,12 +42,19 @@ namespace ChelperPro.Views
         }
 
         TopicInfoLabel _currentnewcomerlabel = new TopicInfoLabel();
+        public string Name { get; set; }
+        public string Language { get; set; }
+        public string Des { get; set; }
+        public string TagType { get; set; }
 
         public NewcomerProblemPage(TopicInfoLabel topicInfoLabel)
         {
             _currentnewcomerlabel = topicInfoLabel;
             InitializeComponent();
-
+            Name = _currentnewcomerlabel.Name;
+            Language = _currentnewcomerlabel.Language;
+            Des = _currentnewcomerlabel.Description;
+            TagType = _currentnewcomerlabel.TagName;
         }
 
         async void ConnectToChannel(UserInfo user, List<string> users)

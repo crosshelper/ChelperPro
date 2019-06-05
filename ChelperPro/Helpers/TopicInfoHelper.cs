@@ -22,13 +22,15 @@ namespace ChelperPro.Helpers
         }
 
         private void TopicInfoConvertor(List<TopicInfo> list)
-        { 
+        {
+            var th = new TagsHelper();
             foreach(TopicInfo tp in list)
             {
                 var user = uih.GetUserInfoByID(tp.UserID);
                 TopicInfoLabel tmp = new TopicInfoLabel
                 {
                     TopicID = tp.TopicID,
+                    TagName = th.GetTagNameByID(tp.TagID),
                     UserID = tp.UserID,
                     Name = user.FirstName + " " + user.LastName,
                     Icon = user.Icon,

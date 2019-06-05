@@ -12,6 +12,7 @@ namespace ChelperPro.Views
         {
             //Navigation.PushAsync(new CurrentLocationPage());
         }
+        //TODO: Get real zip
         public string _currentZipCode { get; private set; } = "95131";
         private List<string> _currentZipCodeList { get; set; }
         public List<TopicInfoLabel> Topics { get; private set; }

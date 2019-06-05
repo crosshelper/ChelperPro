@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.MySpecialitiesPage">
     <NavigationPage.TitleView>
-        <Grid>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
-        </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <ScrollView>

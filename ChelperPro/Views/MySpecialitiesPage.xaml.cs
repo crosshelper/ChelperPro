@@ -9,10 +9,6 @@ namespace ChelperPro.Views
 {
     public partial class MySpecialitiesPage : ContentPage
     {
-        void Handle_Canceled(object sender, System.EventArgs e)
-        {
-            Navigation.PopToRootAsync(false);
-        }
         void Handle_Save(object sender, System.EventArgs e)
         {
             uih.UpdateMySpecialities(BioBox.Text, SelectSkills.Items);

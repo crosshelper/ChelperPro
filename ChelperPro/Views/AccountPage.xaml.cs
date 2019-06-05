@@ -9,12 +9,16 @@ using Amazon.S3.Transfer;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
 using Plugin.Media;
+using Plugin.Media.Abstractions;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using Xamarin.Forms;
 
 namespace ChelperPro.Views
 {
     public partial class AccountPage : ContentPage
     {
+        private string filename = Settings.ChatID + "_ProfileIcon.png";// + DateTime.Now.ToShortDateString();
 
         public TransferUtility s3transferUtility;
         IAmazonS3 s3client;
@@ -64,7 +68,7 @@ namespace ChelperPro.Views
             _usr.LastName = LastName;
             _ac.Email = Email;
             _ac.ContactNo = PhoneNumber;
-
+            _usr.Icon = GetIconUrlFromS3();
             uih.UpdateUserInfo(_usr);
             ush.UpdateUac(_ac);
 
@@ -90,9 +94,73 @@ namespace ChelperPro.Views
             }
         }
 
-        private Task TakePhotoFromCameraAsync()
+        ////check Permisson method
+        private async Task<bool> CheckPermisson()
         {
-            throw new NotImplementedException();
+            var permissons = CrossPermissions.Current;
+            var storageStatus = await permissons.CheckPermissionStatusAsync(Permission.Storage);
+            if (storageStatus != PermissionStatus.Granted)
+            {
+                var results = await permissons.RequestPermissionsAsync(Permission.Storage);
+                storageStatus = results[Permission.Storage];
+            }
+            return storageStatus == PermissionStatus.Granted;
+        }
+
+        private async Task TakePhotoFromCameraAsync()
+        {
+            var media = CrossMedia.Current;
+
+            //check Permisson
+            if (await CheckPermisson())
+            {
+                if (!media.IsCameraAvailable || !media.IsTakePhotoSupported)
+                {
+                    await DisplayAlert("Alert", "Can not access Camera", "OK");
+                    return;
+                }
+                var file = await media.TakePhotoAsync(new StoreCameraMediaOptions
+                {
+                    AllowCropping = true,
+                    SaveToAlbum = true
+                });
+                //fileImage.Source = ImageSource.FromStream(() => { return file.GetStream(); });
+                if (file == null)
+                {
+                    return;
+                }
+                else
+                {
+                    try
+                    {
+                        TransferUtilityUploadRequest request =
+                            new TransferUtilityUploadRequest
+                            {
+                                BucketName = "imagetest123bibi",
+                                FilePath = file.Path,
+                                Key = string.Format(filename),
+                                ContentType = "image/png"
+                            };
+                        //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
+                        //CancellationToken cancellationToken = new CancellationToken();
+                        await this.s3transferUtility.UploadAsync(request).ContinueWith(((x) =>
+                        {
+                            Debug.WriteLine("Image Uploaded");
+                        }));
+
+                        NameCell.IconSource = ImageSource.FromStream(() => {
+                            var stream = file.GetStream();
+                            file.Dispose();
+                            return stream;
+                        });
+                        await Task.Delay(5000);
+                    }
+                    catch (Exception e)
+                    {
+                        throw e;
+                    }
+                }
+            }
         }
 
         async Task SelectFromImageLibrary()
@@ -107,18 +175,35 @@ namespace ChelperPro.Views
                     {
                         BucketName = "imagetest123bibi",
                         FilePath = file.Path,
-                        Key = string.Format("Login Picture"),
+                        Key = string.Format(filename),
                         ContentType = "image/png"
                     };
+                //The cancellationToken is not used within this example, however you can pass it to the UploadAsync consutructor as well
+                //CancellationToken cancellationToken = new CancellationToken();
                 await this.s3transferUtility.UploadAsync(request).ContinueWith(((x) =>
                 {
                     Debug.WriteLine("Image Uploaded");
                 }));
+
+                NameCell.IconSource = ImageSource.FromStream(() => {
+                    var stream = file.GetStream();
+                    file.Dispose();
+                    return stream;
+                });
+                await Task.Delay(5000);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                throw e;
             }
         }
+
+        private string GetIconUrlFromS3()
+        {
+            var s3 = Properties.Resources.S3_BUCKETNAME;
+            string url = "https://" + s3 + ".s3.amazonaws.com/" + filename;
+            return url;
+        }
+
     }
 }

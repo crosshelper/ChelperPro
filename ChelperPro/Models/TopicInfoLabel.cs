@@ -11,6 +11,7 @@ namespace ChelperPro.Models
         public string Language { get; internal set; }
         public string Description { get; internal set; }
         public string Status { get; internal set; }
+        public string TagName { get; internal set; }
 
         public TopicInfoLabel()
         {
