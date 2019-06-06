@@ -27,8 +27,7 @@
                       HeightRequest="50"
                       WidthRequest="50"
                       Rotation="180"
-                      BorderThickness="2"
-                      BorderColor="#FFFFFF"      
+                      BorderThickness="2"     
                       HorizontalOptions="Start"
                       VerticalOptions="End"
                       Source="{Binding Sender.ProfileUrl}" >       
