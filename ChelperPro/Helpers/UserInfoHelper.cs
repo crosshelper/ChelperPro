@@ -268,6 +268,7 @@ namespace ChelperPro.Helpers
 
         internal List<TagInfo> GetMyTagsByID(string userId)
         {
+            tagInfoList.Clear();
             GetTagByHelperID(userId);
             foreach (int tagid in tagslist)
             {
@@ -278,6 +279,7 @@ namespace ChelperPro.Helpers
 
         private void GetTagByHelperID(string helperID)
         {
+            tagslist.Clear();
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
             try

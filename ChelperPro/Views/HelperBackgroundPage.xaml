@@ -10,8 +10,8 @@
                      HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
                      HasUnevenRows="true">
     <sv:Section Title="Language Preference" FooterText="">
-            <sv:TextPickerCell Title="Priority language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16"/>
-            <sv:TextPickerCell Title="Second language" Items="{Binding HomeLandItems}" TitleFontSize="18" ValueTextFontSize="16" />
+            <sv:TextPickerCell Title="Priority language" SelectedItem="{Binding FLanguage}" Items="{Binding LanguageItems}" TitleFontSize="18" ValueTextFontSize="16"/>
+            <sv:TextPickerCell Title="Second language" SelectedItem="{Binding SLanguage}" Items="{Binding LanguageItems}" TitleFontSize="18" ValueTextFontSize="16" />
     </sv:Section>
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
              <sv:ButtonCell Title="Save" TitleFontSize="Large"

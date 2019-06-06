@@ -18,6 +18,7 @@ namespace ChelperPro.Views
                 ZipCode2 = ZipCodeslist[1];
                 ZipCode3 = ZipCodeslist[2];
             }
+            BindingContext = this;
         }
         public string ZipCode1 { get; set; }
         public string ZipCode2 { get; set; }

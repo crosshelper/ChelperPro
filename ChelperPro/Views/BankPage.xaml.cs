@@ -30,10 +30,10 @@ namespace ChelperPro.Views
 
             bankInfo = wmh.GetBankingInfoByID(Settings.UserId);
 
-            if(bankInfo.CVV != "")
-                BankCell.Title = "Add your Banking Account";
-            else
-                BankCell.Title = bankInfo.AccountNo;
+            //if(bankInfo.CVV != "")
+                //BankCell.Title = "Add your Banking Account";
+            //else
+                //BankCell.Title = bankInfo.AccountNo;
             BindingContext = this;
         }
     }

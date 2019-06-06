@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
 using Xamarin.Forms;
@@ -24,28 +26,39 @@ namespace ChelperPro.Views
 
         UserInfoHelper uih = new UserInfoHelper();
         TagsHelper th = new TagsHelper();
-        //List<TagInfo> MyTagList = new List<TagInfo>();
         public MySpecialitiesPage()
         {
             InitializeComponent();
             var mytaginfoList = uih.GetMyTagsByID(Settings.UserId);
-            //MyTagList = mytaginfoList;
             var alltagslist = th.GetTagList();
-            //var mytags = new List<string>();
-            //var alltags = new List<string>();
             string TagsStr = "";
-            //foreach(TagInfo ti in alltagslist)
-            //{
-                //alltags.Add(ti.Pcategory); 
-            //}
             foreach (TagInfo tag in mytaginfoList)
             {
-                //mytags.Add(tag.Pcategory);
                 TagsStr += tag.Pcategory + ", ";
             }
-            SelectSkills.ItemsSource = alltagslist; //alltags;
-            SelectSkills.SelectedItems = mytaginfoList;//mytags;
+
+            SelectSkills.ItemsSource = alltagslist;
+            SelectSkills.SelectedItems = mytaginfoList;
+            SelectSkills.DisplayMember = "Pcategory";
+            SelectSkills.Title = "My Skills";
+            SelectSkills.UseAutoValueText = true;
+            SelectSkills.KeepSelectedUntilBack = true;
+            SelectSkills.SelectedCommand = new Command(RefreshTag);
             speLabel.Text = TagsStr;
         }
+
+        private void RefreshTag()
+        {
+            speLabel.Text = "";
+            var mytaginfoList = uih.GetMyTagsByID(Settings.UserId);
+            string TagsStr = "";
+            foreach (TagInfo tag in mytaginfoList)
+            {
+                TagsStr += tag.Pcategory + ", ";
+            }
+            speLabel.Text = TagsStr;
+        }
+
+
     }
 }
