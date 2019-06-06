@@ -42,20 +42,20 @@ namespace ChelperPro.ViewModels
         {
             var seconds = TimeSpan.FromSeconds(1);
             Device.StartTimer(seconds, () => {
-                if (LastMessageVisible)
-                {
+                //if (LastMessageVisible)
+                //{
                     ch.OnMessageReceived = (BaseChannel baseChannel, BaseMessage baseMessage) => {
                         Messages.Insert(0, (UserMessage)baseMessage);
                         //Messages.Add((UserMessage)baseMessage);
                     };
-                }
-                else
-                {
-                    ch.OnMessageReceived = (BaseChannel baseChannel, BaseMessage baseMessage) => {
-                        DelayedMessages.Enqueue((UserMessage)baseMessage);
-                        PendingMessageCount++;
-                    };
-                }
+                //}
+                //else
+                //{
+                    //ch.OnMessageReceived = (BaseChannel baseChannel, BaseMessage baseMessage) => {
+                        //DelayedMessages.Enqueue((UserMessage)baseMessage);
+                        //PendingMessageCount++;
+                    //};
+                //}
                 return true;
             });
             AddChannelHandler("MyKey", ch);
@@ -64,7 +64,7 @@ namespace ChelperPro.ViewModels
         public async void Load()
         {
             IsBusy = true;
-            await Task.Delay(2000);
+            await Task.Delay(3000);
             PreviousMessageListQuery mPrevMessageListQuery = Channel.CreatePreviousMessageListQuery();
             mPrevMessageListQuery.Load(30, true, (List<BaseMessage> messages, SendBirdException e) => {
                 if (e != null)
@@ -112,26 +112,29 @@ namespace ChelperPro.ViewModels
 
         void OnMessageAppearing(UserMessage message)
         {
-            var idx = Messages.IndexOf(message);
-            if (idx <= 6)
+            if(LastMessageVisible)
             {
-                Device.BeginInvokeOnMainThread(() =>
+                var idx = Messages.IndexOf(message);
+                if (idx <= 2)
                 {
-                    while (DelayedMessages.Count > 0)
+                    Device.BeginInvokeOnMainThread(() =>
                     {
-                        Messages.Insert(0, DelayedMessages.Dequeue());
-                    }
-                    ShowScrollTap = false;
-                    LastMessageVisible = true;
-                    PendingMessageCount = 0;
-                });
+                        while (DelayedMessages.Count > 0)
+                        {
+                            Messages.Insert(0, DelayedMessages.Dequeue());
+                        }
+                        ShowScrollTap = false;
+                        LastMessageVisible = true;
+                        PendingMessageCount = 0;
+                    });
+                }
             }
         }
 
         void OnMessageDisappearing(UserMessage message)
         {
             var idx = Messages.IndexOf(message);
-            if (idx >= 6)
+            if (idx >= 2)
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {

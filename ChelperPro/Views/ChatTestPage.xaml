@@ -10,7 +10,7 @@
         <Grid>
             <StackLayout Orientation="Horizontal">
             <!--此行无Event，仅做占位符--><Button Text="Cancel" TextColor="#FF4E18" HorizontalOptions="End" FontSize="17" VerticalOptions="Center"/>
-                <Label Text="{Binding ChatPageTit}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="White" FontSize="17"/>
+                <Label x:Name="Page_Title" Text="" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="White" FontSize="17"/>
                 <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Clicked" VerticalOptions="Center"/>
             </StackLayout>
         </Grid>

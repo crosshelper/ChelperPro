@@ -24,8 +24,7 @@ namespace ChelperPro.Views
             ChatTestViewModel vvm;
             this.BindingContext = vvm = new ChatTestViewModel();
             vvm.Channel = channel;
-            ChatPageTit = user.FirstName + " " + user.LastName;
-            //vvm.Title 
+            Page_Title.Text = user.FirstName + " " + user.LastName; 
             vvm.Load();
         }
 
