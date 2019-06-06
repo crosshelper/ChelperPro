@@ -27,9 +27,9 @@
                                     <Label Text ="{Binding FirstName}" TextColor="Black"  FontSize="18"/>
                                 </StackLayout>
                                 <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="End">
-                                    <Label Text="May 5" TextColor="#666666" FontSize="14"></Label>
+                                    <Label Text="{Binding Address}" TextColor="#666666" FontSize="14"></Label>
                                 </StackLayout>
-                                <Label Grid.Row="1" Grid.Column="1" Text ="Last Chat" TextColor="#666666" Margin="5,0,0,0" FontSize="16"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text ="{Binding Homeland}" TextColor="#666666" Margin="5,0,0,0" FontSize="16"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

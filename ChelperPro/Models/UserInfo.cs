@@ -15,6 +15,7 @@ namespace ChelperPro.Models
         public string SENo { get; set; }
         public string Address { get; set; }
         public string Location { get; set; }
+        public string Homeland { get; internal set; }
 
         public UserInfo()
         {

@@ -18,6 +18,16 @@ namespace ChelperPro.ViewModels
         #endregion
         public MessageListViewModel()
         {
+            DataInit();
+        }
+
+        public void DataInit()
+        {
+            if (Users.Count > 0)
+            {
+                Users.Clear();
+            }
+
             GroupChannelListQuery mQuery = GroupChannel.CreateMyGroupChannelListQuery();
             mQuery.IncludeEmpty = true;
             mQuery.Next((List<GroupChannel> list, SendBirdException e) => {
@@ -36,13 +46,21 @@ namespace ChelperPro.ViewModels
                             {
                                 ChatID = user.UserId,
                                 FirstName = user.Nickname,
-                                Icon = user.ProfileUrl
+                                Icon = user.ProfileUrl,
+                                Homeland = ((UserMessage)channel.LastMessage).Message,
+                                Address = MilsecToDatetime(channel.LastMessage.CreatedAt).ToString()
                             });
                         }
                     }
                 }
             });
-            Users.Add(new UserInfo { ChatID = "cycbis_004", FirstName = "Thomas Wong" });
+        }
+
+        private DateTime MilsecToDatetime(long milsec)
+        {
+            var createtimestamp = DateTimeOffset.FromUnixTimeMilliseconds(milsec).UtcDateTime;
+            createtimestamp = createtimestamp.ToLocalTime();
+            return createtimestamp;
         }
 
         public async void ConnectToChannel(Models.UserInfo user, List<string> users)
@@ -58,7 +76,7 @@ namespace ChelperPro.ViewModels
                 }
                 group = groupChannel;
             });
-            await Task.Delay(1000);
+            await Task.Delay(2000);
             IsBusy = false;
             await Navigation.PushModalAsync(new NavigationPage(new ChatTestPage(user, group)));
         }

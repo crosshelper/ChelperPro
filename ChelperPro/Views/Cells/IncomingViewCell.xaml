@@ -40,7 +40,7 @@
        Rotation="180"
        FlowDirection="LeftToRight"
        Padding="10">
-  <Label TextColor="White" Text="{Binding Message}" />
+  <Label TextColor="Black" Text="{Binding Message}" />
 </Frame>
 <Label FontSize="Micro" Grid.Row="0" Grid.Column="1" Rotation="180" Text="{Binding CreatedAt, Converter={StaticResource TypeToDateTimeConverter}}" TextColor="Gray"></Label>  
 </Grid>
