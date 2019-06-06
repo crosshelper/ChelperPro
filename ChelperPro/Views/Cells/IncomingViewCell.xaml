@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:plugin="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:converters="clr-namespace:ChelperPro.Converters"
+             x:Class="ChelperPro.Views.Cells.IncomingViewCell">
+ <Grid ColumnSpacing="2" Padding="5">
+ <Grid.ColumnDefinitions>
+   <ColumnDefinition Width="50"></ColumnDefinition>
+   <ColumnDefinition Width="*"></ColumnDefinition>
+   <ColumnDefinition Width="50"></ColumnDefinition>
+ </Grid.ColumnDefinitions>
+  <Grid.RowDefinitions>
+    <RowDefinition Height="50"></RowDefinition>        
+    <RowDefinition Height="*"></RowDefinition>
+    <RowDefinition Height="Auto"></RowDefinition>
+  </Grid.RowDefinitions>       
+  <Grid.Resources>
+        <ResourceDictionary>
+          <converters:TypeToDateTimeConverter x:Key="TypeToDateTimeConverter" />
+        </ResourceDictionary>
+  </Grid.Resources>
+  <plugin:CircleImage
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Grid.Column="0"
+                    Rotation="180"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    BorderThickness="2"
+                    BorderColor="#FFFFFF"  
+                    HorizontalOptions="Start"
+                    VerticalOptions="End"
+                    Source="{Binding Sender.ProfileUrl}" >
+  </plugin:CircleImage>
+<Label Text="{Binding Sender.Nickname}" Grid.Row="2" Grid.Column="1" HorizontalOptions="StartAndExpand" Rotation="180"></Label>        
+<Frame Grid.Row="1" OutlineColor="Transparent" 
+       HasShadow="false" Grid.Column="1" 
+       BackgroundColor="#EDF0F6"
+       Rotation="180"
+       FlowDirection="LeftToRight"
+       Padding="10">
+  <Label TextColor="White" Text="{Binding Message}" />
+</Frame>
+<Label FontSize="Micro" Grid.Row="0" Grid.Column="1" Rotation="180" Text="{Binding CreatedAt, Converter={StaticResource TypeToDateTimeConverter}}" TextColor="Gray"></Label>  
+</Grid>
+</ViewCell>
