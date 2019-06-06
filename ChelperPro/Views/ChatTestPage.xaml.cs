@@ -16,13 +16,16 @@ namespace ChelperPro.Views
             Navigation.PopModalAsync();
         }
 
+        public string ChatPageTit { get; set; }
+
         public ChatTestPage (UserInfo user, GroupChannel channel)
 		{
 			InitializeComponent ();
             ChatTestViewModel vvm;
             this.BindingContext = vvm = new ChatTestViewModel();
             vvm.Channel = channel;
-            vvm.Title = user.FirstName + " " + user.LastName;
+            ChatPageTit = user.FirstName + " " + user.LastName;
+            //vvm.Title 
             vvm.Load();
         }
 
