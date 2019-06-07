@@ -4,42 +4,11 @@
         <Grid>
         <ScrollView>
             <StackLayout Margin="15,15,15,10"> 
-                <StackLayout Orientation="Horizontal">
-            <!--登入 Sign In lable -->
-                <Label Text="Sign In with"
-                       TextColor="#FF4E17"
-                       FontSize="16"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Start"/>
+                <StackLayout Margin="0,30,0,0" VerticalOptions="FillAndExpand">
+                        <Image Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/CycbisLogo/cb_logo.png"/>
+                        </StackLayout>
+            <StackLayout VerticalOptions="End" HorizontalOptions="Center">
                 </StackLayout>
-                <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,5,0,5"></BoxView>
-                <!-- 第三次登入 Third party sign in -->  
-                <StackLayout VerticalOptions="Start" Orientation="Vertical"  Margin="0,5,0,0">
-                        <Button Text="Google" 
-                                BorderColor="#575656" 
-                                BorderWidth="1" 
-                                WidthRequest="90" 
-                                FontSize="16"
-                                Image="https://cdn.foliomag.com/wp-content/uploads/2018/04/google-logo-icon-png-transparent-background.png"
-                                TextColor="#575656" 
-                                FontAttributes="Bold" 
-                                BackgroundColor="White" 
-                                HorizontalOptions="FillAndExpand"
-                                Clicked="Handle_GoogleSignIn"/>
-                       <Button  Text="Facebook" 
-                                WidthRequest="90" 
-                                FontSize="16"
-                                Margin="0,3,0,0"
-                                TextColor="White" 
-                                BackgroundColor="#3B5998" 
-                                FontAttributes="Bold" 
-                                HorizontalOptions="FillAndExpand"
-                                Clicked="Handle_FaceBookSignIn"/>
-                    </StackLayout>
-               
-                <Label Text="or continue with username" HorizontalTextAlignment="Center" TextColor="#999999" FontSize="14" Margin="0,5,0,5"/>
-            
-                <!--邮箱密码 Email&password input -->
                        <StackLayout VerticalOptions="Start" Margin="0,0,0,0" >
                         <Entry Placeholder="Enter your Username"
                                    FontSize="16"
@@ -77,7 +46,7 @@
                                     Clicked="Handle_SignIn"/>
                     </StackLayout>
               <!-- 忘记和创建 forgot&create -->  
-                <StackLayout Margin="0,-5,0,0" VerticalOptions="StartAndExpand" Orientation="Horizontal">
+                <StackLayout Margin="0,-15,0,0" VerticalOptions="StartAndExpand" Orientation="Horizontal">
                     <Button Text="Forgot password" 
                             FontSize="14" 
                             TextColor="#666666"
@@ -96,6 +65,29 @@
                                     HorizontalOptions="EndAndExpand"
                                     Clicked="Handle_CreateAccount"/>
                         </StackLayout>
+                         <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,-5,0,0"></BoxView>
+                <StackLayout VerticalOptions="Start" Orientation="Horizontal"  Margin="0,10,0,5">
+                        <Button Text="Google" 
+                                BorderColor="#575656" 
+                                BorderWidth="1" 
+                                WidthRequest="45" 
+                                FontSize="16"
+                                TextColor="#575656" 
+                                FontAttributes="Bold" 
+                                BackgroundColor="White" 
+                                HorizontalOptions="FillAndExpand"
+                                Clicked="Handle_GoogleSignIn"/>
+                            <Button Text="Facebook" 
+                                BorderColor="#3b5998" 
+                                BorderWidth="1" 
+                                WidthRequest="45" 
+                                FontSize="16"
+                                TextColor="White" 
+                                FontAttributes="Bold"
+                                BackgroundColor="#3b5998" 
+                                HorizontalOptions="FillAndExpand"
+                                Clicked="Handle_FaceBookSignIn"/>
+                    </StackLayout>
                         <StackLayout VerticalOptions="StartAndExpand" Margin="0,0,0,0">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                 <Label Text="By continuing, I accept the" 

@@ -21,15 +21,11 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">
-                                <Grid>
+                                <Grid Padding="5">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="20" />
                                         <RowDefinition Height="20" />
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="8" />
-                                        <RowDefinition Height="10" />
-                                        <RowDefinition Height="15" />
-                                        <RowDefinition Height="15" />
+                                        <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
@@ -38,42 +34,42 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.RowSpan="3"
+                                    <Image Grid.RowSpan="2"
                                            Grid.Row="0"
                                            Grid.ColumnSpan="1"
                                            Source="{Binding Icon}"
-                                           Aspect="AspectFill"/>
+                                           Aspect="AspectFit"/>
                                     <Label Grid.Column="1"
                                            Grid.Row="0"
                                            Grid.ColumnSpan="3"
-                                           FontSize="20"
+                                           FontSize="16"
                                            TextColor="#393939"
                                            Text="{Binding Name}"
                                            FontAttributes="Bold"/>
-                                    <Label Grid.Column="1"
+                                    <Label Grid.Column="4"
                                            Grid.ColumnSpan="2"
-                                           Grid.Row="1"
+                                           Grid.Row="0"
                                            TextColor="Red"
                                            FontSize="16"
                                            FontAttributes="Bold"
+                                           HorizontalOptions="End"
                                            Text="{Binding Status}" />
-                                     <Label Grid.Row="2"
+                                     <Label Grid.Row="1"
                                            Grid.Column="1"
                                            TextColor="#393939"
                                            Grid.ColumnSpan="4"
                                            Text="{Binding Language}" />
-                                    <Label Grid.Row="3"
+                                    <Label Grid.Row="2"
                                            Grid.Column="0"
                                            TextColor="#393939"
-                                           Grid.ColumnSpan="5"
-                                           FontSize="17"
-                                           Grid.RowSpan="4"
+                                           Grid.ColumnSpan="6"
+                                           FontSize="16"
                                            Text="{Binding Description}"/>
-                                    <Label Grid.Row="7"
-                                           Grid.Column="2"
+                                    <Label Grid.Row="1"
+                                           Grid.Column="4"
                                            TextColor="#393939"
-                                           Grid.ColumnSpan="3"
-                                           FontSize="18"
+                                           Grid.ColumnSpan="2"
+                                           FontSize="16"
                                            HorizontalOptions="End"
                                            Text="{Binding Zipcode}"/> 
                                 </Grid>

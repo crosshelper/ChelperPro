@@ -9,6 +9,7 @@ namespace ChelperPro.Views
     {
         public MainPage()
         {
+            this.SelectedTabColor = Color.FromHex("#FF4E18");
             InitializeComponent();
         }
     }

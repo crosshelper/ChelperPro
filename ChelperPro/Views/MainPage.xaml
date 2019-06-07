@@ -7,7 +7,7 @@
          <NavigationPage Title="Help">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png" />
+                    <On Platform="iOS" Value="tab_help.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
@@ -18,7 +18,7 @@
         <NavigationPage Title="Earn">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_about.png" />
+                    <On Platform="iOS" Value="tab_earn.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
@@ -29,7 +29,7 @@
         <NavigationPage Title="Inbox">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_about.png" />
+                    <On Platform="iOS" Value="tab_inbox.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
@@ -40,7 +40,7 @@
         <NavigationPage Title="Profile">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_about.png" />
+                    <On Platform="iOS" Value="tab_profile.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
