@@ -13,14 +13,17 @@
             <StackLayout Margin="10">
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Problem List" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <Label Text="My Service Zone" FontSize="18" HorizontalOptions="EndAndExpand" VerticalOptions="Center"></Label>
-                    <Switch HorizontalOptions="End" VerticalOptions="Center" Toggled="Handle_Toggled"></Switch>
+                    <!--<Label Text="My Service Zone" FontSize="18" HorizontalOptions="EndAndExpand" VerticalOptions="Center"></Label>
+                    <Switch HorizontalOptions="End" VerticalOptions="Center" Toggled="Handle_Toggled"></Switch>-->
                 </StackLayout>
             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                 <ListView ItemsSource="{Binding Topics}" HasUnevenRows="true" ItemSelected="Handle_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnMore" CommandParameter="{Binding .}" Text="Report" />
+                             </ViewCell.ContextActions>
                                 <Grid Padding="5">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="20" />
