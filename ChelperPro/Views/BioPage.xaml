@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.BioPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20,25,20,0">
+            <Label Text="Bio" FontAttributes="Bold" FontSize="20" TextColor="#575656" Margin="0,10,0,0"></Label>
+            <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
+            <Editor x:Name="BioBox" Placeholder="Tell something about yourself" HeightRequest="200" ></Editor>
+            <Button BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" Text="Save" Clicked="Handle_Save"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

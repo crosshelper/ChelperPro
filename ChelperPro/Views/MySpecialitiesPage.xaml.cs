@@ -15,7 +15,7 @@ namespace ChelperPro.Views
         {
             if(SelectSkills.SelectedItems.Count == 3)
             {
-                uih.UpdateMySpecialities(BioBox.Text, (IList<TagInfo>)SelectSkills.SelectedItems);
+                //uih.UpdateMySpecialities(BioBox.Text, (IList<TagInfo>)SelectSkills.SelectedItems);
                 Navigation.PopAsync(false);
             }
             else
@@ -44,19 +44,19 @@ namespace ChelperPro.Views
             SelectSkills.UseAutoValueText = true;
             SelectSkills.KeepSelectedUntilBack = true;
             SelectSkills.SelectedCommand = new Command(RefreshTag);
-            speLabel.Text = TagsStr;
+            //speLabel.Text = TagsStr;
         }
 
         private void RefreshTag()
         {
-            speLabel.Text = "";
+            //speLabel.Text = "";
             var mytaginfoList = uih.GetMyTagsByID(Settings.UserId);
             string TagsStr = "";
             foreach (TagInfo tag in mytaginfoList)
             {
                 TagsStr += tag.Pcategory + ", ";
             }
-            speLabel.Text = TagsStr;
+            //speLabel.Text = TagsStr;
         }
 
 

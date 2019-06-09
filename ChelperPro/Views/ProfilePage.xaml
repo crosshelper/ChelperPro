@@ -17,6 +17,8 @@
     <sv:Section Title="Helper Info" IsVisible="{Binding SctionIsVisible}">
         <sv:PickerCell Title="Specialities" Tapped="Handle_MySpecicalPage"  ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
+        <sv:PickerCell Title="Bio" Tapped="Handle_BioPage"  ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
         <sv:PickerCell Title="Banking" Tapped="Handle_Bank" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
         <sv:CommandCell x:Name="ServiceArea" Tapped="Handle_ServiceArea" Title="Service Area" 

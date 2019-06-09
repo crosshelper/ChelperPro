@@ -41,7 +41,10 @@ namespace ChelperPro.Views
         {
             Navigation.PushAsync(new MySpecialitiesPage());
         }
-
+        void Handle_BioPage(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new BioPage());
+        }
         void Handle_SignOutPage(object sender, System.EventArgs e)
         {
             Settings.IsLogin = false;

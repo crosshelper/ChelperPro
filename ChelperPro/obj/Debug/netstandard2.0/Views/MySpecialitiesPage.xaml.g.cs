@@ -17,20 +17,12 @@ namespace ChelperPro.Views {
     public partial class MySpecialitiesPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "4.0.0.0")]
-        private global::Xamarin.Forms.Label speLabel;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "4.0.0.0")]
         private global::AiForms.Renderers.PickerCell SelectSkills;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "4.0.0.0")]
-        private global::Xamarin.Forms.Editor BioBox;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "4.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MySpecialitiesPage));
-            speLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "speLabel");
             SelectSkills = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::AiForms.Renderers.PickerCell>(this, "SelectSkills");
-            BioBox = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Editor>(this, "BioBox");
         }
     }
 }

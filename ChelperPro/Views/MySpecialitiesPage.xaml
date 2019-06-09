@@ -6,51 +6,27 @@
     <NavigationPage.TitleView>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <ScrollView>
-        <StackLayout Margin="20,25,20,0">
-            <Label Text="Specialities" FontAttributes="Bold" FontSize="20" TextColor="#575656" HorizontalOptions="Start"></Label>
-            <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
-            <StackLayout>
-                <Label x:Name="speLabel" Margin="0,10,0,0" ></Label>
-            </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="My skills" Margin="0,10,0,0"  FontAttributes="Bold" FontSize="20" TextColor="#575656" HorizontalOptions="Start"></Label>
-                    <Label Text="(One for each adding)" VerticalOptions="End" FontSize="13"/>
-                </StackLayout>
-            <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,0,0,5"></BoxView>
-            <StackLayout Orientation="Horizontal">
+
                 <sv:SettingsView>
-                    <sv:Section>
-                            <sv:PickerCell x:Name="SelectSkills" 
-                                           MaxSelectedNumber="3" 
-                                           PageTitle="My Skills" />
-                    </sv:Section>    
+                    <sv:Section Title="My specialities">
+                            <sv:PickerCell x:Name="SelectSkills" MaxSelectedNumber="3" Title="My Skills" />
+                    </sv:Section> 
+                        
+                    <sv:Section Title="No above? add one." FooterText="Add one for each. We will notify you after processing is done.">
+                    <sv:EntryCell 
+                        Title="My skill"
+                        ValueText="" 
+                        Placeholder="Add one" 
+                        MaxLength="20"
+                        TitleFontSize="Medium"
+                        ValueTextFontSize="Medium"
+                        HintText=""/>
+                    </sv:Section>
+            
+                    <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
+                     <sv:ButtonCell Title="Save" Tapped="Handle_Save"
+                     Command="{Binding SectionToggleCommand}"/>
+                    </sv:Section>
                 </sv:SettingsView>
-            </StackLayout>
-            <Label Text="No above? add one." FontSize="13"></Label>  
-            <StackLayout Orientation="Horizontal">
-                <Entry HeightRequest="35" HorizontalOptions="FillAndExpand"></Entry>
-                <Button Text="Add" BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" WidthRequest="65" HeightRequest="35" HorizontalOptions="End" />
-            </StackLayout>
-            <StackLayout>
-                <Label TextColor="Gray"
-                       FontSize="Medium">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="This sentence contains " />
-                            <Span Text="words that are emphasized, "
-                                  FontAttributes="Italic" />
-                            <Span Text="and underlined."
-                                  TextDecorations="Underline" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label Text="Bio" FontAttributes="Bold" FontSize="20" TextColor="#575656" Margin="0,10,0,0"></Label>
-                <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
-                <Editor x:Name="BioBox" Placeholder="Tell something about yourself" HeightRequest="200" ></Editor>
-                <Button BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" Text="Save" Clicked="Handle_Save"/>
-            </StackLayout>
-        </StackLayout>
-        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
