@@ -10,9 +10,12 @@ namespace ChelperPro.Views
 {
     public partial class SignInPage : ContentPage
     {
+
         public SignInPage()
         {
             InitializeComponent();
+
+
         }
         //登入
         async void Handle_SignIn(object sender, EventArgs e)
@@ -132,6 +135,11 @@ namespace ChelperPro.Views
         void PasswordSignInCompleted(object sender, EventArgs e)
         {
             string text = ((Entry)sender).Text;
+        }
+        void Handle_Privacy(object sender, System.EventArgs e)
+        {
+                Device.OpenUri(new Uri("https://cycbis.flycricket.io/privacy.html"));
+            //Navigation.PushModalAsync(new PrivacyPage());
         }
     }
 }

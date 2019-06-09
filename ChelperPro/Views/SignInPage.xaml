@@ -100,8 +100,20 @@
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                 <Label Text="and have read the Cycbis"  
                                 FontSize="10" TextColor="#999999" Margin="0,-5,0,0" HorizontalTextAlignment="Center"/>
-                                <Label Text="privacy policy."
-                                FontSize="10" TextColor="Blue" Margin="-3,-5,0,0" HorizontalTextAlignment="Center"/>
+                                <Label Margin="-3,-5,0,0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="privacy policy." 
+                                              TextColor="Blue"
+                                              FontSize="10"
+                                              TextDecorations="Underline">
+                                            <Span.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="Handle_Privacy"/>
+                                            </Span.GestureRecognizers>
+                                              </Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
