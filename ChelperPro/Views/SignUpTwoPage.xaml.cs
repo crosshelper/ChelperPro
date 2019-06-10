@@ -54,20 +54,20 @@ namespace ChelperPro.Views
         //注册按钮 Sign Up
         void Handle_CreateAccount(object sender, EventArgs e)
         {
-           if (!CheckValid())
-           {
-              DisplayAlert("No Access", "Try again!", "OK");
+            if (!CheckValid())
+            {
+                DisplayAlert("No Access", "Try again!", "OK");
                 return;
             }
             try
             {
-               uac.UpdateHelperInfo(EmailEntry.Text, NoEntry.Text, FLEntry.Text, SLEntry.Text, SocialEntry.Text, AddressEntry.Text);
+                uac.UpdateHelperInfo(EmailEntry.Text, NoEntry.Text, FLEntry.Text, SLEntry.Text, SocialEntry.Text, AddressEntry.Text);
                 //TODO:???PUSH OR Current
                 Navigation.PushAsync(new SignUpThreePage());
             }
-           catch (SystemException ex)
-           {
-              Console.WriteLine(ex);
+            catch (SystemException ex)
+            {
+                Console.WriteLine(ex);
                 return;
             }
 

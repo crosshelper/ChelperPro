@@ -24,15 +24,15 @@
                 <!--邮箱密码 Email&password input -->
                     <StackLayout VerticalOptions="Start" Margin="0,10,0,10">
                             <Label Text="UserName" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry Placeholder="Enter your username"
+                            <Entry x:Name="UnameEntry" Placeholder="Enter your username"
                                    FontSize="16"
                                    HeightRequest="45" />
                             <Label Text="Password" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry Placeholder="Enter password"
+                            <Entry x:Name="PwdEntry" IsPassword="true" Placeholder="Enter password"
                                    FontSize="16"
                                    HeightRequest="45" />
                             <Label Text="Comfirm Password" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry Placeholder="Comfirm password"
+                            <Entry x:Name="PwdcEntry" IsPassword="true" Placeholder="Comfirm password"
                                    FontSize="16"
                                    HeightRequest="45" />
                         </StackLayout >
