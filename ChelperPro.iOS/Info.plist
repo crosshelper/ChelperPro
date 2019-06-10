@@ -5,7 +5,6 @@
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
-		<integer>2</integer>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -19,20 +18,20 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>9.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>ChelperPro</string>
 	<key>CFBundleIdentifier</key>
-	<string>crosshelper.TestApp</string>
+	<string>com.crosshelper.cycbispro</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleVersion</key>
-	<string>0.1</string>
-	<key>CFBundleName</key>
-	<string>TestApp</string>
+	<string>0.1.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1</string>
+	<string>0.1.0</string>
+	<key>CFBundleName</key>
+	<string>Cycbis Pro</string>
 </dict>
 </plist>

@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.471375" />  
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.482894" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
     <PackageReference Include="AiForms.SettingsView" Version="0.4.15" />
     <PackageReference Include="Xam.Plugin.TabView" Version="1.0.4" />
@@ -22,8 +22,7 @@
     <PackageReference Include="AWSSDK.S3" Version="3.3.102.9" />
     <PackageReference Include="AWSSDK.SecurityToken" Version="3.3.101.10" />
     <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.3.100.28" />
-    <PackageReference Include="Stripe.net" Version="26.0.0" />
-    <PackageReference Include="Plugins.Forms.ButtonCircle" Version="2.0.3" />
+    <PackageReference Include="Stripe.net" Version="27.1.0" />
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
     <PackageReference Include="Xam.Plugins.Messaging" Version="5.2.0" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.0.1" />
