@@ -46,11 +46,13 @@ namespace ChelperPro.Views
         public string Language { get; set; }
         public string Des { get; set; }
         public string TagType { get; set; }
+        public string ProfileIcon { get; set; }
 
         public NewcomerProblemPage(TopicInfoLabel topicInfoLabel)
         {
             _currentnewcomerlabel = topicInfoLabel;
             InitializeComponent();
+            ProfileIcon = _currentnewcomerlabel.Icon;
             Name = _currentnewcomerlabel.Name;
             Language = _currentnewcomerlabel.Language;
             Des = _currentnewcomerlabel.Description;
