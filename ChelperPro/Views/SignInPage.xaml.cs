@@ -14,8 +14,6 @@ namespace ChelperPro.Views
         public SignInPage()
         {
             InitializeComponent();
-
-
         }
         //登入
         async void Handle_SignIn(object sender, EventArgs e)
@@ -60,6 +58,8 @@ namespace ChelperPro.Views
                     activity.IsRunning = false;
                     activity.IsVisible = false;
                     Settings.IsLogin = false;
+                    //TODO: push
+                    //push(new SignUpTwoPage());
                 }
             }
             else

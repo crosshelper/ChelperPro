@@ -25,7 +25,7 @@ namespace ChelperPro.Helpers
                 {
                     Console.WriteLine("Connecting to MySQL...");
                     conn.Open();
-                    string sql = "INSERT INTO UserMaster(Uname,Email,ContactNo,Pwd,Permission) VALUES(@para1, @para2, @para3, @para4, 0) ";
+                    string sql = "INSERT INTO UserMaster(Uname,Email,ContactNo,Pwd,Permission) VALUES(@para1, @para2, @para3, @para4, 1) ";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", Uname);
                     cmd.Parameters.AddWithValue("para2", Email);
@@ -77,7 +77,55 @@ namespace ChelperPro.Helpers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Console.WriteLine(ex);
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        internal void UpdateHelperInfo(string email, string phone, string fl, string sl, string social, string address)
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "UPDATE UserInfo SET " +
+                                 "FLanguage = @para2" +
+                                 "SLanguage = @para3" +
+                                 "Address = @para4" +
+                                 " WHERE Uid = @para1 "+
+
+                                 "UPDATE UserMaster SET " +
+                                 "Email = @para5" +
+                                 "ContactNo = @para6" +
+                                 "Permission = 1" +
+                                 " WHERE Uid = @para1 " +
+
+                                 "UPDATE HelperInfo SET " +
+                                 "SSN = @para7" +
+                                 " WHERE Uid = @para1";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", currentUid);
+                    cmd.Parameters.AddWithValue("para2", fl);
+                    cmd.Parameters.AddWithValue("para3", sl);
+                    cmd.Parameters.AddWithValue("para4", address);
+                    cmd.Parameters.AddWithValue("para5", email);
+                    cmd.Parameters.AddWithValue("para6", phone);
+                    cmd.Parameters.AddWithValue("para7", social);
+
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
                 Console.WriteLine("Connection failed");
             }
             finally
