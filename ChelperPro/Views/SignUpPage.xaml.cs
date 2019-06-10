@@ -37,7 +37,7 @@ namespace ChelperPro.Views
         //注册按钮 Sign Up
         void Handle_Next(object sender, EventArgs e)
         {
-            if(Uname.Length < 5 || Pwd != Pwdc)
+            if(Uname.Length < 5 || Pwd.Length<8 ||Pwd != Pwdc)
             {
                 DisplayAlert("No Access", "Try again!", "OK");
                 return;
