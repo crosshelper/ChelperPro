@@ -15,25 +15,17 @@
                            FontSize="26"
                            FontAttributes="Bold"
                            HorizontalOptions="EndAndExpand"/>
-                   </StackLayout>
+                    </StackLayout>
                 <!--标签语love label -->
-                    <Label Text="Get help right now!"
+                    <Label Text="Be a helper right now!"
                            TextColor="#888888"
                            FontSize="16"
                            FontAttributes="Bold"
                            HorizontalOptions="End"/>
-            <!--邮箱密码 Email&password input -->
-                       <StackLayout VerticalOptions="Start" Margin="0,10,0,10">
+                <!--邮箱密码 Email&password input -->
+                    <StackLayout VerticalOptions="Start" Margin="0,10,0,10">
                             <Label Text="UserName" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter your username"
-                                   FontSize="16"
-                                   HeightRequest="45" />
-                            <Label Text="Email" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry Placeholder="Enter email address"
-                                   FontSize="16"
-                                   HeightRequest="45" />
-                            <Label Text="Phone number" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry Placeholder="Enter phone number"
                                    FontSize="16"
                                    HeightRequest="45" />
                             <Label Text="Password" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>

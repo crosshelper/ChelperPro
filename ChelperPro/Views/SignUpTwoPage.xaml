@@ -5,8 +5,16 @@
            <StackLayout Margin="15,20,15,10">
                 <Button Text="Return" TextColor="#FF4E18" HorizontalOptions="Start" Clicked="Handle_Canceled" FontSize="20"/>
 
-            <!--邮箱密码 Email&password input -->
-                       <StackLayout VerticalOptions="Start">
+                <!--邮箱密码 Email&password input -->
+                    <StackLayout VerticalOptions="Start">
+                            <Label Text="Email" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                            <Entry Placeholder="Enter email address"
+                                   FontSize="16"
+                                   HeightRequest="45" />
+                            <Label Text="Phone number" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                            <Entry Placeholder="Enter phone number"
+                                   FontSize="16"
+                                   HeightRequest="45" />
                             <Label Text="Language" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter Priority language"
                                    FontSize="16"
