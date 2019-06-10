@@ -43,6 +43,7 @@ namespace ChelperPro.Views
             IsValid &= FLEntry.Text.Length != 0;
             IsValid &= SLEntry.Text.Length != 0;
             IsValid &= SocialEntry.Text.Length == 9;
+            //TODO: More Valid Check
             if (AddressEntry.Text.Length == 0)
             {
                 IsValid = false;
