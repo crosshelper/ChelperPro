@@ -10,6 +10,40 @@ namespace ChelperPro.Helpers
     {
         private readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
+        internal string GetBioByID(string userId)
+        {
+            string ubio = "";
+            //并没有建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT Bio FROM HelperInfo WHERE Uid = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", userId);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    ubio = reader.GetString(0);
+                }
+                return ubio;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return ubio;
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
         public UserInfo GetUserInfoByID(string userid)
         {
             UserInfo user = new UserInfo();
@@ -95,7 +129,7 @@ namespace ChelperPro.Helpers
             UpdateHelperTags(tags);
         }
 
-        private void UpdateHelperTags(IList<TagInfo> tags)
+        public void UpdateHelperTags(IList<TagInfo> tags)
         {
             DeleteTags();
             foreach(TagInfo taginfo in tags)
@@ -159,7 +193,7 @@ namespace ChelperPro.Helpers
             }
         }
 
-        private void UpdateHelperBio(string bio)
+        public void UpdateHelperBio(string bio)
         {
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);

@@ -24,6 +24,10 @@
                            HorizontalOptions="End"/>
             <!--邮箱密码 Email&password input -->
                        <StackLayout VerticalOptions="Start" Margin="0,10,0,10">
+                            <Label Text="UserName" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                            <Entry Placeholder="Enter your username"
+                                   FontSize="16"
+                                   HeightRequest="45" />
                             <Label Text="Email" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry Placeholder="Enter email address"
                                    FontSize="16"

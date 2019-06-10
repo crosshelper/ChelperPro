@@ -26,6 +26,12 @@ namespace ChelperPro.Views
                 return;
             }
 
+            if (uNameEntry.Text.Length == 0 || pwdEntry.Text.Length == 0)
+            {
+                await DisplayAlert("No user found", "Try again later!", "OK");
+                return;
+            }
+
             UserAccess userAccess = new UserAccess();
             UserInfo usr = new UserInfo();
 
