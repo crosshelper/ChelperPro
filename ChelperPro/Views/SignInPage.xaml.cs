@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
 using SendBird;
+using WebSocketSharp;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -24,7 +25,7 @@ namespace ChelperPro.Views
                 return;
             }
 
-            if (uNameEntry.Text.Length == 0 || pwdEntry.Text.Length == 0)
+            if (uNameEntry.Text.IsNullOrEmpty() || pwdEntry.Text.IsNullOrEmpty())
             {
                 await DisplayAlert("No user found", "Try again later!", "OK");
                 return;
@@ -58,7 +59,6 @@ namespace ChelperPro.Views
                     activity.IsRunning = false;
                     activity.IsVisible = false;
                     Settings.IsLogin = false;
-                    //TODO: push
                     await Navigation.PushModalAsync(new SignUpTwoPage());
                 }
             }
@@ -121,7 +121,8 @@ namespace ChelperPro.Views
         //创建和忘记 Create&Forgot
         void Handle_ForgotPassword(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ForgotPasswordPage());
+            DisplayAlert("Email Us", "Please send your email address or your phone number to bo.chen@cycbis.com", "OK");
+            //Navigation.PushAsync(new ForgotPasswordPage());
         }
         void Handle_CreateAccount(object sender, EventArgs e)
         {

@@ -8,7 +8,10 @@ namespace ChelperPro.Views
     public partial class SignUpPage : ContentPage
     {
         UserAccess uAccess = new UserAccess();
-        private string Uname, Pwd, Pwdc;
+        private string Uname = "";
+        private string Pwd = "";
+        private string Pwdc = "";
+
         public SignUpPage()
         {
             InitializeComponent();
@@ -41,7 +44,7 @@ namespace ChelperPro.Views
             {
                DisplayAlert("No Access", "Try again!", "OK");
                return;
-           }
+            }
             try
             {
                 uac.UserRegister(Uname, "", "", Pwd);
