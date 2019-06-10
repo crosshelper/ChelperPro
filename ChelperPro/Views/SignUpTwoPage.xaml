@@ -3,9 +3,7 @@
     <ContentPage.Content>
         <ScrollView>
            <StackLayout Margin="15,20,15,10">
-                <Button Text="Return" TextColor="#FF4E18" HorizontalOptions="Start" Clicked="Handle_Canceled" FontSize="20"/>
-
-                <!--邮箱密码 Email&password input -->
+         <!--邮箱密码 Email&password input -->
                     <StackLayout VerticalOptions="Start">
                             <Label Text="Email" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry x:Name="EmailEntry" Placeholder="Enter email address"

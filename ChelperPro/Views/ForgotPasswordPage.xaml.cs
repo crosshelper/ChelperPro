@@ -12,9 +12,13 @@ namespace ChelperPro.Views
             InitializeComponent();
 
         }
+        void Handle_Canceled(object sender, System.EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
         void Handle_Reset(object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new SignInPage();
+            Application.Current.MainPage = new LaunchPage();
         }
         void Handle_Sent(object sender, System.EventArgs e)
         {

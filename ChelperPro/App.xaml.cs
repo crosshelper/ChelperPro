@@ -13,7 +13,7 @@ namespace ChelperPro
         public App()
         {
             InitializeComponent();
-            MainPage = new SignInPage();
+            MainPage = new LaunchPage();
         }
 
         protected override void OnStart()

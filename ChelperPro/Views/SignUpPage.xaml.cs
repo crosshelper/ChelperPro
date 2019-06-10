@@ -39,9 +39,9 @@ namespace ChelperPro.Views
         {
             if(Uname.Length < 5 || Pwd.Length<8 ||Pwd != Pwdc)
             {
-                DisplayAlert("No Access", "Try again!", "OK");
-                return;
-            }
+               DisplayAlert("No Access", "Try again!", "OK");
+               return;
+           }
             try
             {
                 uac.UserRegister(Uname, "", "", Pwd);
@@ -50,8 +50,8 @@ namespace ChelperPro.Views
             }
             catch (SystemException ex)
             {
-                Console.WriteLine(ex);
-                return;
+              Console.WriteLine(ex);
+               return;
             }
         }
     }

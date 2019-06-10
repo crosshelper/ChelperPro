@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.SignInPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.SignInPage" Title="Sign In">
+    <NavigationPage.TitleView>
+        <Button Text="Cancel" TextColor="White" HorizontalOptions="End" Clicked="Handle_Canceled" FontSize="20"/>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
-        <Grid>
         <ScrollView>
             <StackLayout Margin="15,15,15,10"> 
-                <StackLayout Margin="0,30,0,0" VerticalOptions="FillAndExpand">
-                        <Image Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/CycbisLogo/cb_logo.png"/>
-                        </StackLayout>
+                    <StackLayout VerticalOptions="Start" Margin="0,10,0,5">
+                        <Button Text="Continue with Google" 
+                                BorderColor="#575656" 
+                                BorderWidth="1" 
+                                WidthRequest="45" 
+                                FontSize="16"
+                                TextColor="#575656" 
+                                FontAttributes="Bold" 
+                                BackgroundColor="White" 
+                                HorizontalOptions="FillAndExpand"
+                                Clicked="Handle_GoogleSignIn"/>
+                            <Button Text="Continue with Facebook" 
+                                BorderColor="#3b5998" 
+                                BorderWidth="1" 
+                                WidthRequest="45" 
+                                FontSize="16"
+                                TextColor="White" 
+                                FontAttributes="Bold"
+                                BackgroundColor="#3b5998" 
+                                HorizontalOptions="FillAndExpand"
+                                Clicked="Handle_FaceBookSignIn"/>
+                    </StackLayout>
+                    <Label Text="Or sign in with username" FontSize="15" TextColor="#666666" Margin="0,5,0,0"/>
+                     <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,0,0,0"></BoxView>
             <StackLayout VerticalOptions="End" HorizontalOptions="Center">
                 </StackLayout>
                        <StackLayout VerticalOptions="Start" Margin="0,0,0,0" >
@@ -65,29 +88,6 @@
                                     HorizontalOptions="EndAndExpand"
                                     Clicked="Handle_CreateAccount"/>
                         </StackLayout>
-                         <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,-5,0,0"></BoxView>
-                <StackLayout VerticalOptions="Start" Orientation="Horizontal"  Margin="0,10,0,5">
-                        <Button Text="Google" 
-                                BorderColor="#575656" 
-                                BorderWidth="1" 
-                                WidthRequest="45" 
-                                FontSize="16"
-                                TextColor="#575656" 
-                                FontAttributes="Bold" 
-                                BackgroundColor="White" 
-                                HorizontalOptions="FillAndExpand"
-                                Clicked="Handle_GoogleSignIn"/>
-                            <Button Text="Facebook" 
-                                BorderColor="#3b5998" 
-                                BorderWidth="1" 
-                                WidthRequest="45" 
-                                FontSize="16"
-                                TextColor="White" 
-                                FontAttributes="Bold"
-                                BackgroundColor="#3b5998" 
-                                HorizontalOptions="FillAndExpand"
-                                Clicked="Handle_FaceBookSignIn"/>
-                    </StackLayout>
                         <StackLayout VerticalOptions="StartAndExpand" Margin="0,0,0,0">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                 <Label Text="By continuing, I accept the" 
@@ -119,6 +119,5 @@
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
-        </Grid>   
     </ContentPage.Content>
 </ContentPage>

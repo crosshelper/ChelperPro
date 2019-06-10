@@ -59,7 +59,7 @@ namespace ChelperPro.Views
                     activity.IsVisible = false;
                     Settings.IsLogin = false;
                     //TODO: push
-                    //push(new SignUpTwoPage());
+                    await Navigation.PushModalAsync(new SignUpTwoPage());
                 }
             }
             else

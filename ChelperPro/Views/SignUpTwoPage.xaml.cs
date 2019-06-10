@@ -13,7 +13,7 @@ namespace ChelperPro.Views
         }
         void Handle_Canceled(object sender, EventArgs e)
         {
-            //Application.Current.MainPage = new SignInPage();
+            Navigation.PopModalAsync();
         }
         //返回按钮 Go Back
         void SUPGoBack(object sender, EventArgs e)
@@ -54,20 +54,20 @@ namespace ChelperPro.Views
         //注册按钮 Sign Up
         void Handle_CreateAccount(object sender, EventArgs e)
         {
-            if (!CheckValid())
-            {
-                DisplayAlert("No Access", "Try again!", "OK");
+           if (!CheckValid())
+           {
+              DisplayAlert("No Access", "Try again!", "OK");
                 return;
             }
             try
             {
-                uac.UpdateHelperInfo(EmailEntry.Text, NoEntry.Text, FLEntry.Text, SLEntry.Text, SocialEntry.Text, AddressEntry.Text);
+               uac.UpdateHelperInfo(EmailEntry.Text, NoEntry.Text, FLEntry.Text, SLEntry.Text, SocialEntry.Text, AddressEntry.Text);
                 //TODO:???PUSH OR Current
-                Application.Current.MainPage = new SignUpThreePage();
+                Navigation.PushAsync(new SignUpThreePage());
             }
-            catch (SystemException ex)
-            {
-                Console.WriteLine(ex);
+           catch (SystemException ex)
+           {
+              Console.WriteLine(ex);
                 return;
             }
 

@@ -13,7 +13,7 @@ namespace ChelperPro.Views
         }
         void Handle_Done(object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new SignInPage();
+            Application.Current.MainPage = new LaunchPage();
         }
     }
 }
