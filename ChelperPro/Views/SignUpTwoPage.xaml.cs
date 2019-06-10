@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ChelperPro.Helpers;
+using WebSocketSharp;
 using Xamarin.Forms;
 
 namespace ChelperPro.Views
@@ -38,13 +39,12 @@ namespace ChelperPro.Views
 
         private bool CheckValid()
         {
-            bool IsValid = true && EmailEntry.Text.Length != 0;
+            bool IsValid = true && !(EmailEntry.Text.IsNullOrEmpty());
             IsValid &= NoEntry.Text.Length >= 10;
-            IsValid &= FLEntry.Text.Length != 0;
-            IsValid &= SLEntry.Text.Length != 0;
+            IsValid &= !(FLEntry.Text.IsNullOrEmpty());
+            IsValid &= !(SLEntry.Text.IsNullOrEmpty());
             IsValid &= SocialEntry.Text.Length == 9;
-            //TODO: More Valid Check
-            if (AddressEntry.Text.Length == 0)
+            if (AddressEntry.Text.IsNullOrEmpty())
             {
                 IsValid = false;
             }
