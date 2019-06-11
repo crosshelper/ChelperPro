@@ -48,8 +48,17 @@
                                    MaxLength="18"
                                    PlaceholderColor="#888888"
                                    Completed="PasswordSignInCompleted"
-                                   x:Name="pwdEntry"/>                 
-                            <Label Text="" x:Name="signInTest"></Label>
+                                   x:Name="pwdEntry"/>      
+                        <StackLayout Orientation="Horizontal">
+                        <ActivityIndicator x:Name="activity"  
+                                             IsRunning="False"  
+                                             IsEnabled="False"  
+                                             IsVisible="False" 
+                                             Color="#FF4E18"
+                                             HorizontalOptions="Start" 
+                                             BackgroundColor="Transparent"/>
+                            <Label Text="" x:Name="signInloading"></Label>
+                        </StackLayout>
                         </StackLayout>
            <!--登入按钮 Sign in Button -->   
             <StackLayout Orientation="Horizontal">
@@ -74,14 +83,7 @@
                             FontSize="14" 
                             TextColor="#666666"
                             HorizontalOptions="StartAndExpand"
-                            Clicked="Handle_ForgotPassword"/>
-                            <ActivityIndicator x:Name="activity"  
-                                             IsRunning="False"  
-                                             IsEnabled="False"  
-                                             IsVisible="False" 
-                                             Color="#FF4E18"
-                                             HorizontalOptions="CenterAndExpand" 
-                                             BackgroundColor="Transparent"/>     
+                            Clicked="Handle_ForgotPassword"/> 
                             <Button Text="Create account" 
                                     FontSize="14" 
                                     TextColor="#666666"

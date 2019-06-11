@@ -19,6 +19,11 @@ namespace ChelperPro.Views
         //登入
         async void Handle_SignIn(object sender, EventArgs e)
         {
+            activity.IsEnabled = true;
+            activity.IsRunning = true;
+            activity.IsVisible = true;
+            signInloading.Text = "Connecting...";
+            signInloading.TextColor = Color.FromHex("#FF4E18");
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 await DisplayAlert("No Internet", "Try again later!", "OK");
@@ -41,8 +46,8 @@ namespace ChelperPro.Views
                     activity.IsEnabled = true;
                     activity.IsRunning = true;
                     activity.IsVisible = true;
-                    signInTest.Text = "Sign In Succeeded, Data Loading...";
-                    signInTest.TextColor = Color.FromHex("#FF4E18");
+                    signInloading.Text = "Sign In Succeeded, Data Loading...";
+                    signInloading.TextColor = Color.FromHex("#FF4E18");
                     Settings.UserId = userAccess.CurrentUid.ToString();
                     usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                     Settings.ChatID = usr.ChatID;
@@ -54,7 +59,7 @@ namespace ChelperPro.Views
                 }
                 else
                 {
-                    signInTest.Text = "Permission Denied, Please Signup as a helper.";
+                    signInloading.Text = "Permission Denied, Please Signup as a helper.";
                     activity.IsEnabled = false;
                     activity.IsRunning = false;
                     activity.IsVisible = false;
@@ -64,7 +69,8 @@ namespace ChelperPro.Views
             }
             else
             {
-                signInTest.Text = "Sign in Faild";
+                signInloading.Text = "Sign in Faild";
+                signInloading.TextColor = Color.FromHex("#FF0000");
                 activity.IsEnabled = false;
                 activity.IsRunning = false;
                 activity.IsVisible = false;

@@ -43,11 +43,10 @@
                                 Text="Confirm"
                                 TextColor="White"
                                 FontSize="16"
-                                VerticalOptions="EndAndExpand"
                                 FontAttributes="Bold"
                                 BackgroundColor="#FF4E18"
                                 Clicked="NHPPConfirm"
-                                Margin="16,0,16,20"/>
+                                Margin="16,30,16,20"/>
                 </StackLayout>
             </ScrollView>
     </ContentPage.Content>

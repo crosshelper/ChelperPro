@@ -38,7 +38,7 @@ namespace ChelperPro.Views
         }
         void Handle_Canceled(object sender, System.EventArgs e)
         {
-            Navigation.PopToRootAsync(false);
+            Navigation.PopModalAsync();
         }
 
         TopicInfoLabel _currentnewcomerlabel = new TopicInfoLabel();

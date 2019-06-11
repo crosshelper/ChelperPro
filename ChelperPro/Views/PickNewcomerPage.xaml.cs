@@ -33,7 +33,7 @@ namespace ChelperPro.Views
         void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             TopicInfoLabel topicInfoLabel = e.SelectedItem as TopicInfoLabel;
-            Navigation.PushAsync(new NewcomerProblemPage(topicInfoLabel));
+            Navigation.PushModalAsync(new NavigationPage(new NewcomerProblemPage(topicInfoLabel)));
         }
 
         void Handle_Toggled(object sender, ToggledEventArgs e)
