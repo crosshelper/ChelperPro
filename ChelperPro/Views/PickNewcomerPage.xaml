@@ -17,7 +17,7 @@
                     <Switch HorizontalOptions="End" VerticalOptions="Center" Toggled="Handle_Toggled"></Switch>-->
                 </StackLayout>
             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
-                <ListView ItemsSource="{Binding Topics}" HasUnevenRows="true" ItemSelected="Handle_ItemSelected">
+                <ListView ItemsSource="{Binding Topics}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">

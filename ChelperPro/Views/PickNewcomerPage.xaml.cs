@@ -30,9 +30,10 @@ namespace ChelperPro.Views
             BindingContext = this;
         }
 
-        void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-            TopicInfoLabel topicInfoLabel = e.SelectedItem as TopicInfoLabel;
+            TopicInfoLabel topicInfoLabel = e.Item as TopicInfoLabel;
+            ((ListView)sender).SelectedItem = null;
             Navigation.PushModalAsync(new NavigationPage(new NewcomerProblemPage(topicInfoLabel)));
         }
 

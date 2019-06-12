@@ -10,13 +10,7 @@
          <StackLayout>
                 <StackLayout Margin="20,20,20,0">
                         <StackLayout>
-                                <Image
-                                    Source="{Binding ProfileIcon}"
-                                    Aspect="AspectFill"
-                                    WidthRequest="80" 
-                                    HorizontalOptions="Center"
-                                    HeightRequest="80"
-                                    />
+                        <Image Source="{Binding ProfileIcon}" Aspect="AspectFill" WidthRequest="80" HorizontalOptions="Center" HeightRequest="80" />
                         <Label Text="{Binding Name}" HorizontalOptions="Center" Grid.ColumnSpan="3" FontAttributes="Bold" FontSize="20" TextColor="#575656" x:Name="NHPPHelperName"></Label>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">

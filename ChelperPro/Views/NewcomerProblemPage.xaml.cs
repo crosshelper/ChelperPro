@@ -25,10 +25,10 @@ namespace ChelperPro.Views
         {
             if (Settings.IsLogin)
             {
-                var user = new UserInfo()
-                {
-                    UserID = uih.GetChatIDByUid(_currentnewcomerlabel.UserID)
-                };
+                var user = uih.GetUserInfoByID(_currentnewcomerlabel.UserID);//new UserInfo()
+                //{
+                    //UserID = uih.GetChatIDByUid(_currentnewcomerlabel.UserID)
+                //};
                 List<string> users = new List<string>() {
                 Settings.ChatID,
                 uih.GetChatIDByUid(_currentnewcomerlabel.UserID)
@@ -57,6 +57,7 @@ namespace ChelperPro.Views
             Language = _currentnewcomerlabel.Language;
             Des = _currentnewcomerlabel.Description;
             TagType = _currentnewcomerlabel.TagName;
+            BindingContext = this;
         }
 
         async void ConnectToChannel(UserInfo user, List<string> users)
@@ -74,7 +75,7 @@ namespace ChelperPro.Views
             });
             await Task.Delay(3000);
             IsBusy = false;
-            await Navigation.PushAsync(new ChatPage(user, group));
+            await Navigation.PushAsync(new ChatTestPage(user, group));
         }
 
     }
