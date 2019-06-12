@@ -24,6 +24,7 @@ namespace ChelperPro.Views
             activity.IsVisible = true;
             signInloading.Text = "Connecting...";
             signInloading.TextColor = Color.FromHex("#FF4E18");
+            await Task.Delay(2000);
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 await DisplayAlert("No Internet", "Try again later!", "OK");
@@ -43,9 +44,9 @@ namespace ChelperPro.Views
             {
                 if(userAccess.CheckPermission())
                 {
-                    activity.IsEnabled = true;
-                    activity.IsRunning = true;
-                    activity.IsVisible = true;
+                    //activity.IsEnabled = true;
+                    //activity.IsRunning = true;
+                    //activity.IsVisible = true;
                     signInloading.Text = "Sign In Succeeded, Data Loading...";
                     signInloading.TextColor = Color.FromHex("#FF4E18");
                     Settings.UserId = userAccess.CurrentUid.ToString();
