@@ -33,5 +33,13 @@
 	<string>0.1.0</string>
 	<key>CFBundleName</key>
 	<string>Cycbis Pro</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This app needs access to your calendar when you set your topic.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>access add photo library</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app needs access to location when in the background.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to location when open.</string>
 </dict>
 </plist>

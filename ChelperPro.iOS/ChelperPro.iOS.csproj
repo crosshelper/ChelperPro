@@ -67,6 +67,7 @@
     <MtouchFloat32>true</MtouchFloat32>
     <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
     <CodesignProvision>Cycbis Pro Dev</CodesignProvision>
+    <MtouchLink>Full</MtouchLink>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -135,9 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Stripe.net">
-      <Version>27.1.2</Version>
+      <Version>27.1.3</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.482894" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
