@@ -48,7 +48,7 @@ namespace ChelperPro.Views
         void Handle_SignOutPage(object sender, System.EventArgs e)
         {
             Settings.IsLogin = false;
-            Application.Current.MainPage = new SignInPage();
+            Application.Current.MainPage = new LaunchPage();
         }
 
         private UserInfo _currentUser;
