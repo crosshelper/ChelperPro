@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="ChelperPro.Views.NewcomerProblemPage"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+             x:Class="ChelperPro.Views.NewcomerProblemPage">
      <NavigationPage.TitleView>
         <Grid>
             <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
@@ -13,7 +12,7 @@
          <StackLayout>
                 <StackLayout Margin="20,20,20,0">
                         <StackLayout>
-                        <ffimageloading:CachedImage Source="{Binding ProfileIcon}" Aspect="AspectFill" WidthRequest="80" HorizontalOptions="Center" HeightRequest="80" />
+                        <Image Source="{Binding ProfileIcon}" Aspect="AspectFill" WidthRequest="80" HorizontalOptions="Center" HeightRequest="80" />
                         <Label Text="{Binding Name}" HorizontalOptions="Center" Grid.ColumnSpan="3" FontAttributes="Bold" FontSize="20" TextColor="#575656" x:Name="NHPPHelperName"></Label>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
