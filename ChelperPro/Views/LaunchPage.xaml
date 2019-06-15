@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.LaunchPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="ChelperPro.Views.LaunchPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <ContentPage.Content>
         <StackLayout Margin="16,35,16,25">
             <StackLayout Padding="0,50,0,45" HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand">
-                <Image VerticalOptions="Center" Aspect="AspectFill" HorizontalOptions="Center" Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/CycbisLogo/cb_logo.png"/>
+                <ffimageloading:CachedImage VerticalOptions="Center" Aspect="AspectFill" HorizontalOptions="Center" Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/CycbisLogo/cb_logo.png"/>
             </StackLayout>
         <StackLayout VerticalOptions="End" Margin="0,0,0,0">  
                 <Label Text="Are you cycbis partners? Have you used cycbis or cycbis pro before?"

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-              xmlns:local="clr-namespace:ChelperPro.Models;" 
+             xmlns:local="clr-namespace:ChelperPro.Models;" 
              x:Class="ChelperPro.Views.PickNewcomerPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              >
     <NavigationPage.TitleView>
         <Grid>
@@ -37,7 +38,7 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.RowSpan="2"
+                                    <ffimageloading:CachedImage Grid.RowSpan="2"
                                            Grid.Row="0"
                                            Grid.ColumnSpan="1"
                                            Source="{Binding Icon}"
