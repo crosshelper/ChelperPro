@@ -41,5 +41,17 @@
 	<string>This app needs access to location when in the background.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to location when open.</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Assets.xcassets/LaunchImage.launchimage</string>
+	<key>NSCameraUsageDescription</key>
+	<string>New Entry</string>
+	<key>NSLocationUsageDescription</key>
+	<string>New Entry</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>New Entry</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>New Entry</string>
+	<key>Custom Property</key>
+	<string></string>
 </dict>
 </plist>

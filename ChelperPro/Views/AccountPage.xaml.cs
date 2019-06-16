@@ -13,6 +13,7 @@ using Plugin.Media.Abstractions;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Xamarin.Forms;
+using Permission = Plugin.Permissions.Abstractions.Permission;
 
 namespace ChelperPro.Views
 {
