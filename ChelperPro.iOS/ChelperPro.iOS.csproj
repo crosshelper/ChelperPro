@@ -127,7 +127,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png" />
     <BundleResource Include="Resources\CH LOGO BIG.jpg" />
     <BundleResource Include="Resources\CH logo W noW.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
