@@ -20,7 +20,7 @@
 	<key>MinimumOSVersion</key>
 	<string>9.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>ChelperPro</string>
+	<string>Cycbis Pro</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.crosshelper.cycbispro</string>
 	<key>UILaunchStoryboardName</key>
@@ -28,15 +28,15 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleVersion</key>
-	<string>0.1.1</string>
+	<string>0.1.2</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.1</string>
+	<string>0.1.2</string>
 	<key>CFBundleName</key>
 	<string>Cycbis Pro</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>This app needs access to your calendar when you set your topic.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>access add photo library</string>
+	<string>This app needs access to access photo library when you set your avatar.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This app needs access to location when in the background.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

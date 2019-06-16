@@ -1,5 +1,5 @@
 ﻿using ChelperPro.Views;
-using Stripe;
+
 using SendBird;
 using Xamarin.Forms.Xaml;
 
@@ -21,7 +21,7 @@ namespace ChelperPro
             // Handle when your app starts
 
             SendBirdClient.Init(ChelperPro.Properties.Resources.APP_ID);
-            StripeConfiguration.SetApiKey(ChelperPro.Properties.Resources.PB_KEY);
+            //StripeConfiguration.SetApiKey(ChelperPro.Properties.Resources.PB_KEY);
         }
 
         protected override void OnSleep()
