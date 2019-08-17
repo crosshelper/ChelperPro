@@ -28,7 +28,7 @@
     <sv:Section Title="Privacy" IsVisible="{Binding SctionIsVisible}">
         <sv:PickerCell Title="Safety" Tapped="Handle_TrustedContacts"  ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:PickerCell Title="Agreement" Tapped="Handle_AgreementPage" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        <sv:PickerCell Title="Legal" Tapped="Handle_LegalPage" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
         

@@ -16,11 +16,6 @@ namespace ChelperPro.Views
         {
             InitializeComponent();
         }
-        //取消按钮 Cancel
-        void Handle_Canceled(object sender, EventArgs e)
-        {
-            Navigation.PopModalAsync();
-        }
         //注册邮箱&密码输入框&再次输入 Sign up email&password&password again input box
         void UnameCompleted(object sender, EventArgs e)
         {
@@ -40,7 +35,7 @@ namespace ChelperPro.Views
         //注册按钮 Sign Up
         void Handle_Next(object sender, EventArgs e)
         {
-            Uname = UnameEntry.Text;
+            /*Uname = UnameEntry.Text;
             Pwd = PwdEntry.Text;
             Pwdc = PwdcEntry.Text;
             if (Uname.Length < 5 || Pwd.Length<8 ||Pwd != Pwdc)
@@ -59,6 +54,8 @@ namespace ChelperPro.Views
               Console.WriteLine(ex);
                return;
             }
+            */
+            Navigation.PushAsync(new SignUpTwoPage());
         }
     }
 }

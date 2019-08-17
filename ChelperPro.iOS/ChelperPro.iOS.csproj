@@ -82,9 +82,6 @@
     <Compile Include="Renderers\ExtendedListViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
     <BundleResource Include="Resources\tab_about.png" />
     <BundleResource Include="Resources\tab_about%402x.png" />
     <BundleResource Include="Resources\tab_about%403x.png" />
@@ -107,24 +104,6 @@
     <BundleResource Include="Resources\tab_profile%403x.png" />
     <BundleResource Include="Resources\tab_earn.png" />
     <BundleResource Include="Resources\tab_help.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\app-iPhone%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\app-iPhone%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\app-iPhone%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%401x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x-2.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png" />
     <BundleResource Include="Resources\CH LOGO BIG.jpg" />
     <BundleResource Include="Resources\CH logo W noW.png" />
   </ItemGroup>

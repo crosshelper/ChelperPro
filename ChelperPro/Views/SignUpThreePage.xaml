@@ -21,13 +21,13 @@
     <!--登入按钮 Sign in Button -->   
             <StackLayout VerticalOptions="StartAndExpand">
                     <Button  
-                    Text="Done"
+                    Text="OK"
                     TextColor="White"
                     FontSize="Medium"
                     FontAttributes="Bold"
                     BackgroundColor="#FF4E18"
                     Margin="0,30,0,0"
-                    Clicked="Handle_Done"/>
+                    Clicked="Handle_OK"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

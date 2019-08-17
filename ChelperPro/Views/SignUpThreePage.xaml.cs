@@ -11,7 +11,7 @@ namespace ChelperPro.Views
         {
             InitializeComponent();
         }
-        void Handle_Done(object sender, System.EventArgs e)
+        void Handle_OK(object sender, System.EventArgs e)
         {
             Application.Current.MainPage = new LaunchPage();
         }

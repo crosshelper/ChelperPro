@@ -12,26 +12,15 @@
                 <Label Text="Are you cycbis partners? Have you used cycbis or cycbis pro before?"
                             VerticalTextAlignment="End" HorizontalTextAlignment="Center" FontSize="21" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,0,0,10"/>
             <BoxView BackgroundColor="#CDCDCD" HeightRequest="1"></BoxView>
-                    <!-- 第三次登入 Third party sign in -->  
-            <StackLayout VerticalOptions="Start">
-                <Button Text="No, Sign up as a new helper"
+                <Button Text="Get Start."
                         TextColor="White"
                         FontSize="18"
-                        HeightRequest="50"
-                        FontAttributes="Bold"
-                        BackgroundColor="#FF4E18"
-                        Margin="0,10,0,5"
-                        Clicked="Handle_No"/>
-                        </StackLayout>
-                <Button Text="Yes, I have used before."
-                        TextColor="Gray"
-                        FontSize="18"
                         BorderWidth="1"
-                        BorderColor="#999999"
+                        BorderColor="White"
                         HeightRequest="50"
                         FontAttributes="Bold"
-                        BackgroundColor="White"
-                        Margin="0,0,0,10"
+                        BackgroundColor="#ff4e18"
+                        Margin="0,5,0,12"
                         Clicked="Handle_Yes"/>
                 </StackLayout>
         </StackLayout>

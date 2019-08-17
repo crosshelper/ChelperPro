@@ -5,52 +5,37 @@
            <StackLayout Margin="15,20,15,10">
          <!--邮箱密码 Email&password input -->
                     <StackLayout VerticalOptions="Start">
-                            <Label Text="Email" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry x:Name="EmailEntry" Placeholder="Enter email address"
-                                   FontSize="16"
-                                   HeightRequest="45" />
-                            <Label Text="Phone number" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry x:Name="NoEntry" Placeholder="Enter phone number"
-                                   FontSize="16"
-                                   HeightRequest="45" />
                             <Label Text="Language" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
                             <Entry x:Name="FLEntry" Placeholder="Enter Priority language"
                                    FontSize="16"
-                                   HeightRequest="45"
-                                   Completed="SUPPasswordCompleted"/>
+                                   HeightRequest="45"/>
                             <Entry x:Name="SLEntry" Placeholder="Enter if any second language"
                                    FontSize="16"
-                                   HeightRequest="45"
-                                   Completed="SUPComfirmPasswordCompleted"/>
+                                   HeightRequest="45"/>
                     <StackLayout>
                             <Label Text="Address" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
                             <Entry x:Name="AddressEntry" Placeholder="260 N Sunnyvale Ave"
                                    FontSize="16"
-                                   HeightRequest="45"
-                                   Completed="SUPComfirmPasswordCompleted"/> 
+                                   HeightRequest="45"/> 
                         <StackLayout Orientation="Horizontal">
                             <Entry Placeholder="Unit"
                                    FontSize="16"
                                    WidthRequest="100"
-                                   HeightRequest="45"
-                                   Completed="SUPComfirmPasswordCompleted"/>
+                                   HeightRequest="45"/>
                             <Entry Placeholder="City"
                                    FontSize="16"
                                    WidthRequest="150"
-                                   HeightRequest="45"
-                                   Completed="SUPComfirmPasswordCompleted"/> 
+                                   HeightRequest="45"/> 
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Entry Placeholder="State"
                                    FontSize="16"
                                    WidthRequest="100"
-                                   HeightRequest="45"
-                                   Completed="SUPComfirmPasswordCompleted"/> 
+                                   HeightRequest="45"/> 
                             <Entry Placeholder="001-06125"
                                    FontSize="16"
                                    WidthRequest="120"
-                                   HeightRequest="45"
-                                   Completed="SUPComfirmPasswordCompleted"/>
+                                   HeightRequest="45"/>
                         </StackLayout>
                     </StackLayout>
                             <Label Text="Photo ID" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
@@ -61,8 +46,9 @@
                             <Label Text="SSN" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
                             <Entry x:Name="SocialEntry" Placeholder="5 years"
                                    FontSize="16"
-                                   HeightRequest="45"
-                                   Completed="SUPComfirmPasswordCompleted"/>
+                                   MaxLength="9"
+                                   Keyboard="Numeric"
+                                   HeightRequest="45"/>
                         </StackLayout >
                 <StackLayout>
                     <Label TextColor="Gray"

@@ -1,43 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.SignUpPage">
-    <NavigationPage.TitleView>
-        <Button Text="Cancel" TextColor="White" HorizontalOptions="End" Clicked="Handle_Canceled" FontSize="20"/>
-    </NavigationPage.TitleView>
     <ContentPage.Content>
         <ScrollView>
            <StackLayout Margin="15,20,15,10">
                 <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
                   <!--登入 Sign In lable -->
                     <Label Margin="0,0,16,10"
-                           Text="Sign Up"
+                           Text="Phone number verify"
                            TextColor="#FF4E17"
                            FontSize="26"
                            FontAttributes="Bold"
                            HorizontalOptions="EndAndExpand"/>
                     </StackLayout>
                 <!--标签语love label -->
-                    <Label Text="Be a helper right now!"
+                    <Label Text="Enter the Code to here"
                            TextColor="#888888"
                            FontSize="16"
                            FontAttributes="Bold"
-                           HorizontalOptions="End"/>
+                           HorizontalOptions="Start"/>
                 <!--邮箱密码 Email&password input -->
                     <StackLayout VerticalOptions="Start" Margin="0,10,0,10">
-                            <Label Text="UserName" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry x:Name="UnameEntry" Placeholder="Enter your username"
-                                   FontSize="16"
-                                   HeightRequest="45" />
-                            <Label Text="Password" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry x:Name="PwdEntry" IsPassword="true" Placeholder="Enter password"
-                                   FontSize="16"
-                                   HeightRequest="45" />
-                            <Label Text="Comfirm Password" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry x:Name="PwdcEntry" IsPassword="true" Placeholder="Comfirm password"
-                                   FontSize="16"
-                                   HeightRequest="45" />
+                            <Label Text="" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                            <Entry x:Name="PwdcEntry" 
+                                   FontSize="50"
+                                   MaxLength="6"
+                                   Keyboard="Numeric"
+                                   HorizontalOptions="FillAndExpand"/>
                         </StackLayout >
            <!--登入按钮 Sign in Button -->   
-                    <StackLayout VerticalOptions="Start">
+                    <StackLayout VerticalOptions="FillAndExpand">
                             <Button Margin="0,10,0,0"
                                     Text="Next"
                                     TextColor="White"

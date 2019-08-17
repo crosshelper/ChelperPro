@@ -6,49 +6,48 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="15,15,15,10"> 
-                  <!--  <StackLayout VerticalOptions="Start" Margin="0,10,0,5">
-                        <Button Text="Continue with Google" 
-                                BorderColor="#575656" 
-                                BorderWidth="1" 
-                                WidthRequest="45" 
-                                FontSize="16"
-                                TextColor="#575656" 
-                                FontAttributes="Bold" 
-                                BackgroundColor="White" 
-                                HorizontalOptions="FillAndExpand"
-                                Clicked="Handle_GoogleSignIn"/>
-                            <Button Text="Continue with Facebook" 
-                                BorderColor="#3b5998" 
-                                BorderWidth="1" 
-                                WidthRequest="45" 
-                                FontSize="16"
-                                TextColor="White" 
-                                FontAttributes="Bold"
-                                BackgroundColor="#3b5998" 
-                                HorizontalOptions="FillAndExpand"
-                                Clicked="Handle_FaceBookSignIn"/>
-                    </StackLayout>
-                    <Label Text="Or sign in with username" FontSize="15" TextColor="#666666" Margin="0,5,0,0"/> 
-                     <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,0,0,0"></BoxView> -->
+                    <Label Text="Get Started! " FontSize="25" TextColor="#666666" Margin="0,5,0,0"/> 
+                 <Label Text="Select country code and sign in with Phone number" FontSize="15" TextColor="#666666" Margin="0,5,0,0"/> 
+                <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,0,0,0"></BoxView> 
             <StackLayout VerticalOptions="End" HorizontalOptions="Center">
                 </StackLayout>
                        <StackLayout VerticalOptions="Start" Margin="0,0,0,0" >
-                        <Entry Placeholder="Enter your Username"
+                           <StackLayout Orientation="Horizontal">
+                                <Picker x:Name="countryCodePicker"
+                                        Title="+1"
+                                        TitleColor="#888888">
+                                  <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>+55</x:String>
+                                        <x:String>+1</x:String>
+                                        <x:String>+86</x:String>
+                                        <x:String>+33</x:String>
+                                        <x:String>+49</x:String>
+                                        <x:String>+852</x:String>
+                                        <x:String>+91</x:String>
+                                        <x:String>+81</x:String>
+                                        <x:String>+52</x:String>
+                                        <x:String>+7</x:String>
+                                        <x:String>+44</x:String>
+                                        <x:String>+82</x:String>
+                                        <x:String>+886</x:String>
+                                        <x:String>+44</x:String>
+                                        <x:String>+1</x:String>
+                                    </x:Array>
+                                  </Picker.ItemsSource>
+                                </Picker>
+                                <Entry Placeholder="Enter your Phone number"
                                    FontSize="16"
-                                   MaxLength="18"
+                                   MaxLength="11"
+                                       Keyboard="Telephone"
                                    PlaceholderColor="#888888"
                                    HeightRequest="45"
-                                   Completed="UsernameSignInCompleted"
+                                   HorizontalOptions="FillAndExpand"
+                                   Completed="PhoneNumberSignInCompleted"
                                    x:Name="uNameEntry"/>
-                            <!-- <Label Text="Password" TextColor="#666666" FontAttributes="Bold"/> -->
-                            <Entry Placeholder="Enter your password"
-                                   FontSize="16"
-                                   HeightRequest="45"
-                                   IsPassword="true"
-                                   MaxLength="18"
-                                   PlaceholderColor="#888888"
-                                   Completed="PasswordSignInCompleted"
-                                   x:Name="pwdEntry"/>      
+                              
+                           </StackLayout>
+                            <!-- <Label Text="Password" TextColor="#666666" FontAttributes="Bold"/> -->     
                         <StackLayout Orientation="Horizontal">
                         <ActivityIndicator x:Name="activity"  
                                              IsRunning="False"  
@@ -68,36 +67,34 @@
             <StackLayout VerticalOptions="StartAndExpand">
                     <StackLayout VerticalOptions="Start">
                             <Button  
-                                    Text="Sign In"
+                                    Text="Get Started"
                                     TextColor="White"
                                     FontSize="18"
                                     HeightRequest="45"
                                     FontAttributes="Bold"
                                     BackgroundColor="#FF4E18"
-                                    Margin="0,10,0,10"
+                                    Margin="0,10,0,0"
                                     Clicked="Handle_SignIn"/>
                     </StackLayout>
-              <!-- 忘记和创建 forgot&create -->  
-                <StackLayout Margin="0,-15,0,0" VerticalOptions="StartAndExpand" Orientation="Horizontal">
-                    <Button Text="Forgot password" 
-                            FontSize="14" 
-                            TextColor="#666666"
-                            HorizontalOptions="StartAndExpand"
-                            Clicked="Handle_ForgotPassword"/> 
-                            <Button Text="Create account" 
-                                    FontSize="14" 
-                                    TextColor="#666666"
-                                    HorizontalOptions="EndAndExpand"
-                                    Clicked="Handle_CreateAccount"/>
-                        </StackLayout>
-                        <StackLayout VerticalOptions="StartAndExpand" Margin="0,0,0,0">
+                        <StackLayout VerticalOptions="StartAndExpand" Margin="0,10,0,0">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                <Label Text="By continuing, I accept the" 
+                                <Label Text="By continuing, I accept the Cycbis" 
                                FontSize="10" TextColor="#999999" HorizontalTextAlignment="Center"/>
-                                <Label Text="Cycbis Terms" 
-                               FontSize="10" TextColor="Blue" Margin="-3,0,0,0" HorizontalTextAlignment="Center"/>
-                                <Label Text="of service" 
-                               FontSize="10" TextColor="#999999" Margin="-3,0,0,0" HorizontalTextAlignment="Center"/>
+                               <Label Margin="-3,0,0,0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Terms of service." 
+                                              TextColor="Blue"
+                                              FontSize="10"
+                                              TextDecorations="Underline">
+                                            <Span.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="Handle_Terms"/>
+                                            </Span.GestureRecognizers>
+                                              </Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                 <Label Text="and have read the Cycbis"  

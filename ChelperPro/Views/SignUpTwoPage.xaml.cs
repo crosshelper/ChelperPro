@@ -32,58 +32,24 @@ namespace ChelperPro.Views
         {
             (sender as Button).Text = "Click me again!";
         }
-        //注册邮箱&密码输入框&再次输入 Sign up email&password&password again input box
-        void SUPEmailCompleted(object sender, EventArgs e)
-        {
-            string text = ((Entry)sender).Text;
-        }
-        void SUPPasswordCompleted(object sender, EventArgs e)
-        {
-            string text = ((Entry)sender).Text;
-        }
-        void SUPComfirmPasswordCompleted(object sender, EventArgs e)
-        {
-            string text = ((Entry)sender).Text;
-        }
-
         UserAccess uac = new UserAccess();
 
-        private bool CheckValid()
-        {
-            bool IsValid = true && !(EmailEntry.Text.IsNullOrEmpty());
-            IsValid &= NoEntry.Text.Length >= 10;
-            IsValid &= !(FLEntry.Text.IsNullOrEmpty());
-            IsValid &= !(SLEntry.Text.IsNullOrEmpty());
-            IsValid &= SocialEntry.Text.Length == 9;
-            if (AddressEntry.Text.IsNullOrEmpty())
-            {
-                IsValid = false;
-            }
-            return IsValid; 
-        }
+        /* private bool CheckValid()
+         {
+             bool IsValid = true && !(EmailEntry.Text.IsNullOrEmpty());
+             IsValid &= NoEntry.Text.Length >= 10;
+             IsValid &= !(FLEntry.Text.IsNullOrEmpty());
+             IsValid &= !(SLEntry.Text.IsNullOrEmpty());
+             IsValid &= SocialEntry.Text.Length == 9;
+             if (AddressEntry.Text.IsNullOrEmpty())
+             {
+                 IsValid = false;
+             }
+             return IsValid;
+             
+    }*/
 
-        //注册按钮 Sign Up
-        void Handle_CreateAccount(object sender, EventArgs e)
-        {
-            if (!CheckValid())
-            {
-                DisplayAlert("No Access", "Try again!", "OK");
-                return;
-            }
-            try
-            {
-                uac.UpdateHelperInfo(EmailEntry.Text, NoEntry.Text, FLEntry.Text, SLEntry.Text, SocialEntry.Text, AddressEntry.Text);
-                Navigation.PushAsync(new SignUpThreePage());
-            }
-            catch (SystemException ex)
-            {
-                Console.WriteLine(ex);
-                return;
-            }
-
-        }
-
-        private string filename = Settings.ChatID + "_ProfileIcon.png";// + DateTime.Now.ToShortDateString();
+    private string filename = Settings.ChatID + "_ProfileIcon.png";// + DateTime.Now.ToShortDateString();
 
         public TransferUtility s3transferUtility;
         IAmazonS3 s3client;
@@ -196,6 +162,10 @@ namespace ChelperPro.Views
         }
 
 
+       void Handle_CreateAccount(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SignUpThreePage());
+        }
 
 
         private void SetupAWSCredentials()
