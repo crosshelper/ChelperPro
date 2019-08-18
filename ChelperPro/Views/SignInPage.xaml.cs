@@ -116,8 +116,20 @@ namespace ChelperPro.Views
              });
              Settings.IsLogin = true;
              */
-            Navigation.PushAsync(new SignUpPage());
+            if (uNameEntry.Text == null)
+            {
+               await DisplayAlert("Notice","Please enter your phone number and make sure it's correct and includes with area code.", "OK");
+
+            }else {
+
+                Navigation.PushAsync(new SignUpPage());
+
+            }
         }
+
+
+
+
 
 
         //取消按钮 Canceled

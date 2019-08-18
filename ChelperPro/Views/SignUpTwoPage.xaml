@@ -6,7 +6,7 @@
          <!--邮箱密码 Email&password input -->
                     <StackLayout VerticalOptions="Start">
                             <Label Text="Language" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
-                            <Entry x:Name="FLEntry" Placeholder="Enter Priority language"
+                            <Entry x:Name="FLEntry" Placeholder="Enter Priority language (Required)"
                                    FontSize="16"
                                    HeightRequest="45"/>
                             <Entry x:Name="SLEntry" Placeholder="Enter if any second language"
@@ -14,7 +14,7 @@
                                    HeightRequest="45"/>
                     <StackLayout>
                             <Label Text="Address" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
-                            <Entry x:Name="AddressEntry" Placeholder="260 N Sunnyvale Ave"
+                            <Entry x:Name="AddressEntry" Placeholder="Enter your address here (Required)"
                                    FontSize="16"
                                    HeightRequest="45"/> 
                         <StackLayout Orientation="Horizontal">
@@ -22,21 +22,28 @@
                                    FontSize="16"
                                    WidthRequest="100"
                                    HeightRequest="45"/>
-                            <Entry Placeholder="City"
+                            <Entry Placeholder="City (Required)"
+                                   x:Name="cityEntry"
                                    FontSize="16"
                                    WidthRequest="150"
                                    HeightRequest="45"/> 
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Entry Placeholder="State"
+                            <Entry Placeholder="State (Required)"
                                    FontSize="16"
-                                   WidthRequest="100"
+                                   x:Name="stateEntry"
+                                   WidthRequest="160"
                                    HeightRequest="45"/> 
-                            <Entry Placeholder="001-06125"
+                            <Entry Placeholder="Zip Code (Required)"
+                                   x:Name="zipEntry"
                                    FontSize="16"
-                                   WidthRequest="120"
+                                   WidthRequest="165"
                                    HeightRequest="45"/>
                         </StackLayout>
+                        <Label Text="Country" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
+                            <Entry x:Name="countryEntry" Placeholder="United States of America (Required)"
+                                   FontSize="16"
+                                   HeightRequest="45"/> 
                     </StackLayout>
                             <Label Text="Photo ID" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
                         <StackLayout Orientation="Horizontal">
@@ -44,7 +51,7 @@
                             <Label Text="Upload completed" TextColor="#79B563" HorizontalOptions="End" VerticalOptions="End" FontSize="13" FontAttributes="Italic" TextDecorations="Underline" Margin="5,0,0,0"/>
                         </StackLayout>
                             <Label Text="SSN" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
-                            <Entry x:Name="SocialEntry" Placeholder="5 years"
+                            <Entry x:Name="SocialEntry" Placeholder="000000000 (Required)"
                                    FontSize="16"
                                    MaxLength="9"
                                    Keyboard="Numeric"
@@ -59,6 +66,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
+                    <Label Text="" x:Name="CreateAccountStatus" TextColor="#ff4e18" FontSize="13"></Label>
                 </StackLayout>
            <!--登入按钮 Sign in Button -->   
                     <StackLayout VerticalOptions="StartAndExpand">

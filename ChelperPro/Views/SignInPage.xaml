@@ -39,7 +39,7 @@
                                 <Entry Placeholder="Enter your Phone number"
                                    FontSize="16"
                                    MaxLength="11"
-                                       Keyboard="Telephone"
+                                   Keyboard="Telephone"
                                    PlaceholderColor="#888888"
                                    HeightRequest="45"
                                    HorizontalOptions="FillAndExpand"
@@ -56,7 +56,7 @@
                                              Color="#FF4E18"
                                              HorizontalOptions="Start" 
                                              BackgroundColor="Transparent"/>
-                            <Label Text="" x:Name="signInloading"></Label>
+                            <Label Text="" x:Name="signInloading" TextColor="#ff4e18" FontSize="13"></Label>
                         </StackLayout>
                         </StackLayout>
            <!--登入按钮 Sign in Button -->   

@@ -164,7 +164,22 @@ namespace ChelperPro.Views
 
        void Handle_CreateAccount(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignUpThreePage());
+
+            if (FLEntry.Text == null
+                && AddressEntry.Text == null
+                && cityEntry.Text == null
+                && stateEntry.Text == null
+                && zipEntry.Text == null
+                && countryEntry.Text == null)
+            {
+                CreateAccountStatus.Text = "Please fill all required information box.";
+            }
+            else
+            {
+
+                Navigation.PushAsync(new SignUpThreePage());
+            }
+
         }
 
 

@@ -12,7 +12,7 @@
                 <Label Text="Are you cycbis partners? Have you used cycbis or cycbis pro before?"
                             VerticalTextAlignment="End" HorizontalTextAlignment="Center" FontSize="21" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,0,0,10"/>
             <BoxView BackgroundColor="#CDCDCD" HeightRequest="1"></BoxView>
-                <Button Text="Get Start."
+                <Button Text="Get Started"
                         TextColor="White"
                         FontSize="18"
                         BorderWidth="1"

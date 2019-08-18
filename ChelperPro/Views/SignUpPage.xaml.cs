@@ -15,6 +15,7 @@ namespace ChelperPro.Views
         public SignUpPage()
         {
             InitializeComponent();
+
         }
         //注册邮箱&密码输入框&再次输入 Sign up email&password&password again input box
         void UnameCompleted(object sender, EventArgs e)
@@ -55,7 +56,20 @@ namespace ChelperPro.Views
                return;
             }
             */
-            Navigation.PushAsync(new SignUpTwoPage());
+            if (CodeEntry.Text == null)
+            {
+                DisplayAlert("Notice", "Please check your text code and make sure it's correct.", "OK");
+
+            }
+            else
+            {
+
+                Navigation.PushAsync(new SignUpTwoPage());
+            }
+        }
+        void Handle_CodeAgain(object sender, System.EventArgs e)
+        {
+            DisplayAlert("Notice", "Code resent to your phone, please enter the Code", "OK");
         }
     }
 }
