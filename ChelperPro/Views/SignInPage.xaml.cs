@@ -11,7 +11,15 @@ namespace ChelperPro.Views
 {
     public partial class SignInPage : ContentPage
     {
-
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await System.Threading.Tasks.Task.Delay(150);
+                PNumEntry.Focus();
+            });
+        }
         public SignInPage()
         {
             InitializeComponent();
@@ -116,7 +124,7 @@ namespace ChelperPro.Views
              });
              Settings.IsLogin = true;
              */
-            if (uNameEntry.Text == null)
+            if (PNumEntry.Text == null)
             {
                await DisplayAlert("Notice","Please enter your phone number and make sure it's correct and includes with area code.", "OK");
 
@@ -141,16 +149,6 @@ namespace ChelperPro.Views
         void PhoneNumberSignInCompleted(object sender, EventArgs e)
         {
             string text = ((Entry)sender).Text;
-        }
-        void Handle_Privacy(object sender, System.EventArgs e)
-        {
-            Device.OpenUri(new Uri("https://www.cycbis.com/#/privacy"));
-            //Navigation.PushModalAsync(new PrivacyPage());
-        }
-        void Handle_Terms(object sender, System.EventArgs e)
-        {
-            Device.OpenUri(new Uri("https://www.cycbis.com/#/terms"));
-            //Navigation.PushModalAsync(new PrivacyPage());
         }
     }
 }

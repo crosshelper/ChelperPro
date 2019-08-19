@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ChelperPro.Helpers;
 using Xamarin.Forms;
 
+
 namespace ChelperPro.Views
 {
     public partial class SignUpPage : ContentPage
@@ -11,6 +12,16 @@ namespace ChelperPro.Views
         private string Uname = "";
         private string Pwd = "";
         private string Pwdc = "";
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await System.Threading.Tasks.Task.Delay(150);
+                CodeEntry.Focus();
+            });
+        }
 
         public SignUpPage()
         {
@@ -58,18 +69,25 @@ namespace ChelperPro.Views
             */
             if (CodeEntry.Text == null)
             {
-                DisplayAlert("Notice", "Please check your text code and make sure it's correct.", "OK");
+                DisplayAlert("Notice", "Please check your text code and make sure it's correct. ", "OK");
 
             }
             else
             {
 
-                Navigation.PushAsync(new SignUpTwoPage());
+                Navigation.PushAsync(new SignInPasswordPage());
             }
         }
+
+
         void Handle_CodeAgain(object sender, System.EventArgs e)
         {
-            DisplayAlert("Notice", "Code resent to your phone, please enter the Code", "OK");
+            DisplayAlert("Notice", "Please check your text code and make sure it's correct. ", "OK");
+            var time = 45;
+            TmcodeAgain.Text = "Resent code in " + time + " second";
+            TmcodeAgain.TextColor = Color.FromHex("#888888");
+            this.IsEnabled = false;
+            
         }
     }
 }
