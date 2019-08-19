@@ -86,7 +86,7 @@ namespace ChelperPro.Views
             var time = 45;
             TmcodeAgain.Text = "Resent code in " + time + " second";
             TmcodeAgain.TextColor = Color.FromHex("#888888");
-            this.IsEnabled = false;
+            //this.IsEnabled = false;
             
         }
     }
