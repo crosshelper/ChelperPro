@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="ChelperPro.Views.LaunchPage">
     <ContentPage.Content>
-        <StackLayout Margin="16,35,16,25">
+        <StackLayout Margin="16,50,16,10">
             <StackLayout Padding="0,50,0,45" HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand">
                 <Image VerticalOptions="Center" Aspect="AspectFill" HorizontalOptions="Center" Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/CycbisLogo/cb_logo.png"/>
             </StackLayout>
         <StackLayout VerticalOptions="End" Margin="0,0,0,0">  
-                <Label Text="Are you cycbis partners? Have you used cycbis or cycbis pro before?"
+                <Label Text="Earn money up tp $1400 each week. "
                             VerticalTextAlignment="End" HorizontalTextAlignment="Center" FontSize="21" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,0,0,10"/>
             <BoxView BackgroundColor="#CDCDCD" HeightRequest="1"></BoxView>
                 <Button Text="Get Started"
@@ -20,7 +20,7 @@
                         HeightRequest="50"
                         FontAttributes="Bold"
                         BackgroundColor="#ff4e18"
-                        Margin="0,5,0,12"
+                        Margin="0,5,0,0"
                         Clicked="Handle_Yes"/>
                 </StackLayout>
         </StackLayout>

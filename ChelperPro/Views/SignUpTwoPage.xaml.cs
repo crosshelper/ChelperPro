@@ -172,7 +172,7 @@ namespace ChelperPro.Views
                 && zipEntry.Text == null
                 && countryEntry.Text == null)
             {
-                CreateAccountStatus.Text = "Please fill all required information box.";
+                DisplayAlert("Notice", "Please fill all required information box.", "OK");
             }
             else
             {
