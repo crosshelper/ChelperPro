@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ChelperPro.Views.SignUpInfoPage">
+    <ContentPage.Content>
+        <ScrollView>
+           <StackLayout Margin="15,20,15,10">
+         <!--邮箱密码 Email&password input -->
+                    <StackLayout>
+                        <Label Text="What's your Name?" TextColor="#666666" FontSize="16" FontAttributes="Bold"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="FNameEntry" Placeholder="First Name (Required)"
+                                   FontSize="16"
+                                   HorizontalOptions="StartAndExpand"
+                                   HeightRequest="45"/>
+                            <Entry x:Name="LNameEntry" Placeholder="Last Name (Required)"
+                                   FontSize="16"
+                                   HorizontalOptions="EndAndExpand"
+                                   HeightRequest="45"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Entry x:Name="PLangEntry" Placeholder="Preferred Language (Required)"
+                                   FontSize="16"
+                                   HorizontalOptions="FillAndExpand"
+                                   HeightRequest="45"/>
+                            <Entry x:Name="SLangEntry" Placeholder="Second Language (Option)"
+                                   FontSize="16"
+                                   HorizontalOptions="FillAndExpand"
+                                   HeightRequest="45"/>
+                            <Entry x:Name="EmailEntry" Placeholder="Email Address (Option)"
+                                   FontSize="16"
+                                   HorizontalOptions="FillAndExpand"
+                                   HeightRequest="45"/>
+                        </StackLayout>
+                        </StackLayout >
+                <StackLayout>
+                    <Label Text="" x:Name="CreateAccountStatus" TextColor="#ff4e18" FontSize="15" Margin="0,5,0,0"></Label>
+                </StackLayout>
+           <!--登入按钮 Sign in Button -->   
+                    <StackLayout VerticalOptions="StartAndExpand">
+                            <Button  
+                                    Text="Create account"
+                                    TextColor="White"
+                                    FontSize="Medium"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#FF4E18"
+                                    Margin="0,20,0,0"
+                                    Clicked="Handle_CreateAccount"/>
+                    </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

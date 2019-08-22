@@ -13,11 +13,13 @@ namespace ChelperPro.Views
         {
             InitializeComponent();
             BioBox.Text = uih.GetBioByID(Settings.UserId);
+           
         }
 
         void Handle_Save(object sender, System.EventArgs e)
         {
             uih.UpdateHelperBio(BioBox.Text);
+            Navigation.PopAsync(false);
         }
     }
 }

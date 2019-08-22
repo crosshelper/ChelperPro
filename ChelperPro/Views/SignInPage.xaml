@@ -4,7 +4,7 @@
         <Button Text="Cancel" TextColor="White" HorizontalOptions="End" Clicked="Handle_Canceled" FontSize="20"/>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <ScrollView>
+         <ScrollView>
             <StackLayout Margin="15,15,15,10"> 
                     <Label Text="Get Started" FontSize="26" TextColor="#FF4E18" Margin="0,5,0,0" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/> 
                   <Label Text="Enter your Phone number" FontSize="20" TextColor="#666666" Margin="0,5,0,0"/>
@@ -18,24 +18,8 @@
                                         Title="+1"
                                         FontSize="18"
                                         SelectedItem="🇺🇸|+1"
-                                        TitleColor="#888888">
-                                  <Picker.ItemsSource>
-                                    <x:Array Type="{x:Type x:String}">
-                                        <x:String>+55</x:String>
-                                        <x:String>🇺🇸 +1</x:String>
-                                        <x:String>+7</x:String>
-                                        <x:String>+33</x:String>
-                                        <x:String>+44</x:String>
-                                        <x:String>+49</x:String>
-                                        <x:String>+52</x:String>
-                                        <x:String>+81</x:String>
-                                        <x:String>+82</x:String>
-                                        <x:String>+86</x:String>
-                                        <x:String>+91</x:String>
-                                        <x:String>+852</x:String>
-                                        <x:String>+886</x:String>
-                                    </x:Array>
-                                  </Picker.ItemsSource>
+                                        TitleColor="#888888"
+                                        ItemsSource="{Binding CountryCodes}">
                                 </Picker>
                                 <Entry Placeholder="Enter your Phone number"
                                    FontSize="16"
@@ -44,7 +28,6 @@
                                    PlaceholderColor="#888888"
                                    HeightRequest="45"
                                    HorizontalOptions="FillAndExpand"
-                                   Completed="PhoneNumberSignInCompleted"
                                    x:Name="PNumEntry"/>
                               
                            </StackLayout>

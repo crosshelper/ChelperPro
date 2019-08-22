@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
@@ -11,6 +12,9 @@ namespace ChelperPro.Views
 {
     public partial class SignInPage : ContentPage
     {
+        public List<string> CountryCodes { get; private set; }
+        private TwilioHelper thelper = new TwilioHelper();
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -23,116 +27,82 @@ namespace ChelperPro.Views
         public SignInPage()
         {
             InitializeComponent();
+            CountryCodes = new List<string>();
+            CountryCodes.Add("+55");
+            CountryCodes.Add("(US) +1");
+            CountryCodes.Add("+7");
+            CountryCodes.Add("+33");
+            CountryCodes.Add("+44");
+            CountryCodes.Add("+49");
+            CountryCodes.Add("+52");
+            CountryCodes.Add("+81");
+            CountryCodes.Add("+82");
+            CountryCodes.Add("+86");
+            CountryCodes.Add("+91");
+            CountryCodes.Add("+852");
+            CountryCodes.Add("+886");
+            NavigationPage.SetHasBackButton(this, false);
+            countryCodePicker.SelectedIndex = 1;
+            this.BindingContext = this;
         }
         //登入
+        private string GetCountryName(string fullcode)
+        {
+            string[] sArray = fullcode.Split(' ');
+            var Flag = "";
+            var Code = "";
+            if (sArray.Length == 2)
+            {
+                Flag = sArray[0];
+                Code = sArray[1];
+            }
+            return Code;
+        }
+
         async void Handle_SignIn(object sender, EventArgs e)
         {
-            /*
             activity.IsEnabled = true;
             activity.IsRunning = true;
             activity.IsVisible = true;
             signInloading.Text = "Connecting...";
             signInloading.TextColor = Color.FromHex("#FF4E18");
-             await Task.Delay(2000);
-             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
-             {
-                 await DisplayAlert("No Internet", "Try again later!", "OK");
-                 return;
-             }
+            UserAccess userAccess = new UserAccess();
+            Uac uac = new Uac();
+            uac.ContactNo = GetCountryName(countryCodePicker.SelectedItem.ToString()) + PNumEntry.Text;
 
-             if (uNameEntry.Text.IsNullOrEmpty() || pwdEntry.Text.IsNullOrEmpty())
-             {
-                 await DisplayAlert("No user found", "Try again later!", "OK");
-                 return;
-             }
-
-             UserAccess userAccess = new UserAccess();
-             UserInfo usr = new UserInfo();
-
-             if (userAccess.VerifyUser(uNameEntry.Text, pwdEntry.Text))
-             {
-                 if(userAccess.CheckPermission())
-                 {
-                     //activity.IsEnabled = true;
-                     //activity.IsRunning = true;
-                     //activity.IsVisible = true;
-                     signInloading.Text = "Sign In Succeeded, Data Loading...";
-                     signInloading.TextColor = Color.FromHex("#FF4E18");
-                     Settings.UserId = userAccess.CurrentUid.ToString();
-                     usr = userAccess.GetUserInfo(userAccess.CurrentUid);
-                     Settings.ChatID = usr.ChatID;
-                     Name = usr.FirstName + " " + usr.LastName;
-                     ProfileIcon = usr.Icon;
-                     ChatServerConnect();
-                     await Task.Delay(3000);
-                     Application.Current.MainPage = new MainPage();
-                 }
-                 else
-                 {
-                     signInloading.Text = "Permission Denied, Please Signup as a helper.";
-                     activity.IsEnabled = false;
-                     activity.IsRunning = false;
-                     activity.IsVisible = false;
-                     Settings.IsLogin = false;
-                     await Navigation.PushModalAsync(new SignUpTwoPage());
-                 }
-             }
-             else
-             {
-                 signInloading.Text = "Sign in Faild";
-                 signInloading.TextColor = Color.FromHex("#FF0000");
-                 activity.IsEnabled = false;
-                 activity.IsRunning = false;
-                 activity.IsVisible = false;
-                 Settings.IsLogin = false;
-             }
-         }
-
-         private string Name = "";
-         private string ProfileIcon = "";
-
-         private void ChatServerConnect()
-         {
-             SendBirdClient.Connect(Settings.ChatID, (SendBird.User user, SendBirdException e) =>
-             {
-                 if (e != null)
-                 {
-                     return;
-                 }
-
-                 SendBirdClient.UpdateCurrentUserInfo(Name, ProfileIcon, (SendBirdException e1) =>
-                 {
-                     if (e1 != null)
-                     {
-                         return;
-                     }
-                 });
-
-                 SendBirdClient.RegisterAPNSPushTokenForCurrentUser(SendBirdClient.GetPendingPushToken(), (SendBirdClient.PushTokenRegistrationStatus status, SendBirdException e1) =>
-                 {
-                     if (e1 != null)
-                     {
-                         // Error.
-                         return;
-                     }
-
-                     if (status == SendBirdClient.PushTokenRegistrationStatus.PENDING)
-                     {
-                         // Try registration after connection is established.
-                     }
-                 });
-             });
-             Settings.IsLogin = true;
-             */
-            if (PNumEntry.Text == null)
+            //Internet Connection Check
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-               await DisplayAlert("Notice","Please enter your phone number and make sure it's correct and includes with area code.", "OK");
-
-            }else {
-
-                Navigation.PushAsync(new SignUpPage());
-
+                await DisplayAlert("No Internet", "Try again later!", "OK");
+                return;
             }
+
+            //Validation Check
+            if (!thelper.IsValidE164(uac.ContactNo, "US"))
+            {
+                await DisplayAlert("Not Valid", "Enter a real number and try again!", "OK");
+                return;
+            }
+
+            //Empty Check
+            if (PNumEntry.Text.IsNullOrEmpty())
+            {
+                await DisplayAlert("Error", "Try enter your Number and try again!", "OK");
+                return;
+            }
+
+            //RememberMe = savename.IsToggled;
+            if (userAccess.CheckPhoneNoExist(uac.ContactNo))
+            {
+                Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
+                await Navigation.PushAsync(new SignInPasswordPage(uac.ContactNo));
+            }
+            else
+            {
+                userAccess.TwilioVerifyService(uac.ContactNo);
+                await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
+            }
+
         }
 
 
@@ -144,11 +114,6 @@ namespace ChelperPro.Views
         void Handle_Canceled(object sender, EventArgs e)
         {
             Navigation.PopModalAsync();
-        }
-        //登入邮箱&密码输入框 Sign in email&password input box
-        void PhoneNumberSignInCompleted(object sender, EventArgs e)
-        {
-            string text = ((Entry)sender).Text;
         }
     }
 }

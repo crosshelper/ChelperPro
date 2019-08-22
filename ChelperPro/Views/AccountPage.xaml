@@ -14,21 +14,17 @@
             </sv:Section>
             <sv:Section Title="Email Address" FooterText="">
                 <sv:EntryCell Title="Email" ValueText="{Binding Email}" 
-                              Placeholder="0000 0000 0000 0000" 
                               HintText="{Binding InputError.Value}" />
             </sv:Section>
             <sv:Section Title="Name" FooterText="">
                 <sv:EntryCell Title="First Name" ValueText="{Binding FirstName}" 
-                              Placeholder="0000 0000 0000 0000" 
                               HintText="{Binding InputError.Value}" /> 
                 <sv:EntryCell Title="Last Name" ValueText="{Binding LastName}" 
-                              Placeholder="11/20" 
                               HintText="{Binding InputError.Value}" />
             </sv:Section>
             
            <sv:Section Title="Security" FooterText="">
                 <sv:EntryCell Title="Phone number" ValueText="{Binding PhoneNumber}" 
-                              Placeholder="626 566 0781"
                               HintText="{Binding InputError.Value}" /> 
                 <sv:PickerCell Title="Reset Password" Tapped="Handle_ResetPassword" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
                               SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />

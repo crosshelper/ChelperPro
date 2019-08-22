@@ -1,7 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.SignUpPage">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ChelperPro.Views.ResetPWDVerifyPage">
+    <NavigationPage.TitleView>
+        <Button Text="Cancel" TextColor="White" HorizontalOptions="End" Clicked="Handle_Canceled" FontSize="20"/>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
-        <ScrollView>
+         <ScrollView>
            <StackLayout Margin="15,20,15,10">
                 <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
                   <!--登入 Sign In lable -->
@@ -60,6 +66,6 @@
                                     Clicked="Handle_Next"/>
                     </StackLayout>
             </StackLayout>
-        </ScrollView>
+        </ScrollView> 
     </ContentPage.Content>
 </ContentPage>

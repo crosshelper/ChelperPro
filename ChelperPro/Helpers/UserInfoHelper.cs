@@ -88,6 +88,41 @@ namespace ChelperPro.Helpers
             }
         }
 
+        internal void UpdateUserRealNameEmail(string fName, string lName, string email)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "INSERT INTO UserInfo(Uid,FirstName,LastName,ChatID," +
+                        "Flanguage,SLanguage,PaymentID,Icon,FENum,SENum," +
+                        "Address,Location,Email,ZipCode) " +
+                        "VALUES(@para4, @para1, @para2, 'cycbis', 'English', 'English', 'cycbis0000', 'http', " +
+                        "0000000000, 0000000000, 'example', 'example', @para3, 95131)";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", fName);
+                    cmd.Parameters.AddWithValue("para2", lName);
+                    cmd.Parameters.AddWithValue("para3", email);
+                    cmd.Parameters.AddWithValue("para4", Settings.UserId);
+
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();//关闭连接              
+            }
+        }
+
         internal List<string> GetMyServiceArea()
         {
             var zipslist = new List<string>();
@@ -190,6 +225,35 @@ namespace ChelperPro.Helpers
             finally
             {
                 conn.Close();
+            }
+        }
+
+        internal void UpdateUac(Uac ac)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                    "UPDATE UserMaster SET " +
+                    "ContactNo = @para3, " +
+                    "Pwd = @para4" +
+                    " WHERE Uid = @para1";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", ac.UserID);
+                cmd.Parameters.AddWithValue("para3", ac.ContactNo);
+                cmd.Parameters.AddWithValue("para4", ac.Pwd);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
             }
         }
 

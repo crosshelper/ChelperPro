@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ChelperPro.Views.PwdForgotResetPage">
+    <ContentPage.Content>
+        <ScrollView>
+           <StackLayout Margin="15,20,15,10">
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
+                  <!--登入 Sign In lable -->
+                    <Label Margin="0,0,16,10"
+                           Text="Continuing with a password"
+                           TextColor="#FF4E17"
+                           FontSize="26"
+                           FontAttributes="Bold"
+                           HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                <!--邮箱密码 Email&password input -->
+                    <StackLayout VerticalOptions="Start" Margin="0,10,0,10">
+                            <Label Text="Set up new password" TextColor="#888888" FontSize="16" FontAttributes="Bold"/>
+                            <Entry x:Name="PwdEntry" 
+                                   FontSize="16"
+                                   MaxLength="11"
+                                   Margin="0,10,0,0"
+                                   IsPassword="True"
+                                   Keyboard="Default"
+                                   PlaceholderColor="#888888"
+                                   HeightRequest="45"
+                                   Placeholder="at least 8 characters"
+                                   HorizontalOptions="FillAndExpand"/>
+                    </StackLayout >
+               <Label Text="" x:Name="pwdStatus" TextColor="#ff4e18" FontSize="13"></Label>
+           <!--登入按钮 Sign in Button -->   
+                    <StackLayout VerticalOptions="StartAndExpand">
+                            <Button Margin="0,0,0,0"
+                                    Text="Next"
+                                    TextColor="White"
+                                    FontSize="Medium"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#FF4E18"
+                                    Clicked="Handle_Next"/>
+                    </StackLayout>
+               </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
