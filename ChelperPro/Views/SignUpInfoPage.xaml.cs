@@ -42,7 +42,7 @@ namespace ChelperPro.Views
             Navigation.PopModalAsync();
         }
 
-        private string FName, LName;
+        private string FName, LName, PLanguage, Address, ZipCode, HelperSSN;
         private string _currentNo = "";
         private string _currentPassword = "";
 
@@ -87,6 +87,7 @@ namespace ChelperPro.Views
 
         async void Handle_CreateAccount(object sender, EventArgs e)
         {
+            //TODO: planguage,address,zipcode,ssn,not null or empty
             if (FNameEntry.Text.IsNullOrEmpty() && LNameEntry.Text.IsNullOrEmpty())
             {
                 await DisplayAlert("Notice", "Please fill all required information box.", "OK");
@@ -95,9 +96,16 @@ namespace ChelperPro.Views
             {
                 FName = FNameEntry.Text;
                 LName = LNameEntry.Text;
+                Email = EmailEntry.Text;
+                PLanguage = FlanPicker.SelectedItem.ToString();
+                Address = AddressEntry.Text + cityEntry.Text + stateEntry.Text;
+                ZipCode = zipEntry.Text;
+                HelperSSN = SocialEntry.Text;
+
                 if (Email.IsNullOrEmpty())
                     Email = "cycbis@cycbis.com";
-                uih.UpdateUserRealNameEmail(FName, LName, Email);
+                uih.UpdateUserRealNameEmail(FName, LName, Email, PLanguage, Address, ZipCode);
+                uih.UpdateHelperSSN(HelperSSN);
                 uAccess.SetChatID();
                 //uAccess.UpdateEmailNo(Email, ContactNo);
                 //Settings.IsLogin = uAccess.VerifyUser(Uname, Pwd);
