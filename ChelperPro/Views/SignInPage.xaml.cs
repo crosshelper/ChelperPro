@@ -65,7 +65,7 @@ namespace ChelperPro.Views
             activity.IsRunning = true;
             activity.IsVisible = true;
             signInloading.Text = "Connecting...";
-            signInloading.TextColor = Color.FromHex("#FF4E18");
+            signInloading.TextColor = Color.FromHex("#888888");
             UserAccess userAccess = new UserAccess();
             Uac uac = new Uac();
             uac.ContactNo = GetCountryName(countryCodePicker.SelectedItem.ToString()) + PNumEntry.Text;
@@ -73,6 +73,10 @@ namespace ChelperPro.Views
             //Internet Connection Check
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                signInloading.Text = "";
                 await DisplayAlert("No Internet", "Try again later!", "OK");
                 return;
             }
@@ -80,6 +84,10 @@ namespace ChelperPro.Views
             //Validation Check
             if (!thelper.IsValidE164(uac.ContactNo, "US"))
             {
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                signInloading.Text = "";
                 await DisplayAlert("Not Valid", "Enter a real number and try again!", "OK");
                 return;
             }
@@ -87,6 +95,10 @@ namespace ChelperPro.Views
             //Empty Check
             if (PNumEntry.Text.IsNullOrEmpty())
             {
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                signInloading.Text = "";
                 await DisplayAlert("Error", "Try enter your Number and try again!", "OK");
                 return;
             }
@@ -95,20 +107,23 @@ namespace ChelperPro.Views
             if (userAccess.CheckPhoneNoExist(uac.ContactNo))
             {
                 Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                signInloading.Text = "";
                 await Navigation.PushAsync(new SignInPasswordPage(uac.ContactNo));
             }
             else
             {
                 userAccess.TwilioVerifyService(uac.ContactNo);
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                signInloading.Text = "";
                 await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
             }
 
         }
-
-
-
-
-
 
         //取消按钮 Canceled
         void Handle_Canceled(object sender, EventArgs e)

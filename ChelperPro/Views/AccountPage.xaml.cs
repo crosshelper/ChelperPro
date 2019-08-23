@@ -111,7 +111,6 @@ namespace ChelperPro.Views
         private async Task TakePhotoFromCameraAsync()
         {
             var media = CrossMedia.Current;
-
             //check Permisson
             if (await CheckPermisson())
             {

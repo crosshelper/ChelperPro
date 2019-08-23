@@ -20,20 +20,105 @@
                                    HeightRequest="45"/>
                         </StackLayout>
                         <StackLayout>
-                            <Entry x:Name="PLangEntry" Placeholder="Preferred Language (Required)"
+                            <Label Text="Preferred language" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+                            <Picker x:Name="FlanPicker" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select (Required)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>Chinese</x:String>
+                                            <x:String>English</x:String>
+                                            <x:String>German</x:String>
+                                            <x:String>Italian</x:String>
+                                            <x:String>Japanese</x:String>
+                                            <x:String>Korean</x:String>
+                                            <x:String>Spanish</x:String>
+                                            <x:String>Vietnamance</x:String>
+                                            <x:String>Other</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+                            <Label Text="Second language" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+                            <Picker x:Name="SlanPicker" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select (Option)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Chinese</x:String>
+                                        <x:String>English</x:String>
+                                        <x:String>German</x:String>
+                                        <x:String>Italian</x:String>
+                                        <x:String>Japanese</x:String>
+                                        <x:String>Korean</x:String>
+                                        <x:String>Spanish</x:String>
+                                        <x:String>Vietnamance</x:String>
+                                        <x:String>Other</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                            <Label Text="Email Address" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+                            <Entry x:Name="EmailEntry" Placeholder="email@email.com (Option)"
                                    FontSize="16"
                                    HorizontalOptions="FillAndExpand"
                                    HeightRequest="45"/>
-                            <Entry x:Name="SLangEntry" Placeholder="Second Language (Option)"
-                                   FontSize="16"
-                                   HorizontalOptions="FillAndExpand"
-                                   HeightRequest="45"/>
-                            <Entry x:Name="EmailEntry" Placeholder="Email Address (Option)"
-                                   FontSize="16"
-                                   HorizontalOptions="FillAndExpand"
-                                   HeightRequest="45"/>
+
+                            <StackLayout>
+	                            <Label Text="Address" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
+	                            <Entry x:Name="AddressEntry" Placeholder="Enter your address here (Required)"
+	                                   FontSize="16"
+	                                   HeightRequest="45"/> 
+	                        <StackLayout Orientation="Horizontal">
+	                            <Entry Placeholder="Unit"
+	                                   FontSize="16"
+	                                   WidthRequest="100"
+	                                   HeightRequest="45"/>
+	                            <Entry Placeholder="City (Required)"
+	                                   x:Name="cityEntry"
+	                                   FontSize="16"
+	                                   WidthRequest="150"
+	                                   HeightRequest="45"/> 
+	                        </StackLayout>
+	                        <StackLayout Orientation="Horizontal">
+	                            <Entry Placeholder="State (Required)"
+	                                   FontSize="16"
+	                                   x:Name="stateEntry"
+	                                   WidthRequest="160"
+	                                   HeightRequest="45"/> 
+	                            <Entry Placeholder="Zip Code (Required)"
+	                                   x:Name="zipEntry"
+	                                   FontSize="16"
+	                                   WidthRequest="165"
+	                                   HeightRequest="45"/>
+	                        </StackLayout>
+	                         <Picker x:Name="Country" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select country (Required)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>United States</x:String>
+                                        <x:String>United Kingdom</x:String>
+                                        <x:String>China</x:String>
+                                        <x:String>Germany</x:String>
+                                        <x:String>France</x:String>
+                                        <x:String>Japan</x:String>
+                                        <x:String>Canada</x:String>
+                                        <x:String>Mexico</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+	                    </StackLayout>
+	                            <Label Text="SSN" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
+	                            <Entry x:Name="SocialEntry" Placeholder="000000000 (Required)"
+	                                   FontSize="16"
+	                                   MaxLength="9"
+	                                   Keyboard="Numeric"
+	                                   HeightRequest="45"/>
+	                        </StackLayout >
+	                <StackLayout>
+	                    <Label TextColor="Gray"
+	                           FontSize="Small">
+	                        <Label.FormattedText>
+	                            <FormattedString>
+	                                <Span Text="Enter SSN for background check and Tax, We will not use your SSN to do any other purposes."/>
+	                            </FormattedString>
+	                        </Label.FormattedText>
+	                    </Label>
+	                </StackLayout>
                         </StackLayout>
-                        </StackLayout >
                 <StackLayout>
                     <Label Text="" x:Name="CreateAccountStatus" TextColor="#ff4e18" FontSize="15" Margin="0,5,0,0"></Label>
                 </StackLayout>

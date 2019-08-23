@@ -80,6 +80,11 @@ namespace ChelperPro.Views
             Settings.IsLogin = true;
         }
 
+        async void Handle_Upload(object sender, EventArgs e)
+        {
+            //Upload photo
+        }
+
         async void Handle_CreateAccount(object sender, EventArgs e)
         {
             if (FNameEntry.Text.IsNullOrEmpty() && LNameEntry.Text.IsNullOrEmpty())
