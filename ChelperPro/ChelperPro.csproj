@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
     <PackageReference Include="AiForms.SettingsView" Version="0.4.15" />
     <PackageReference Include="Xam.Plugin.TabView" Version="1.0.4" />
     <PackageReference Include="MySql.Data" Version="8.0.16" />
@@ -24,7 +24,7 @@
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
     <PackageReference Include="Xam.Plugins.Messaging" Version="5.2.0" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.0.1" />
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
     <PackageReference Include="Twilio" Version="5.31.4" />
     <PackageReference Include="libphonenumber-csharp" Version="8.10.17" />
   </ItemGroup>
