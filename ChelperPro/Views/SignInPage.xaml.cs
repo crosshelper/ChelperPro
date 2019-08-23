@@ -14,6 +14,7 @@ namespace ChelperPro.Views
     {
         public List<string> CountryCodes { get; private set; }
         private TwilioHelper thelper = new TwilioHelper();
+        public string DefaultCountryCode { get; set; }
 
         protected override void OnAppearing()
         {
@@ -21,6 +22,8 @@ namespace ChelperPro.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 await System.Threading.Tasks.Task.Delay(150);
+                DefaultCountryCode = "(US) +1";
+                countryCodePicker.SelectedIndex = 1;
                 PNumEntry.Focus();
             });
         }

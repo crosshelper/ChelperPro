@@ -27,6 +27,8 @@
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
     <PackageReference Include="Twilio" Version="5.31.4" />
     <PackageReference Include="libphonenumber-csharp" Version="8.10.17" />
+    <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
+    <PackageReference Include="Stripe.net" Version="28.5.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />

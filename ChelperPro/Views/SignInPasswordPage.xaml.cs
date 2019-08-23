@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
 using SendBird;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace ChelperPro.Views
@@ -26,11 +27,41 @@ namespace ChelperPro.Views
         KeyChainHelper kch = new KeyChainHelper();
         private string _currentNumber = "";
 
+        public bool RememberMe
+        {
+            get => Preferences.Get(nameof(RememberMe), false);
+            set
+            {
+                Preferences.Set(nameof(RememberMe), value);
+                if (!value)
+                {
+                    Preferences.Set(nameof(Username), string.Empty);
+                }
+                OnPropertyChanged(nameof(RememberMe));
+            }
+        }
+
+        string username = Preferences.Get(nameof(Username), string.Empty);
+        public string Username
+        {
+            get => username;
+            set
+            {
+                username = value;
+                if (RememberMe)
+                {
+                    Preferences.Set(nameof(Username), value);
+                }
+                OnPropertyChanged(nameof(RememberMe));
+            }
+        }
+
         public SignInPasswordPage(string currentNumber)
         {
             InitializeComponent();
             _currentNumber = currentNumber;
         }
+
         async void Handle_Next(object sender, EventArgs e)
         {
             if (pwdEntry.Text == null)
@@ -39,6 +70,9 @@ namespace ChelperPro.Views
                 return;
             }
             await Task.Delay(2000);
+
+            RememberMe = true;
+            Username = _currentNumber;
 
             if (userAccess.VerifyUser(_currentNumber, pwdEntry.Text))
             {

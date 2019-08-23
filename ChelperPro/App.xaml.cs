@@ -1,7 +1,9 @@
 ﻿using ChelperPro.Views;
-
 using SendBird;
+using Plugin.Multilingual;
+using Stripe;
 using Xamarin.Forms.Xaml;
+using ChelperPro;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -13,7 +15,10 @@ namespace ChelperPro
         public App()
         {
             InitializeComponent();
-            MainPage = new LaunchPage();
+            AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
+            StripeConfiguration.SetApiKey("sk_live_XXXXXXXXXXXXXXX");
+            SendBirdClient.Init(ChelperPro.Properties.Resources.APP_ID);
+            MainPage = new MySplashScreen();
         }
 
         protected override void OnStart()
