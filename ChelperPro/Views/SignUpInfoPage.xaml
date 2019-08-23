@@ -90,13 +90,6 @@
                                 <Picker.ItemsSource>
                                     <x:Array Type="{x:Type x:String}">
                                         <x:String>United States</x:String>
-                                        <x:String>United Kingdom</x:String>
-                                        <x:String>China</x:String>
-                                        <x:String>Germany</x:String>
-                                        <x:String>France</x:String>
-                                        <x:String>Japan</x:String>
-                                        <x:String>Canada</x:String>
-                                        <x:String>Mexico</x:String>
                                     </x:Array>
                                 </Picker.ItemsSource>
                             </Picker>

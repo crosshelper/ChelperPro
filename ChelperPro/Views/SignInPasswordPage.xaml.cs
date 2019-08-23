@@ -16,7 +16,7 @@ namespace ChelperPro.Views
             base.OnAppearing();
             Device.BeginInvokeOnMainThread(async () =>
             {
-                await System.Threading.Tasks.Task.Delay(150);
+                await Task.Delay(150);
                 pwdEntry.Focus();
             });
         }

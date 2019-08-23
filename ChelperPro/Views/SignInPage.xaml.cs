@@ -109,27 +109,12 @@ namespace ChelperPro.Views
             //RememberMe = savename.IsToggled;
             if (userAccess.CheckPhoneNoExist(uac.ContactNo))
             {
-                if (userAccess.GetPermission(uac.ContactNo) == "1")
-                {
-                    Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
-                    activity.IsEnabled = false;
-                    activity.IsRunning = false;
-                    activity.IsVisible = false;
-                    signInloading.Text = "";
-                    await Navigation.PushAsync(new SignInPasswordPage(uac.ContactNo));
-                }
-                else
-                {
-                    Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
-                    activity.IsEnabled = false;
-                    activity.IsRunning = false;
-                    activity.IsVisible = false;
-                    signInloading.Text = "";
-                    uac.Pwd = userAccess.GetPWD(uac.ContactNo);
-                    await Navigation.PushAsync(new SignUpInfoPage(uac.ContactNo,uac.Pwd));
-
-                }
-                
+                Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                signInloading.Text = "";
+                await Navigation.PushAsync(new SignInPasswordPage(uac.ContactNo));
             }
             else
             {
@@ -140,7 +125,6 @@ namespace ChelperPro.Views
                 signInloading.Text = "";
                 await Navigation.PushAsync(new SignUpVerifyPage(uac.ContactNo));
             }
-
         }
 
         //取消按钮 Canceled
