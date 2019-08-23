@@ -106,12 +106,27 @@ namespace ChelperPro.Views
             //RememberMe = savename.IsToggled;
             if (userAccess.CheckPhoneNoExist(uac.ContactNo))
             {
-                Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
-                activity.IsEnabled = false;
-                activity.IsRunning = false;
-                activity.IsVisible = false;
-                signInloading.Text = "";
-                await Navigation.PushAsync(new SignInPasswordPage(uac.ContactNo));
+                if (userAccess.GetPermission(uac.ContactNo) == "1")
+                {
+                    Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
+                    activity.IsEnabled = false;
+                    activity.IsRunning = false;
+                    activity.IsVisible = false;
+                    signInloading.Text = "";
+                    await Navigation.PushAsync(new SignInPasswordPage(uac.ContactNo));
+                }
+                else
+                {
+                    Settings.UserId = userAccess.GetUserIDbyNo(uac.ContactNo);
+                    activity.IsEnabled = false;
+                    activity.IsRunning = false;
+                    activity.IsVisible = false;
+                    signInloading.Text = "";
+                    uac.Pwd = userAccess.GetPWD(uac.ContactNo);
+                    await Navigation.PushAsync(new SignUpInfoPage(uac.ContactNo,uac.Pwd));
+
+                }
+                
             }
             else
             {
