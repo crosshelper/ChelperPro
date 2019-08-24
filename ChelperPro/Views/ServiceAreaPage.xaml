@@ -16,7 +16,7 @@
                 ValueTextFontSize="Medium"
                 HintText="{Binding InputError.Value}"/>
         </sv:Section>
-        <sv:Section Title="Addition area" FooterText="Enter 5 digit code here.(Exp: 95131)">
+        <sv:Section Title="Addition area" FooterText="Enter 5 digit zip code here.(Exp: 95131)">
             <sv:EntryCell 
                 ValueText="{Binding ZipCode2}" 
                 Placeholder="00000" 
