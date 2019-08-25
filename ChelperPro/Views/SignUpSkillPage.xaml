@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
+    x:Class="ChelperPro.Views.SignUpSkillPage">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout  Margin="15,20,15,10">
+            <Label Text="What are your service type?" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+            <Picker x:Name="FSkillType" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Required)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
+            </Picker>
+            <Picker x:Name="SSkillType" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Option)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
+            </Picker>
+            <Picker x:Name="TSkillType" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Option)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
+            </Picker>
+            <Label Text="Not on the List？" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+            <Entry x:Name="AddSkill" Placeholder="Add One (Option)"
+                    FontSize="16"
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="45"/>
+            <Label Text="Service Area" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+                <StackLayout>
+                <Entry x:Name="FArea" Placeholder="Priority area (Required)"
+                        FontSize="16"
+                        Keyboard="Telephone"
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="45"/>
+                <Entry x:Name="SArea" Placeholder="Addition area (Option)"
+                        FontSize="16"
+                        Keyboard="Telephone"
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="45"/>
+                    <Entry x:Name="STArea" Placeholder="Addition area (Option)"
+                        FontSize="16"
+                        Keyboard="Telephone"
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="45"/>
+                </StackLayout>
+                <Label TextColor="Gray"
+	                FontSize="Small">
+	            <Label.FormattedText>
+	                <FormattedString>
+	                    <Span Text="Enter 5 digit zip code here.(Exp: 95131)"/>
+	                </FormattedString>
+	            </Label.FormattedText>
+	            </Label>
+                    <StackLayout VerticalOptions="StartAndExpand">
+                            <Button  
+                                    Text="Next"
+                                    TextColor="White"
+                                    FontSize="Medium"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="#FF4E18"
+                                    Margin="0,20,0,0"
+                                    Clicked="Handle_Next"/>
+                    </StackLayout>
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

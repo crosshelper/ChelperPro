@@ -25,7 +25,7 @@ namespace ChelperPro.Views
             base.OnAppearing();
             Device.BeginInvokeOnMainThread(async () =>
             {
-                await System.Threading.Tasks.Task.Delay(150);
+                await Task.Delay(150);
                 FNameEntry.Focus();
             });
         }
@@ -84,8 +84,7 @@ namespace ChelperPro.Views
         {
             //Upload photo
         }
-
-        async void Handle_CreateAccount(object sender, EventArgs e)
+        async void Handle_Next(object sender, EventArgs e)
         {
             //TODO: planguage,address,zipcode,ssn,not null or empty
             if (FNameEntry.Text.IsNullOrEmpty() && LNameEntry.Text.IsNullOrEmpty())
@@ -98,9 +97,9 @@ namespace ChelperPro.Views
                 LName = LNameEntry.Text;
                 Email = EmailEntry.Text;
                 PLanguage = FlanPicker.SelectedItem.ToString();
-                Address = AddressEntry.Text + cityEntry.Text + stateEntry.Text;
-                ZipCode = zipEntry.Text;
-                HelperSSN = SocialEntry.Text;
+                //Address = AddressEntry.Text + cityEntry.Text + stateEntry.Text;
+                //ZipCode = zipEntry.Text;
+                //HelperSSN = SocialEntry.Text;
 
                 if (Email.IsNullOrEmpty())
                     Email = "cycbis@cycbis.com";
@@ -122,8 +121,7 @@ namespace ChelperPro.Views
                 ChatServerConnect();
                 await Task.Delay(3000);
                 Settings.IsLogin = true;
-
-                Application.Current.MainPage = new MainPage();
+                await Navigation.PushAsync(new SignUpSkillPage());
             }
         }
     }

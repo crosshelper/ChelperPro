@@ -3,15 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
              x:Class="ChelperPro.Views.MySpecialitiesPage">
-    <NavigationPage.TitleView>
-    </NavigationPage.TitleView>
     <ContentPage.Content>
-
                 <sv:SettingsView>
                     <sv:Section Title="My specialities">
                             <sv:PickerCell x:Name="SelectSkills" MaxSelectedNumber="3" Title="My Skills" />
-                    </sv:Section> 
-                        
+                    </sv:Section>   
                     <sv:Section Title="No above? add one." FooterText="Add one for each. We will notify you after processing is done.">
                     <sv:EntryCell 
                         Title="My skill"
@@ -24,7 +20,7 @@
                     </sv:Section>
             
                     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-                     <sv:ButtonCell Title="Save" Tapped="Handle_Save"
+                     <sv:ButtonCell Title="Save" Tapped="Handle_Save" TitleColor="#ff4e18"
                      Command="{Binding SectionToggleCommand}"/>
                     </sv:Section>
                 </sv:SettingsView>

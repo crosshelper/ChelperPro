@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
@@ -24,11 +25,24 @@ namespace ChelperPro.Views
             }
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Task.Delay(150);
+                SelectSkills.SelectedItems = uih.GetMyTagsByID(Settings.UserId);
+            });
+        }
+
         UserInfoHelper uih = new UserInfoHelper();
         TagsHelper th = new TagsHelper();
         public MySpecialitiesPage()
         {
             InitializeComponent();
+
+
+
             var mytaginfoList = uih.GetMyTagsByID(Settings.UserId);
             var alltagslist = th.GetTagList();
 

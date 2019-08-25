@@ -57,20 +57,6 @@
                                    FontSize="16"
                                    HorizontalOptions="FillAndExpand"
                                    HeightRequest="45"/>
-
-                            <Label Text="Service Area" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
-                            <StackLayout>
-                            <Entry x:Name="PArea" Placeholder="Priority area (Required)"
-                                   FontSize="16"
-                                   Keyboard="Telephone"
-                                   HorizontalOptions="FillAndExpand"
-                                   HeightRequest="45"/>
-                            <Entry x:Name="SArea" Placeholder="Addition area (Option)"
-                                   FontSize="16"
-                                   Keyboard="Telephone"
-                                   HorizontalOptions="FillAndExpand"
-                                   HeightRequest="45"/>
-                            </StackLayout>
                             <Label TextColor="Gray"
 	                           FontSize="Small">
 	                        <Label.FormattedText>
@@ -79,60 +65,7 @@
 	                            </FormattedString>
 	                        </Label.FormattedText>
 	                        </Label>
-
-                            <StackLayout>
-	                            <Label Text="Address" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
-	                            <Entry x:Name="AddressEntry" Placeholder="Enter your address here (Required)"
-	                                   FontSize="16"
-	                                   HeightRequest="45"/> 
-	                        <StackLayout Orientation="Horizontal">
-	                            <Entry Placeholder="Unit"
-	                                   FontSize="16"
-	                                   WidthRequest="100"
-	                                   HeightRequest="45"/>
-	                            <Entry Placeholder="City (Required)"
-	                                   x:Name="cityEntry"
-	                                   FontSize="16"
-	                                   WidthRequest="150"
-	                                   HeightRequest="45"/> 
-	                        </StackLayout>
-	                        <StackLayout Orientation="Horizontal">
-	                            <Entry Placeholder="State (Required)"
-	                                   FontSize="16"
-	                                   x:Name="stateEntry"
-	                                   WidthRequest="160"
-	                                   HeightRequest="45"/> 
-	                            <Entry Placeholder="Zip Code (Required)"
-	                                   x:Name="zipEntry"
-	                                   FontSize="16"
-	                                   WidthRequest="165"
-	                                   HeightRequest="45"/>
-	                        </StackLayout>
-	                         <Picker x:Name="Country" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select country (Required)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
-                                <Picker.ItemsSource>
-                                    <x:Array Type="{x:Type x:String}">
-                                        <x:String>United States</x:String>
-                                    </x:Array>
-                                </Picker.ItemsSource>
-                            </Picker>
-	                    </StackLayout>
-	                            <Label Text="SSN" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
-	                            <Entry x:Name="SocialEntry" Placeholder="000000000 (Required)"
-	                                   FontSize="16"
-	                                   MaxLength="9"
-	                                   Keyboard="Numeric"
-	                                   HeightRequest="45"/>
-	                        </StackLayout >
-	                <StackLayout>
-	                    <Label TextColor="Gray"
-	                           FontSize="Small">
-	                        <Label.FormattedText>
-	                            <FormattedString>
-	                                <Span Text="Enter SSN for background check and Tax, We will not use your SSN to do any other purposes."/>
-	                            </FormattedString>
-	                        </Label.FormattedText>
-	                    </Label>
-	                </StackLayout>
+                            </StackLayout>
                         </StackLayout>
                 <StackLayout>
                     <Label Text="" x:Name="CreateAccountStatus" TextColor="#ff4e18" FontSize="15" Margin="0,5,0,0"></Label>
@@ -140,13 +73,13 @@
            <!--登入按钮 Sign in Button -->   
                     <StackLayout VerticalOptions="StartAndExpand">
                             <Button  
-                                    Text="Create account"
+                                    Text="Next"
                                     TextColor="White"
                                     FontSize="Medium"
                                     FontAttributes="Bold"
                                     BackgroundColor="#FF4E18"
                                     Margin="0,20,0,0"
-                                    Clicked="Handle_CreateAccount"/>
+                                    Clicked="Handle_Next"/>
                     </StackLayout>
             </StackLayout>
         </ScrollView>
