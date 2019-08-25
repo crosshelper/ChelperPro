@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
 using Xamarin.Forms;
@@ -31,28 +27,31 @@ namespace ChelperPro.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 await Task.Delay(150);
-                SelectSkills.SelectedItems = uih.GetMyTagsByID(Settings.UserId);
+                MytaginfoList = uih.GetMyTagsByID(Settings.UserId);
+                //SelectSkills.SelectedItems = uih.GetMyTagsByID(Settings.UserId);
             });
         }
 
         UserInfoHelper uih = new UserInfoHelper();
         TagsHelper th = new TagsHelper();
+        public List<TagInfo> Alltagslist = new List<TagInfo>();
+        public List<TagInfo> MytaginfoList = new List<TagInfo>();
+
         public MySpecialitiesPage()
         {
             InitializeComponent();
 
+            MytaginfoList = uih.GetMyTagsByID(Settings.UserId);
+            Alltagslist = th.GetTagList();
 
-
-            var mytaginfoList = uih.GetMyTagsByID(Settings.UserId);
-            var alltagslist = th.GetTagList();
-
-            SelectSkills.ItemsSource = alltagslist;
-            SelectSkills.SelectedItems = mytaginfoList;
-            SelectSkills.DisplayMember = "Pcategory";
-            SelectSkills.Title = "My Skills";
+            //SelectSkills.ItemsSource = alltagslist;
+            //SelectSkills.SelectedItems = mytaginfoList;
+            //SelectSkills.DisplayMember = "Pcategory";
+            //SelectSkills.Title = "My Skills";
             SelectSkills.UseAutoValueText = true;
-            SelectSkills.KeepSelectedUntilBack = true;
-            SelectSkills.SelectedCommand = new Command(RefreshTag);
+            //SelectSkills.KeepSelectedUntilBack = true;
+            //SelectSkills.SelectedCommand = new Command(RefreshTag);
+            BindingContext = this;
         }
 
         private void RefreshTag()
@@ -64,7 +63,5 @@ namespace ChelperPro.Views
                 TagsStr += tag.Pcategory + ", ";
             }
         }
-
-
     }
 }

@@ -6,7 +6,9 @@
     <ContentPage.Content>
                 <sv:SettingsView>
                     <sv:Section Title="My specialities">
-                            <sv:PickerCell x:Name="SelectSkills" MaxSelectedNumber="3" Title="My Skills" />
+                            <sv:PickerCell x:Name="SelectSkills" ItemsSource="{Binding Alltagslist}"
+                                           SelectedItems="{Binding MytaginfoList}" KeepSelectedUntilBack="true" PageTitle="Select 3 skills"
+                                           DisplayMember="Pcategory" MaxSelectedNumber="3" Title="My Skills" />
                     </sv:Section>   
                     <sv:Section Title="No above? add one." FooterText="Add one for each. We will notify you after processing is done.">
                     <sv:EntryCell 
