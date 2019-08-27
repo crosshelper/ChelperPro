@@ -364,10 +364,12 @@ namespace ChelperPro.Helpers
                     user.PaymentID = reader.GetString(6);
                     user.Icon = reader.GetString(7);
                     //user.Homeland = reader.GetString(8);
-                    user.FENo = reader.GetString(9);
-                    user.SENo = reader.GetString(10);
-                    user.Address = reader.GetString(11);
-                    user.Location = reader.GetString(12);
+                    user.FENo = reader.GetString(8);
+                    user.SENo = reader.GetString(9);
+                    user.Address = reader.GetString(10);
+                    user.Location = reader.GetString(11);
+                    user.Email = reader.GetString(12);
+                    user.ZipCode = reader.GetString(13);
                     return user;
                 }
             }

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
 using SendBird;
+using WebSocketSharp;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -66,7 +67,7 @@ namespace ChelperPro.Views
         {
             if (pwdEntry.Text == null)
             {
-                DisplayAlert("Notice", "Please enter your password and make sure it's least 8 characters. ", "OK");
+                await DisplayAlert("Notice", "Please enter your password and make sure it's least 8 characters. ", "OK");
                 return;
             }
             await Task.Delay(2000);
@@ -81,7 +82,10 @@ namespace ChelperPro.Views
                 //signInloading.TextColor = Color.FromHex("#555555");
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
+                var permission = userAccess.GetPermission(_currentNumber);
                 Settings.ChatID = usr.ChatID;
+                if (permission == "0" ||usr.FirstName.IsNullOrEmpty() || usr.LastName.IsNullOrEmpty() || usr.FLanguage.IsNullOrEmpty())
+                    await Navigation.PushAsync(new SignUpInfoPage(_currentNumber, pwdEntry.Text));
                 Name = usr.FirstName + " " + usr.LastName;
                 ProfileIcon = usr.Icon;
                 ChatServerConnect();

@@ -16,6 +16,8 @@ namespace ChelperPro.Models
         public string Address { get; set; }
         public string Location { get; set; }
         public string Homeland { get; internal set; }
+        public string Email { get; internal set; }
+        public string ZipCode { get; internal set; }
 
         public UserInfo()
         {

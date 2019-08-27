@@ -88,7 +88,7 @@ namespace ChelperPro.Helpers
             }
         }
 
-        internal void UpdateUserRealNameEmail(string fName, string lName, string email, string planguage, string address, string zipcode)
+        internal void UpdateUserRealNameEmail(string fName, string lName, string email, string planguage)
         {
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -102,15 +102,13 @@ namespace ChelperPro.Helpers
                         "Flanguage,SLanguage,PaymentID,Icon,FENum,SENum," +
                         "Address,Location,Email,ZipCode) " +
                         "VALUES(@para4, @para1, @para2, 'cycbis', @para5, 'English', 'cycbis0000', 'https://s3-us-west-1.amazonaws.com/image.cycbis.com/CycbisLogo/CHAppLogo.png', " +
-                        "0000000000, 0000000000, @para6, 'example', @para3, @para7)";
+                        "0000000000, 0000000000, 'example', 'example', @para3, 00000)";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", fName);
                     cmd.Parameters.AddWithValue("para2", lName);
                     cmd.Parameters.AddWithValue("para3", email);
                     cmd.Parameters.AddWithValue("para4", Settings.UserId);
                     cmd.Parameters.AddWithValue("para5", planguage);
-                    cmd.Parameters.AddWithValue("para6", address);
-                    cmd.Parameters.AddWithValue("para7", zipcode);
 
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Connecting to MySQL success");

@@ -15,7 +15,8 @@ namespace ChelperPro.Views
         {
             UserInfoHelper uih = new UserInfoHelper();
             uih.UpdateHelperSSN(SocialEntry.Text);
-            Navigation.PushAsync(new SignUpSkillPage());
+            Navigation.PopToRootAsync();
+            //Navigation.PushAsync(new SignUpSkillPage());
         }
     }
 }
