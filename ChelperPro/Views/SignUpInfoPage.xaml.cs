@@ -65,7 +65,7 @@ namespace ChelperPro.Views
 
                 if (Email.IsNullOrEmpty())
                     Email = "cycbis@cycbis.com";
-                uih.UpdateUserRealNameEmail(FName, LName, Email, PLanguage);
+                uih.CreateUserInfo(FName, LName, Email, PLanguage);
                 //uih.UpdateHelperSSN(HelperSSN);
                 uAccess.SetChatID();
                 //uAccess.UpdateEmailNo(Email, ContactNo);

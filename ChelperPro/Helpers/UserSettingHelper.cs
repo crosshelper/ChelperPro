@@ -27,10 +27,8 @@ namespace ChelperPro.Helpers
                 while (reader.Read())
                 {
                     ac.UserID = reader.GetString(0);
-                    ac.UserName = reader.GetString(1);
-                    ac.Email = reader.GetString(2);
-                    ac.ContactNo = reader.GetString(3);
-                    ac.Pwd = reader.GetString(4);
+                    ac.ContactNo = reader.GetString(1);
+                    ac.Pwd = reader.GetString(2);
                 }
                 return ac;
             }

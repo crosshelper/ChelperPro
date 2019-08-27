@@ -42,7 +42,7 @@ namespace ChelperPro.Views
             FirstName = _usr.FirstName;
             LastName = _usr.LastName;
             _ac = ush.GetUacByID(_usr.UserID);
-            Email = _ac.Email;
+            Email = _usr.Email;
             PhoneNumber = _ac.ContactNo;
             BindingContext = this;
             SetupAWSCredentials();
@@ -67,7 +67,7 @@ namespace ChelperPro.Views
         {
             _usr.FirstName = FirstName;
             _usr.LastName = LastName;
-            _ac.Email = Email;
+            _usr.Email = Email;
             _ac.ContactNo = PhoneNumber;
             _usr.Icon = GetIconUrlFromS3();
             uih.UpdateUserInfo(_usr);

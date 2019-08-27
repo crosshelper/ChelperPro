@@ -14,7 +14,8 @@ namespace ChelperPro.Views
         void Handle_Create(object sender, EventArgs e)
         {
             UserInfoHelper uih = new UserInfoHelper();
-            uih.UpdateHelperSSN(SocialEntry.Text);
+            //uih.UpdateHelperSSN(SocialEntry.Text);
+            uih.CreateHelperSSN(SocialEntry.Text);
             Navigation.PopToRootAsync();
             //Navigation.PushAsync(new SignUpSkillPage());
         }

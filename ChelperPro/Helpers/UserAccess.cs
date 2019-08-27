@@ -99,6 +99,34 @@ namespace ChelperPro.Helpers
             }
         }
 
+        internal bool IsSSNExist()
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "select 1 from HelperInfo where Uid = @para1 limit 1";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                    object result = cmd.ExecuteScalar();
+                    if (Convert.ToInt32(result) == 1)
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+            return false;
+        }
+
         internal string GetUserIDbyNo(string contactNo)
         {
             MySqlConnection conn = new MySqlConnection(connStr);

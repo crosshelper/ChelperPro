@@ -12,7 +12,14 @@ namespace ChelperPro.Views
         {
             if(SelectSkills.SelectedItems.Count == 3)
             {
-                uih.UpdateHelperTags((IList<TagInfo>)SelectSkills.SelectedItems);
+                if (uih.IsTagExist())
+                {
+                    uih.UpdateHelperTags((IList<TagInfo>)SelectSkills.SelectedItems);
+                }
+                else
+                {
+                    uih.CreateHelperTags((IList<TagInfo>)SelectSkills.SelectedItems);
+                }
                 Navigation.PopAsync(false);
             }
             else
@@ -28,7 +35,7 @@ namespace ChelperPro.Views
             {
                 await Task.Delay(150);
                 MytaginfoList = uih.GetMyTagsByID(Settings.UserId);
-                //SelectSkills.SelectedItems = uih.GetMyTagsByID(Settings.UserId);
+                SelectSkills.SelectedItems = MytaginfoList;
             });
         }
 
@@ -41,16 +48,15 @@ namespace ChelperPro.Views
         {
             InitializeComponent();
 
-            MytaginfoList = uih.GetMyTagsByID(Settings.UserId);
+            //MytaginfoList = uih.GetMyTagsByID(Settings.UserId);
             Alltagslist = th.GetTagList();
-
-            //SelectSkills.ItemsSource = alltagslist;
-            //SelectSkills.SelectedItems = mytaginfoList;
-            //SelectSkills.DisplayMember = "Pcategory";
-            //SelectSkills.Title = "My Skills";
+            SelectSkills.ItemsSource = Alltagslist;
+            //SelectSkills.SelectedItems = MytaginfoList;
+            SelectSkills.DisplayMember = "Pcategory";
+            SelectSkills.Title = "My Skills";
             SelectSkills.UseAutoValueText = true;
-            //SelectSkills.KeepSelectedUntilBack = true;
-            //SelectSkills.SelectedCommand = new Command(RefreshTag);
+            SelectSkills.KeepSelectedUntilBack = true;
+            SelectSkills.SelectedCommand = new Command(RefreshTag);
             BindingContext = this;
         }
 

@@ -44,6 +44,98 @@ namespace ChelperPro.Helpers
             }
         }
 
+        internal bool IsTagExist()
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "select 1 from HelperTag WHERE Uid = @para1 limit 1";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                    object result = cmd.ExecuteScalar();
+                    if (Convert.ToInt32(result) == 1)
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+            return false;
+        }
+
+        internal void CreateHelperTags(IList<TagInfo> selectedItems)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    foreach(var tag in selectedItems)
+                    {
+                        Console.WriteLine("Connecting to MySQL...");
+                        conn.Open();
+                        string sql = "INSERT INTO HelperTag(Uid, TagID) " +
+                            "VALUES(@para1, @para2)";
+                        MySqlCommand cmd = new MySqlCommand(sql, conn);
+                        cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                        cmd.Parameters.AddWithValue("para2", tag.TagID);
+
+                        cmd.ExecuteNonQuery();
+                        Console.WriteLine("Connecting to MySQL success");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();//关闭连接              
+            }
+        }
+
+        internal void CreateHelperSSN(string ssn)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "INSERT INTO HelperInfo(Uid,SSN,Rating,Status," +
+                        "PriceSign,IDFile,Bio,ServiceZip1,ServiceZip2,ServiceZip3) " +
+                        "VALUES(@para2, @para1, 5, 1, 99.99, 'Y8733256', 'What can I do for you?', 00000, 00000, 00000)";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", ssn);
+                    cmd.Parameters.AddWithValue("para2", Settings.UserId);
+
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();//关闭连接              
+            }
+        }
+
         public UserInfo GetUserInfoByID(string userid)
         {
             UserInfo user = new UserInfo();
@@ -53,7 +145,7 @@ namespace ChelperPro.Helpers
             {   //建立连接，打开数据库
                 conn.Open();
                 string sqlstr =
-                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,FENum,SENum,Address FROM UserInfo WHERE Uid = @para1";
+                "SELECT FirstName,LastName,Icon,ChatID,FLanguage,SLanguage,PaymentID,FENum,SENum,Address,Email FROM UserInfo WHERE Uid = @para1";
 
                 MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
                 //通过设置参数的形式给SQL 语句串值
@@ -73,6 +165,7 @@ namespace ChelperPro.Helpers
                     user.FENo = reader.GetString(7);
                     user.SENo = reader.GetString(8);
                     user.Address = reader.GetString(9);
+                    user.Email = reader.GetString(10);
                     user.UserID = userid;
                 }
                 return user;
@@ -88,7 +181,7 @@ namespace ChelperPro.Helpers
             }
         }
 
-        internal void UpdateUserRealNameEmail(string fName, string lName, string email, string planguage)
+        internal void CreateUserInfo(string fName, string lName, string email, string planguage)
         {
             //建立数据库连接
             MySqlConnection conn = new MySqlConnection(connStr);
