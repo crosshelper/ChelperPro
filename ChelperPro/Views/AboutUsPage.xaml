@@ -5,7 +5,8 @@
     <ContentPage.Content>
         <StackLayout Margin="20,25,20,0">
             <Label Text="Crosshelper" FontAttributes="Bold" FontSize="22" HorizontalOptions="Center"></Label>
-            <Label Text="Version beta 1.0" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
+            <Label Text="Version beta 0.2.2" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
+            <Label Text="Early access" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
             <Image Source="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" HeightRequest="80"/>
             <StackLayout>
                 <Label Text="Feedback"></Label>

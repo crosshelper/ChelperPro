@@ -15,7 +15,7 @@ namespace ChelperPro.Views
         {
             //TODO: Stripe Connect code here
 
-            DisplayAlert("Sorry,current unavailable", "It will be suppported later.", "OK");
+            DisplayAlert("Sorry,current unavailable.", "you can feel free to chat and earn money, the online payment option will be available soon.", "OK");
             //Navigation.PushAsync(new TransferBankPage());
         }
 

@@ -14,7 +14,7 @@
             <sv:TextPickerCell Title="Second language" SelectedItem="{Binding SLanguage}" Items="{Binding LanguageItems}" TitleFontSize="18" ValueTextFontSize="16" />
     </sv:Section>
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-             <sv:ButtonCell Title="Save" TitleFontSize="Large"
+             <sv:ButtonCell Title="Save" TitleFontSize="Large" TitleColor="#FF4E18"
              Command="{Binding SectionToggleCommand}" Tapped="Handle_Saved" />
     </sv:Section>
     </sv:SettingsView>

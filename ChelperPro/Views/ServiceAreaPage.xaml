@@ -32,7 +32,7 @@
         </sv:Section>
             
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-             <sv:ButtonCell Title="Save" Tapped="Handle_Save"
+             <sv:ButtonCell Title="Save" Tapped="Handle_Save" TitleColor="#FF4E18"
              Command="{Binding SectionToggleCommand}" />
     </sv:Section>
     

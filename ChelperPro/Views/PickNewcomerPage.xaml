@@ -12,9 +12,8 @@
         <ContentPage.Content>
             <StackLayout Margin="10">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Problem List" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="#555555" FontAttributes="Bold"/>
-                    <!--<Label Text="My Service Zone" FontSize="18" HorizontalOptions="EndAndExpand" VerticalOptions="Center"></Label>
-                    <Switch HorizontalOptions="End" VerticalOptions="Center" Toggled="Handle_Toggled"></Switch>-->
+                    <Label Text="Demand List" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="#555555" FontAttributes="Bold" Margin="0,3,0,3"/>
+                    <Label Text="Pull down to refresh the list" FontSize="13" HorizontalOptions="EndAndExpand" VerticalOptions="Center" TextColor="#555555" ></Label>
                 </StackLayout>
             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                 <ListView ItemsSource="{Binding Topics}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped">

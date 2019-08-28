@@ -12,7 +12,7 @@
         <ContentPage.Content>
             <StackLayout Margin="10">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Problem List" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="#555555" FontAttributes="Bold"/>
+                    <Label Text="Demand List" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="#555555" FontAttributes="Bold" Margin="0,3,0,3"/>
                     <!--<Label Text="My Service Zone" FontSize="18" HorizontalOptions="EndAndExpand" VerticalOptions="Center"></Label>
                     <Switch HorizontalOptions="End" VerticalOptions="Center" Toggled="Handle_Toggled"></Switch>-->
                 </StackLayout>
