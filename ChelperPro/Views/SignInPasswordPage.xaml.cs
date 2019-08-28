@@ -19,6 +19,10 @@ namespace ChelperPro.Views
             {
                 await Task.Delay(150);
                 pwdEntry.Focus();
+                activity.IsEnabled = false;
+                activity.IsRunning = false;
+                activity.IsVisible = false;
+                SignInStatus.Text = "";
             });
         }
         private string Name = "";
@@ -77,6 +81,10 @@ namespace ChelperPro.Views
 
             if (userAccess.VerifyUser(_currentNumber, pwdEntry.Text))
             {
+                activity.IsEnabled = true;
+                activity.IsRunning = true;
+                activity.IsVisible = true;
+                SignInStatus.Text = "Connecting...";
                 kch.SavetoSecureStorage("token_of_" + _currentNumber, pwdEntry.Text);
                 //signInloading.Text = "Sign In Succeeded, Data Loading...";
                 //signInloading.TextColor = Color.FromHex("#555555");
@@ -100,6 +108,7 @@ namespace ChelperPro.Views
             }
             else
             {
+                await DisplayAlert("Notice", "Please enter your current password and make sure it's least 8 characters. ", "OK");
                 Settings.IsLogin = false;
             }
         }
