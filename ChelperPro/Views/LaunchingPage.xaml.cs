@@ -5,14 +5,14 @@ using Xamarin.Forms;
 
 namespace ChelperPro.Views
 {
-    public partial class LaunchPage : ContentPage
+    public partial class LaunchingPage : ContentPage
     {
         void Handle_Yes(object sender, System.EventArgs e)
         {
-            Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage( new SignInPage()));
+            Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(new SignInPage()));
         }
 
-        public LaunchPage()
+        public LaunchingPage()
         {
             InitializeComponent();
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);

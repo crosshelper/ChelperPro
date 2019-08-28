@@ -28,9 +28,9 @@
 	<key>XSAppIconAssets</key>
 	<string>Asset.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleVersion</key>
-	<string>0.2.1</string>
+	<string>0.2.2</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.2.1</string>
+	<string>0.2.2</string>
 	<key>CFBundleName</key>
 	<string>Cycbis Pro</string>
 	<key>NSCalendarsUsageDescription</key>

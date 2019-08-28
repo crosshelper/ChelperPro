@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
+using WebSocketSharp;
 
 namespace ChelperPro.Views
 {
@@ -76,7 +77,7 @@ namespace ChelperPro.Views
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
                 await DisplayAlert("No Internet", "Try again later!", "OK");
-                Application.Current.MainPage = new LaunchPage();
+                Application.Current.MainPage = new LaunchingPage();
             }
 
             if (Username != string.Empty)
@@ -90,21 +91,33 @@ namespace ChelperPro.Views
                     Settings.UserId = userAccess.CurrentUid.ToString();
                     usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                     Settings.ChatID = usr.ChatID;
-                    Name = usr.FirstName + " " + usr.LastName;
-                    ProfileIcon = usr.Icon;
-                    ChatServerConnect();
-                    await Task.Delay(3000);
-                    //await Navigation.PushModalAsync(new MyTabbedPage());
-                    Application.Current.MainPage = new MainPage();
+                    var permission = userAccess.GetPermission(Username);
+                    var uih = new UserInfoHelper();
+                    if (!uih.IsTagExist() || !userAccess.IsSSNExist() || permission == "0" || usr.FirstName.IsNullOrEmpty() || usr.LastName.IsNullOrEmpty() || usr.FLanguage.IsNullOrEmpty())
+                    {
+                        userAccess.SetPermission();
+                        //Application.Current.MainPage = new LaunchPage();
+                        await Navigation.PushModalAsync(new NavigationPage(new SignUpInfoPage(Username, pwd.Result)));
+                        //return;
+                    }
+                    else
+                    {
+                        Name = usr.FirstName + " " + usr.LastName;
+                        ProfileIcon = usr.Icon;
+                        ChatServerConnect();
+                        await Task.Delay(3000);
+                        //await Navigation.PushModalAsync(new MyTabbedPage());
+                        Application.Current.MainPage = new MainPage();
+                    }
                 }
                 else
                 {
-                    await Navigation.PushModalAsync(new LaunchPage());
+                    await Navigation.PushModalAsync(new LaunchingPage());
                 }
             }
             else
             {
-                await Navigation.PushModalAsync(new LaunchPage());
+                await Navigation.PushModalAsync(new LaunchingPage());
             }
         }
 

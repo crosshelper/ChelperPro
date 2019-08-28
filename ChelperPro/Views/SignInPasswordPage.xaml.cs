@@ -83,8 +83,9 @@ namespace ChelperPro.Views
                 Settings.UserId = userAccess.CurrentUid.ToString();
                 usr = userAccess.GetUserInfo(userAccess.CurrentUid);
                 var permission = userAccess.GetPermission(_currentNumber);
+                var uih = new UserInfoHelper();
                 Settings.ChatID = usr.ChatID;
-                if (!userAccess.IsSSNExist() || permission == "0" || usr.FirstName.IsNullOrEmpty() || usr.LastName.IsNullOrEmpty() || usr.FLanguage.IsNullOrEmpty())
+                if (!uih.IsTagExist()||!userAccess.IsSSNExist() || permission == "0" || usr.FirstName.IsNullOrEmpty() || usr.LastName.IsNullOrEmpty() || usr.FLanguage.IsNullOrEmpty())
                 {
                     userAccess.SetPermission();
                     await Navigation.PushAsync(new SignUpInfoPage(_currentNumber, pwdEntry.Text));

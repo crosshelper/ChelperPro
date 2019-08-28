@@ -8,11 +8,11 @@
         <ScrollView>
         <StackLayout  Margin="15,20,15,10">
             <Label Text="What are your service type?" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
-            <Picker x:Name="FSkillType" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Required)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
+            <Picker x:Name="FSkillType" ItemDisplayBinding="{Binding Pcategory}" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Required)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
             </Picker>
-            <Picker x:Name="SSkillType" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Option)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
+            <Picker x:Name="SSkillType" ItemDisplayBinding="{Binding Pcategory}" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Option)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
             </Picker>
-            <Picker x:Name="TSkillType" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Option)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
+            <Picker x:Name="TSkillType" ItemDisplayBinding="{Binding Pcategory}" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Option)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
             </Picker>
             <Label Text="Not on the List？" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
             <Entry x:Name="AddSkill" Placeholder="Add One (Option)"
