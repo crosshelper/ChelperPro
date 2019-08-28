@@ -34,7 +34,7 @@ namespace ChelperPro.Views
         {
             TopicInfoLabel topicInfoLabel = e.Item as TopicInfoLabel;
             ((ListView)sender).SelectedItem = null;
-            Navigation.PushModalAsync(new NavigationPage(new NewcomerProblemPage(topicInfoLabel)));
+            Navigation.PushAsync(new NewcomerProblemPage(topicInfoLabel));
         }
 
         void Handle_Toggled(object sender, ToggledEventArgs e)

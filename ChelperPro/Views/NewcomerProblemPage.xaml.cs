@@ -10,15 +10,6 @@ namespace ChelperPro.Views
 {
     public partial class NewcomerProblemPage : ContentPage
     {
-        //Top Ring&Menu button
-        void NHPPBackButton(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Click me again!";
-        }
-        void NHPPCancelButton(object sender, EventArgs e)
-        {
-            (sender as Button).Text = "Click me again!";
-        }
         UserInfoHelper uih = new UserInfoHelper();
         //Confirm
         void NHPPConfirm(object sender, EventArgs e)
@@ -36,11 +27,6 @@ namespace ChelperPro.Views
                 ConnectToChannel(user, users);
             }
         }
-        void Handle_Canceled(object sender, System.EventArgs e)
-        {
-            Navigation.PopModalAsync();
-        }
-
         TopicInfoLabel _currentnewcomerlabel = new TopicInfoLabel();
         public string Name { get; set; }
         public string Language { get; set; }
@@ -75,7 +61,7 @@ namespace ChelperPro.Views
             });
             await Task.Delay(3000);
             IsBusy = false;
-            await Navigation.PushAsync(new ChatTestPage(user, group));
+            await Navigation.PushModalAsync(new NavigationPage(new ChatTestPage(user, group)));
         }
 
     }
