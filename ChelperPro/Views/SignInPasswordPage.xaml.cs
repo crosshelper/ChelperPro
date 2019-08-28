@@ -86,7 +86,7 @@ namespace ChelperPro.Views
                 Settings.ChatID = usr.ChatID;
                 if (!userAccess.IsSSNExist() || permission == "0" || usr.FirstName.IsNullOrEmpty() || usr.LastName.IsNullOrEmpty() || usr.FLanguage.IsNullOrEmpty())
                 {
-                    userAccess.SetPermission(_currentNumber);
+                    userAccess.SetPermission();
                     await Navigation.PushAsync(new SignUpInfoPage(_currentNumber, pwdEntry.Text));
                     return;
                 }   

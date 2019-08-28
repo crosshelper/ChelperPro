@@ -99,7 +99,7 @@ namespace ChelperPro.Helpers
             }
         }
 
-        internal void SetPermission(string currentNumber)
+        internal void SetPermission()
         {
             MySqlConnection conn = new MySqlConnection(connStr);
             try
