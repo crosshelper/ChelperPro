@@ -36,7 +36,7 @@
                                             <x:String>Vietnamese</x:String>
                                         </x:Array>
                                     </Picker.ItemsSource>
-                                </Picker>
+                            </Picker>
                             <Label Text="Second language" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
                             <Picker x:Name="SlanPicker" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select (Option)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
                                 <Picker.ItemsSource>
