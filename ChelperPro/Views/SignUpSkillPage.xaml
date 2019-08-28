@@ -24,15 +24,18 @@
                 <Entry x:Name="FArea" Placeholder="Priority area (Required)"
                         FontSize="16"
                         Keyboard="Telephone"
+                        MaxLength="5"
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="45"/>
                 <Entry x:Name="SArea" Placeholder="Addition area (Option)"
                         FontSize="16"
+                        MaxLength="5"
                         Keyboard="Telephone"
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="45"/>
                     <Entry x:Name="STArea" Placeholder="Addition area (Option)"
                         FontSize="16"
+                        MaxLength="5"
                         Keyboard="Telephone"
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="45"/>
