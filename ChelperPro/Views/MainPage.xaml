@@ -4,7 +4,7 @@
             xmlns:views="clr-namespace:ChelperPro.Views" 
             x:Class="ChelperPro.Views.MainPage">
     <TabbedPage.Children>
-         <NavigationPage Title="Help">
+         <NavigationPage Title="Real Word Help">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_help.png" />
@@ -12,6 +12,17 @@
             </NavigationPage.Icon>
             <x:Arguments>
                 <views:PickNewcomerPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Digital Help">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_help.png" />
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:PickDigitalPage />
             </x:Arguments>
         </NavigationPage>
        
