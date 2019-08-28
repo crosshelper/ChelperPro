@@ -107,6 +107,9 @@
     <BundleResource Include="Resources\tab_help.png" />
     <BundleResource Include="Resources\CH LOGO BIG.jpg" />
     <BundleResource Include="Resources\CH logo W noW.png" />
+    <BundleResource Include="Resources\tab_Dhelp.png" />
+    <BundleResource Include="Resources\tab_Dhelp%402x.png" />
+    <BundleResource Include="Resources\tab_Dhelp%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

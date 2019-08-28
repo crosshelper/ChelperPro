@@ -18,7 +18,7 @@
         <NavigationPage Title="Digital Help">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_help.png" />
+                    <On Platform="iOS" Value="tab_Dhelp.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
