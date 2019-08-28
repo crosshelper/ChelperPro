@@ -6,7 +6,7 @@
     x:Class="ChelperPro.Views.PickDigitalPage">
      <NavigationPage.TitleView>
         <Grid>
-            <Label Text="Help other" Grid.Row="0" TextColor="White" FontSize="17" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="Digital Help" Grid.Row="0" TextColor="White" FontSize="17" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Grid>
     </NavigationPage.TitleView>
         <ContentPage.Content>
