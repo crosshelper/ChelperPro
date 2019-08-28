@@ -25,8 +25,9 @@ namespace ChelperPro.Views
         public PickDigitalPage()
         {
             InitializeComponent();
-            var _currentZipCodeList = uih.GetMyServiceArea();
-            Topics = tih.GetMyTopicList(_currentZipCodeList); //_currentZipCode);
+            //var _currentZipCodeList = uih.GetMyServiceArea();
+            Topics = tih.GetDigitalTopicList();//
+            //tih.GetMyTopicList(_currentZipCodeList); //_currentZipCode);
             BindingContext = this;
         }
         void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)

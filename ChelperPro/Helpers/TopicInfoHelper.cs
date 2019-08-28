@@ -9,6 +9,7 @@ namespace ChelperPro.Helpers
     public class TopicInfoHelper
     {
         private readonly List<TopicInfo> topiclist = new List<TopicInfo>();
+        private readonly List<TopicInfo> newtopiclist = new List<TopicInfo>();
         private readonly List<TopicInfoLabel> topiclabellist = new List<TopicInfoLabel>();
         private readonly UserInfoHelper uih= new UserInfoHelper();
 
@@ -16,11 +17,24 @@ namespace ChelperPro.Helpers
 
         public List<TopicInfoLabel> GetMyTopicList(List<string> ziplist)
         {
-            foreach(string zip in ziplist)
+            var tags = uih.GetMyTagsByID(Settings.UserId);
+            var uinfo = uih.GetUserInfoByID(Settings.UserId);
+            foreach (string zip in ziplist)
             {
                 GetTopicListByZipCode(zip);
             }
-            TopicInfoConvertor(topiclist);
+            foreach (var topic in topiclist)
+            {
+                if (uinfo.FLanguage == topic.Language || uinfo.SLanguage == topic.Language)
+                {
+                    if (tags[0].TagID == topic.TagID || tags[1].TagID == topic.TagID || tags[2].TagID == topic.TagID)
+                    {
+                        newtopiclist.Add(topic);
+                    }
+                }
+            }
+
+            TopicInfoConvertor(newtopiclist);
             return topiclabellist;
         }
 
@@ -44,6 +58,26 @@ namespace ChelperPro.Helpers
                 };
                 topiclabellist.Add(tmp);
             }
+        }
+
+        internal List<TopicInfoLabel> GetDigitalTopicList()
+        {
+            var tags = uih.GetMyTagsByID(Settings.UserId);
+            var uinfo = uih.GetUserInfoByID(Settings.UserId);
+            
+            GetTopicListByZipCode("00000");
+            foreach (var topic in topiclist)
+            {
+                if (uinfo.FLanguage == topic.Language || uinfo.SLanguage == topic.Language)
+                {
+                    if (tags[0].TagID == topic.TagID || tags[1].TagID == topic.TagID || tags[2].TagID == topic.TagID)
+                    {
+                        newtopiclist.Add(topic);
+                    }
+                }
+            }
+            TopicInfoConvertor(newtopiclist);
+            return topiclabellist;
         }
 
         private string StatusTextConvertor(int status)
