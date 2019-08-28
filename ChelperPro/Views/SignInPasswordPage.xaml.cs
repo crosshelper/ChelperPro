@@ -85,7 +85,11 @@ namespace ChelperPro.Views
                 var permission = userAccess.GetPermission(_currentNumber);
                 Settings.ChatID = usr.ChatID;
                 if (!userAccess.IsSSNExist() || permission == "0" || usr.FirstName.IsNullOrEmpty() || usr.LastName.IsNullOrEmpty() || usr.FLanguage.IsNullOrEmpty())
+                {
+                    userAccess.SetPermission(_currentNumber);
                     await Navigation.PushAsync(new SignUpInfoPage(_currentNumber, pwdEntry.Text));
+                    return;
+                }   
                 Name = usr.FirstName + " " + usr.LastName;
                 ProfileIcon = usr.Icon;
                 ChatServerConnect();

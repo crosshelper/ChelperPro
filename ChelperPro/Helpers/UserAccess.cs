@@ -99,6 +99,35 @@ namespace ChelperPro.Helpers
             }
         }
 
+        internal void SetPermission(string currentNumber)
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "UPDATE UserMaster SET " +
+                                 "Permission = 1" +
+                                 " WHERE Uid = @para1";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", currentUid);
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Connecting to MySQL success");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Connection failed");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         internal bool IsSSNExist()
         {
             MySqlConnection conn = new MySqlConnection(connStr);

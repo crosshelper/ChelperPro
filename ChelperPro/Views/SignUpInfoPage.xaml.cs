@@ -59,30 +59,11 @@ namespace ChelperPro.Views
                 LName = LNameEntry.Text;
                 Email = EmailEntry.Text;
                 PLanguage = FlanPicker.SelectedItem.ToString();
-                //Address = AddressEntry.Text + cityEntry.Text + stateEntry.Text;
-                //ZipCode = zipEntry.Text;
-                //HelperSSN = SocialEntry.Text;
-
                 if (Email.IsNullOrEmpty())
                     Email = "cycbis@cycbis.com";
                 uih.CreateUserInfo(FName, LName, Email, PLanguage);
                 //uih.UpdateHelperSSN(HelperSSN);
                 uAccess.SetChatID();
-                //uAccess.UpdateEmailNo(Email, ContactNo);
-                //Settings.IsLogin = uAccess.VerifyUser(Uname, Pwd);
-                //DisplayAlert("Congrats!", "You Have Done Sign Up, Sign In right now", "OK");
-                //
-                //kch.SavetoSecureStorage("token_of_" + _currentNo, _currentPassword);
-                //signInloading.Text = "Sign In Succeeded, Data Loading...";
-                //signInloading.TextColor = Color.FromHex("#555555");
-                //Settings.UserId = uAccess.CurrentUid.ToString();
-                //usr = uAccess.GetUserInfo(Convert.ToInt32(Settings.UserId));// uAccess.CurrentUid);
-                //Settings.ChatID = usr.ChatID;
-                //Name = usr.FirstName + " " + usr.LastName;
-                //ProfileIcon = usr.Icon;
-                //ChatServerConnect();
-                //await Task.Delay(3000);
-                //Settings.IsLogin = true;
                 await Navigation.PushAsync(new SignUpSkillPage());
             }
         }
