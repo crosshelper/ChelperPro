@@ -31,6 +31,7 @@
                                             <x:String>Japanese</x:String>
                                             <x:String>Korean</x:String>
                                             <x:String>Portuguese</x:String>
+                                            <x:String>Thai</x:String>
                                             <x:String>Spanish</x:String>
                                             <x:String>Vietnamese</x:String>
                                         </x:Array>
@@ -47,6 +48,7 @@
                                         <x:String>Japanese</x:String>
                                         <x:String>Korean</x:String>
                                         <x:String>Portuguese</x:String>
+                                        <x:String>Thai</x:String>
                                         <x:String>Spanish</x:String>
                                         <x:String>Vietnamese</x:String>
                                     </x:Array>

@@ -40,12 +40,14 @@ namespace ChelperPro.Views
             {
                 "Chinese",
                 "English",
-                "Spanish",
-                "Korean",
-                "Japanese",
                 "French",
                 "German",
-                "Thai"
+                "Japanese",
+                "Korean",
+                "Portuguese",
+                "Spanish",
+                "Thai",
+                "Vietnamese"
             };
             LanguageItems = list;
 
