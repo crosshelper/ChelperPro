@@ -32,7 +32,7 @@
                                             <x:String>Korean</x:String>
                                             <x:String>Portuguese</x:String>
                                             <x:String>Spanish</x:String>
-                                            <x:String>Vietnamance</x:String>
+                                            <x:String>Vietnamese</x:String>
                                         </x:Array>
                                     </Picker.ItemsSource>
                                 </Picker>
@@ -48,7 +48,7 @@
                                         <x:String>Korean</x:String>
                                         <x:String>Portuguese</x:String>
                                         <x:String>Spanish</x:String>
-                                        <x:String>Vietnamance</x:String>
+                                        <x:String>Vietnamese</x:String>
                                     </x:Array>
                                 </Picker.ItemsSource>
                             </Picker>
