@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
+using WebSocketSharp;
 using Xamarin.Forms;
 
 namespace ChelperPro.Views
@@ -31,9 +32,32 @@ namespace ChelperPro.Views
 
         void Handle_Next(object sender, EventArgs e)
         {
-            InsertTags.Add((TagInfo)FSkillType.SelectedItem);
-            InsertTags.Add((TagInfo)SSkillType.SelectedItem);
-            InsertTags.Add((TagInfo)TSkillType.SelectedItem);
+            var temp = new TagInfo() { TagID = 99999, ImageUrl = "temp", Pcategory = "General" };
+            if (FSkillType.SelectedItem.ToString().IsNullOrEmpty())
+            {
+                DisplayAlert("Opps!","You should pick at least one skill","Ok");
+                return;
+            }
+            else
+            {
+                InsertTags.Add((TagInfo)FSkillType.SelectedItem);
+                if (SSkillType.SelectedItem.ToString().IsNullOrEmpty())
+                {
+                    InsertTags.Add(temp);
+                }
+                else
+                {
+                    InsertTags.Add((TagInfo)SSkillType.SelectedItem);
+                    if (TSkillType.SelectedItem.ToString().IsNullOrEmpty())
+                    {
+                        InsertTags.Add(temp);
+                    }
+                    else
+                    {
+                        InsertTags.Add((TagInfo)TSkillType.SelectedItem);
+                    }
+                }
+            }
             uih.UpdateHelperTags(InsertTags);
             if (!string.IsNullOrEmpty(ZipCode1) && !string.IsNullOrEmpty(ZipCode2) && !string.IsNullOrEmpty(ZipCode3))
                 ush.UpdateZipCode(ZipCode1, ZipCode2, ZipCode3);
