@@ -27,6 +27,15 @@ namespace ChelperPro.Views
             {
                 await Task.Delay(150);
                 FNameEntry.Focus();
+                if (uih.UInfoIDIsNullOrEmpty())
+                {
+                    var uinfo = uih.GetUserInfoByID(Settings.UserId);
+                    FNameEntry.Text=uinfo.FirstName;
+                    LNameEntry.Text=uinfo.LastName;
+                    EmailEntry.Text=uinfo.Email;
+                    FlanPicker.SelectedItem=uinfo.FLanguage;
+                    SlanPicker.SelectedItem = uinfo.SLanguage;
+                }
             });
         }
 
@@ -55,16 +64,23 @@ namespace ChelperPro.Views
             }
             else
             {
-                FName = FNameEntry.Text;
-                LName = LNameEntry.Text;
-                Email = EmailEntry.Text;
-                PLanguage = FlanPicker.SelectedItem.ToString();
-                if (Email.IsNullOrEmpty())
-                    Email = "cycbis@cycbis.com";
-                uih.CreateUserInfo(FName, LName, Email, PLanguage);
-                //uih.UpdateHelperSSN(HelperSSN);
-                uAccess.SetChatID();
-                await Navigation.PushAsync(new SignUpSkillPage());
+                if (!uih.UInfoIDIsNullOrEmpty())
+                {
+                    await Navigation.PushAsync(new SignUpAddPage());
+                }
+                else
+                {
+                    FName = FNameEntry.Text;
+                    LName = LNameEntry.Text;
+                    Email = EmailEntry.Text;
+                    PLanguage = FlanPicker.SelectedItem.ToString();
+                    if (Email.IsNullOrEmpty())
+                        Email = "cycbis@cycbis.com";
+                    uih.CreateUserInfo(FName, LName, Email, PLanguage);
+                    //uih.UpdateHelperSSN(HelperSSN);
+                    uAccess.SetChatID();
+                    await Navigation.PushAsync(new SignUpAddPage());
+                }
             }
         }
     }

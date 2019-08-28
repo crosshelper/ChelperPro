@@ -72,6 +72,34 @@ namespace ChelperPro.Helpers
             return false;
         }
 
+        internal bool UInfoIDIsNullOrEmpty()
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    Console.WriteLine("Connecting to MySQL...");
+                    conn.Open();
+                    string sql = "select 1 from UserInfo WHERE Uid = @para1 limit 1";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                    object result = cmd.ExecuteScalar();
+                    if (Convert.ToInt32(result) == 1)
+                        return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+            return true;
+        }
+
         internal void CreateHelperTags(IList<TagInfo> selectedItems)
         {
             //建立数据库连接

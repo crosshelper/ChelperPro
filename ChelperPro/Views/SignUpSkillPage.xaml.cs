@@ -37,7 +37,7 @@ namespace ChelperPro.Views
             uih.UpdateHelperTags(InsertTags);
             if (!string.IsNullOrEmpty(ZipCode1) && !string.IsNullOrEmpty(ZipCode2) && !string.IsNullOrEmpty(ZipCode3))
                 ush.UpdateZipCode(ZipCode1, ZipCode2, ZipCode3);
-            Navigation.PushAsync(new SignUpAddPage());
+            Navigation.PopToRootAsync();
         }
         TagsHelper th = new TagsHelper();
         UserInfoHelper uih = new UserInfoHelper();
