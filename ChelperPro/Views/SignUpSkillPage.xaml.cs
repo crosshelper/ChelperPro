@@ -33,7 +33,7 @@ namespace ChelperPro.Views
         void Handle_Next(object sender, EventArgs e)
         {
             var temp = new TagInfo() { TagID = 99999, ImageUrl = "temp", Pcategory = "General" };
-            if (FSkillType.SelectedItem.ToString().IsNullOrEmpty())
+            if (FSkillType.SelectedItem == null)
             {
                 DisplayAlert("Opps!","You should pick at least one skill","Ok");
                 return;
@@ -41,14 +41,14 @@ namespace ChelperPro.Views
             else
             {
                 InsertTags.Add((TagInfo)FSkillType.SelectedItem);
-                if (SSkillType.SelectedItem.ToString().IsNullOrEmpty())
+                if (SSkillType.SelectedItem == null)
                 {
                     InsertTags.Add(temp);
                 }
                 else
                 {
                     InsertTags.Add((TagInfo)SSkillType.SelectedItem);
-                    if (TSkillType.SelectedItem.ToString().IsNullOrEmpty())
+                    if (TSkillType.SelectedItem == null)
                     {
                         InsertTags.Add(temp);
                     }
