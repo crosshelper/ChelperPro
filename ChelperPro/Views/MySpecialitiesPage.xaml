@@ -27,7 +27,7 @@
                              Title="$"
                         ValueText="" 
                         Placeholder="15" 
-                        MaxLength="5"
+                        MaxLength="7"
                         TitleFontSize="Medium"
                         Keyboard="Numeric"
                         ValueTextFontSize="Medium"
