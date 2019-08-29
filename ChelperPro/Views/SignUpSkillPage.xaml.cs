@@ -44,6 +44,14 @@ namespace ChelperPro.Views
                 if (SSkillType.SelectedItem == null)
                 {
                     InsertTags.Add(temp);
+                    if (TSkillType.SelectedItem == null)
+                    {
+                        InsertTags.Add(temp);
+                    }
+                    else
+                    {
+                        InsertTags.Add((TagInfo)TSkillType.SelectedItem);
+                    }
                 }
                 else
                 {
