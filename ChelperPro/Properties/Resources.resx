@@ -126,4 +126,13 @@
   <data name="S3_BUCKETNAME" xml:space="preserve">
     <value>imagetest123bibi</value>
   </data>
+  <data name="TWILIO_KEY" xml:space="preserve">
+    <value>88bde17df05d1be8d26239c2915f0960</value>
+  </data>
+  <data name="TWILIO_SERVICEID" xml:space="preserve">
+    <value>VA0f7950bc53a8d465b01ecff8f8c96f1c</value>
+  </data>
+  <data name="TWILIO_TOKEN" xml:space="preserve">
+    <value>AC86ac48ee4086ad028d5c75b60bc28d12</value>
+  </data>
 </root>

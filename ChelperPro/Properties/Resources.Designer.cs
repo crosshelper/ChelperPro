@@ -64,5 +64,23 @@ namespace ChelperPro.Properties {
                 return ResourceManager.GetString("S3_BUCKETNAME", resourceCulture);
             }
         }
+        
+        internal static string TWILIO_KEY {
+            get {
+                return ResourceManager.GetString("TWILIO_KEY", resourceCulture);
+            }
+        }
+        
+        internal static string TWILIO_SERVICEID {
+            get {
+                return ResourceManager.GetString("TWILIO_SERVICEID", resourceCulture);
+            }
+        }
+        
+        internal static string TWILIO_TOKEN {
+            get {
+                return ResourceManager.GetString("TWILIO_TOKEN", resourceCulture);
+            }
+        }
     }
 }

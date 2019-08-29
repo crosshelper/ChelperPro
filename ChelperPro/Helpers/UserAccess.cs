@@ -20,15 +20,13 @@ namespace ChelperPro.Helpers
 
         public void TwilioVerifyService(string tempNumber)
         {
-            const string accountSid = "AC86ac48ee4086ad028d5c75b60bc28d12";
-            const string authToken = "88bde17df05d1be8d26239c2915f0960";
+            string accountSid = ChelperPro.Properties.Resources.TWILIO_TOKEN;
+            string authToken = ChelperPro.Properties.Resources.TWILIO_KEY;
             TwilioClient.Init(accountSid, authToken);
-            //var service = ServiceResource.Create(friendlyName: "My First Verify Service");
-            //Console.WriteLine(service.Sid);
             var verification = VerificationResource.Create(
-                to: tempNumber, //"+14084641309",
+                to: tempNumber,
                 channel: "sms",
-                pathServiceSid: "VA0f7950bc53a8d465b01ecff8f8c96f1c"
+                pathServiceSid: ChelperPro.Properties.Resources.TWILIO_SERVICEID
             );
 
             Console.WriteLine(verification.Status);
@@ -323,7 +321,7 @@ namespace ChelperPro.Helpers
                                  " WHERE Uid = @para2";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", "cycbis_" + Settings.UserId);
-                    cmd.Parameters.AddWithValue("para2", currentUid);
+                    cmd.Parameters.AddWithValue("para2", Settings.UserId);
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Connecting to MySQL success");
                 }
