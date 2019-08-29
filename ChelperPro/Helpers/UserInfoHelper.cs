@@ -10,6 +10,33 @@ namespace ChelperPro.Helpers
     {
         private readonly string connStr = "server=chdb.cakl0xweapqd.us-west-1.rds.amazonaws.com;port=3306;database=chdb;user=chroot;password=ch123456;charset=utf8";
 
+        internal void UpdateHelperPriceSign(string price)
+        {
+            //建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                    "UPDATE HelperInfo SET " +
+                    "PriceSign = @para2" +
+                    " WHERE Uid = @para1";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                cmd.Parameters.AddWithValue("para2", price);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
+        }
+
         internal string GetBioByID(string userId)
         {
             string ubio = "";
@@ -70,6 +97,40 @@ namespace ChelperPro.Helpers
                 conn.Close();   //关闭连接              
             }
             return false;
+        }
+
+        internal string GetHelperPriceSign()
+        {
+            var price = "";
+            //并没有建立数据库连接
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr =
+                "SELECT PriceSign FROM HelperInfo WHERE Uid = @para1";
+
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", Settings.UserId);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    price = reader.GetString(0);
+                }
+                return price;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                conn.Close();   //关闭连接              
+            }
         }
 
         internal bool UInfoIDIsNullOrEmpty()
@@ -145,7 +206,7 @@ namespace ChelperPro.Helpers
                     conn.Open();
                     string sql = "INSERT INTO HelperInfo(Uid,SSN,Rating,Status," +
                         "PriceSign,IDFile,Bio,ServiceZip1,ServiceZip2,ServiceZip3) " +
-                        "VALUES(@para2, @para1, 5, 1, 99.99, 'Y8733256', 'What can I do for you?', 00000, 00000, 00000)";
+                        "VALUES(@para2, @para1, 5, 1, 10.00, 'Y8733256', 'What can I do for you?', 00000, 00000, 00000)";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", ssn);
                     cmd.Parameters.AddWithValue("para2", Settings.UserId);

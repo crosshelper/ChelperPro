@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:ChelperPro.Models;" 
+             
              x:Class="ChelperPro.Views.PickNewcomerPage"
              >
     <NavigationPage.TitleView>
@@ -16,7 +16,11 @@
                     <Label Text="Pull down to refresh the list" FontSize="13" HorizontalOptions="EndAndExpand" VerticalOptions="Center" TextColor="#555555" ></Label>
                 </StackLayout>
             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
-                <ListView ItemsSource="{Binding Topics}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped">
+                <ListView x:Name="MyListView" ItemsSource="{Binding Topics}" HasUnevenRows="true" ItemTapped="Handle_ItemTapped"
+                          IsPullToRefreshEnabled="True"
+                          RefreshCommand="{Binding RefreshCommand}"
+                          IsRefreshing="{Binding IsRefreshing}"
+                          CachingStrategy="RecycleElement">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="PHPPickNewcomeButton">

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Input;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
 using ChelperPro.ViewModels;
@@ -31,5 +32,6 @@ namespace ChelperPro.Views
             ((ListView)sender).SelectedItem = null;
             vm.ConnectToChannel(user, users);
         }
+        
     }
 }

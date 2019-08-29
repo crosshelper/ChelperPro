@@ -23,7 +23,8 @@
 
                     <sv:Section Title="Starting Price" FooterText="Set up your starting price to display on customer searching page.">
                          <sv:EntryCell 
-                        Title="$"
+                             x:Name="PriceEntry"
+                             Title="$"
                         ValueText="" 
                         Placeholder="15" 
                         MaxLength="5"

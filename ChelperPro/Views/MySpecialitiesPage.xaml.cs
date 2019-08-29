@@ -10,6 +10,8 @@ namespace ChelperPro.Views
     {
         void Handle_Save(object sender, System.EventArgs e)
         {
+            //updateprice
+            uih.UpdateHelperPriceSign(PriceEntry.ValueText);
             if(SelectSkills.SelectedItems.Count == 3)
             {
                 if (uih.IsTagExist())
@@ -36,13 +38,15 @@ namespace ChelperPro.Views
                 await Task.Delay(150);
                 MytaginfoList = uih.GetMyTagsByID(Settings.UserId);
                 SelectSkills.SelectedItems = MytaginfoList;
+                PriceEntry.ValueText = uih.GetHelperPriceSign();
             });
         }
 
-        UserInfoHelper uih = new UserInfoHelper();
-        TagsHelper th = new TagsHelper();
+        readonly UserInfoHelper uih = new UserInfoHelper();
+        readonly TagsHelper th = new TagsHelper();
         public List<TagInfo> Alltagslist = new List<TagInfo>();
         public List<TagInfo> MytaginfoList = new List<TagInfo>();
+        
 
         public MySpecialitiesPage()
         {

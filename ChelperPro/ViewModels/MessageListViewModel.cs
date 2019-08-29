@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
 using ChelperPro.Views;
@@ -54,6 +55,35 @@ namespace ChelperPro.ViewModels
                     }
                 }
             });
+        }
+
+        private bool _isRefreshing = false;
+        public bool IsRefreshing
+        {
+            get { return _isRefreshing; }
+            set
+            {
+                _isRefreshing = value;
+                OnPropertyChanged(nameof(IsRefreshing));
+            }
+        }
+
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    IsRefreshing = true;
+                    RefreshData();
+                    IsRefreshing = false;
+                });
+            }
+        }
+
+        private void RefreshData()
+        {
+            DataInit();
         }
 
         private DateTime MilsecToDatetime(long milsec)
