@@ -59,6 +59,8 @@ namespace ChelperPro.Views
             InitializeComponent();
             _currentUser = uih.GetUserInfoByID(Settings.UserId);
             UserCell.Title = _currentUser.FirstName + " " + _currentUser.LastName;
+            var uac = new UserAccess();
+            UserCell.Description = uac.GetNobyID(_currentUser.UserID);
             UserCell.IconSource = _currentUser.Icon;
         }
     }

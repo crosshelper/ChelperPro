@@ -66,6 +66,35 @@ namespace ChelperPro.Helpers
             }
         }
 
+        internal string GetNobyID(string userID)
+        {
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {   //建立连接，打开数据库
+                conn.Open();
+                string sqlstr = "select * from UserMaster where Uid = @para1";// and Pwd = @para2";
+                MySqlCommand cmd = new MySqlCommand(sqlstr, conn);
+                //通过设置参数的形式给SQL 语句串值
+                cmd.Parameters.AddWithValue("para1", uid);
+                //cmd.Parameters.AddWithValue("para2", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    return reader.GetString(1);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();   //关闭连接
+            }
+            return "";
+        }
+
         internal void UpdateEmailNo(string email, string contactNo)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
