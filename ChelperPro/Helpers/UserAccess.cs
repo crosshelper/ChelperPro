@@ -322,7 +322,7 @@ namespace ChelperPro.Helpers
                                  "ChatID = @para1" +
                                  " WHERE Uid = @para2";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("para1", "cycbis_" + currentUid);
+                    cmd.Parameters.AddWithValue("para1", "cycbis_" + Settings.UserId);
                     cmd.Parameters.AddWithValue("para2", currentUid);
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Connecting to MySQL success");
