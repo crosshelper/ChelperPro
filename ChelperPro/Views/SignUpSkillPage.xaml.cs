@@ -69,6 +69,8 @@ namespace ChelperPro.Views
             uih.UpdateHelperTags(InsertTags);
             if (!string.IsNullOrEmpty(ZipCode1) && !string.IsNullOrEmpty(ZipCode2) && !string.IsNullOrEmpty(ZipCode3))
                 ush.UpdateZipCode(ZipCode1, ZipCode2, ZipCode3);
+
+            DisplayAlert("Congratulations!", "It's time to launch.", "OK");
             Application.Current.MainPage = new LaunchingPage();
             //Navigation.PopToRootAsync();
         }

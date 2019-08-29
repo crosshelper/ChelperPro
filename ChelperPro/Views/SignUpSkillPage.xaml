@@ -50,7 +50,7 @@
 	            </Label>
                     <StackLayout VerticalOptions="StartAndExpand">
                             <Button  
-                                    Text="Next"
+                                    Text="Launch!"
                                     TextColor="White"
                                     FontSize="Medium"
                                     FontAttributes="Bold"

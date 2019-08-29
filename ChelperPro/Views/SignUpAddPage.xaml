@@ -30,7 +30,7 @@
 	            </Label>
                 <StackLayout VerticalOptions="StartAndExpand">
                             <Button  
-                                    Text="Create a account"
+                                    Text="Next"
                                     TextColor="White"
                                     FontSize="Medium"
                                     FontAttributes="Bold"
