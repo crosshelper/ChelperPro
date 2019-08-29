@@ -19,10 +19,7 @@ namespace ChelperPro.Views
             {
                 await Task.Delay(150);
                 pwdEntry.Focus();
-                activity.IsEnabled = false;
-                activity.IsRunning = false;
-                activity.IsVisible = false;
-                SignInStatus.Text = "";
+                
             });
         }
         private string Name = "";
@@ -74,7 +71,7 @@ namespace ChelperPro.Views
                 await DisplayAlert("Notice", "Please enter your password and make sure it's least 8 characters. ", "OK");
                 return;
             }
-            await Task.Delay(2000);
+            //await Task.Delay(2000);
 
             RememberMe = true;
             Username = _currentNumber;

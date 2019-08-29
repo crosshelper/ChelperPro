@@ -8,11 +8,6 @@ namespace ChelperPro.Views
 {
     public partial class BankPage : ContentPage
     {
-        void Handle_Canceled(object sender, System.EventArgs e)
-        {
-            Navigation.PopToRootAsync(false);
-        }
-
         void Handle_Tapped(object sender, System.EventArgs e)
         {
             DisplayAlert("Sorry,current unavailable", "You can feel free to chat and earn money, the online payment option will be available soon.", "OK");

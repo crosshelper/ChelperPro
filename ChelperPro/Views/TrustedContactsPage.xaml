@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.TrustedContactsPage">
-    <NavigationPage.TitleView>
-        <Grid>
-            <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="20" Clicked="Handle_Canceled"/>
-        </Grid>
-    </NavigationPage.TitleView>
     <ContentPage.Content>
          <sv:SettingsView x:Name="settings"
                      HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"

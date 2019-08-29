@@ -47,7 +47,7 @@ namespace ChelperPro.Views
                     Settings.UserId = uac.GetUserIDbyNo(ContactNo);
                     //uih.UpdateUserRealNameEmail(ContactNo, "Cycbis", "cycbis@cycbis.com");
 
-                    //Navigation.PushAsync(new SignUpInfoPage(ContactNo, Pwd));
+                    Navigation.PushAsync(new SignUpInfoPage(ContactNo, Pwd));
                 }
                 catch (SystemException ex)
                 {

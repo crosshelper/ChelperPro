@@ -45,7 +45,7 @@ namespace ChelperPro.Helpers
                 {
                     Console.WriteLine("Connecting to MySQL...");
                     conn.Open();
-                    string sql = "INSERT INTO UserMaster(Uname,Email,ContactNo,Pwd,Permission) VALUES(@para1, @para2, 0) ";
+                    string sql = "INSERT INTO UserMaster(ContactNo,Pwd,Permission) VALUES(@para1, @para2, 0) ";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("para1", ContactNo);
                     cmd.Parameters.AddWithValue("para2", Pwd);
