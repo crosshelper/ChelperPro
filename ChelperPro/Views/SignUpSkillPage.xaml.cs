@@ -32,7 +32,8 @@ namespace ChelperPro.Views
 
         void Handle_Next(object sender, EventArgs e)
         {
-            var temp = new TagInfo() { TagID = 99999, ImageUrl = "temp", Pcategory = "General" };
+            var temp = new TagInfo() { TagID = 99998, ImageUrl = "temp", Pcategory = "General" };
+            var temp1 = new TagInfo() { TagID = 99999, ImageUrl = "temp1", Pcategory = "General." };
             if (FSkillType.SelectedItem == null)
             {
                 DisplayAlert("Opps!","You should pick at least one skill","Ok");
@@ -46,7 +47,7 @@ namespace ChelperPro.Views
                     InsertTags.Add(temp);
                     if (TSkillType.SelectedItem == null)
                     {
-                        InsertTags.Add(temp);
+                        InsertTags.Add(temp1);
                     }
                     else
                     {
@@ -58,7 +59,7 @@ namespace ChelperPro.Views
                     InsertTags.Add((TagInfo)SSkillType.SelectedItem);
                     if (TSkillType.SelectedItem == null)
                     {
-                        InsertTags.Add(temp);
+                        InsertTags.Add(temp1);
                     }
                     else
                     {
