@@ -17,6 +17,8 @@ namespace ChelperPro.Helpers
 
         public List<TopicInfoLabel> GetMyTopicList(List<string> ziplist)
         {
+            topiclist.Clear();
+            newtopiclist.Clear();
             var tags = uih.GetMyTagsByID(Settings.UserId);
             var uinfo = uih.GetUserInfoByID(Settings.UserId);
             foreach (string zip in ziplist)
@@ -62,6 +64,8 @@ namespace ChelperPro.Helpers
 
         internal List<TopicInfoLabel> GetDigitalTopicList()
         {
+            topiclist.Clear();
+            newtopiclist.Clear();
             var tags = uih.GetMyTagsByID(Settings.UserId);
             var uinfo = uih.GetUserInfoByID(Settings.UserId);
             
