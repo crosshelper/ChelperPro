@@ -20,8 +20,9 @@ namespace ChelperPro.Views
             DisplayAlert("Report to us","Please send email to 'supports@cycbis.com' with the screenshot of the problem, thanks!","Got it"); //"More Context Action", mi.CommandParameter + " more context action", "OK");
         }
         public List<TopicInfoLabel> Topics { get; private set; }
-        TopicInfoHelper tih = new TopicInfoHelper();
-        UserInfoHelper uih = new UserInfoHelper();
+
+        readonly TopicInfoHelper tih = new TopicInfoHelper();
+        readonly UserInfoHelper uih = new UserInfoHelper();
 
         public PickNewcomerPage()
         {
@@ -74,7 +75,7 @@ namespace ChelperPro.Views
             {
                 Topics.Clear();
             }
-            Topics = tih.GetDigitalTopicList();
+            Topics = tih.GetMyTopicList(uih.GetMyServiceArea());
             MyListView.ItemsSource = Topics;
         }
     }
