@@ -8,7 +8,7 @@
     
     <sv:Section Title="Account" FooterText="">
             <sv:CommandCell x:Name="UserCell" Tapped="Handle_Account" IconSource="https://s3-us-west-1.amazonaws.com/image.cycbis.com/CycbisLogo/CHAppLogo.png"
-            IconSize="60,60" IconRadius="30" Title="William Liang" Description="" 
+            IconSize="60,60" IconRadius="30" Title="William Liang" Description="" DescriptionFontSize="16" 
             Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
             <sv:PickerCell Title="My Language" Tapped="Handle_HelperBackGround" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
             SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />

@@ -66,7 +66,7 @@ namespace ChelperPro.Helpers
             }
         }
 
-        internal string GetNobyID(string userID)
+        internal string GetNobyID(string uid)
         {
             MySqlConnection conn = new MySqlConnection(connStr);
             try
