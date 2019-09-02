@@ -14,7 +14,7 @@
                              x:Name="HPProject">
                     <Label Text="Current Balance" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#515151"></Label>
                     <StackLayout BackgroundColor="White" Padding="15" VerticalOptions="FillAndExpand">
-                            <Label Text="$9999"  HorizontalOptions="Center" FontSize="Large" TextColor="#FF4E18" FontAttributes="Bold"></Label>   
+                            <Label Text="$9.99"  HorizontalOptions="Center" FontSize="Large" TextColor="#FF4E18" FontAttributes="Bold"></Label>   
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Margin="16,20,16,20" VerticalOptions="StartAndExpand">

@@ -10,7 +10,7 @@
                 <Image VerticalOptions="Center" Aspect="AspectFill" HorizontalOptions="Center" Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/CycbisLogo/cb_logo.png"/>
             </StackLayout>
         <StackLayout VerticalOptions="End" Margin="0,0,0,0">  
-                <Label Text="Earn money up tp $1400 each week. "
+                <Label Text="Earn money up to $1400 each week. "
                             VerticalTextAlignment="End" HorizontalTextAlignment="Center" FontSize="21" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,0,0,10"/>
             <BoxView BackgroundColor="#CDCDCD" HeightRequest="1"></BoxView>
                 <Button Text="Get Started"

@@ -77,7 +77,7 @@
                                            Grid.ColumnSpan="2"
                                            FontSize="16"
                                            HorizontalOptions="End"
-                                           Text="{Binding Zipcode}"/> 
+                                           Text=""/> 
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

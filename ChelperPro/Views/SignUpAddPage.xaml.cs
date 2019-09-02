@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ChelperPro.Helpers;
+using WebSocketSharp;
 using Xamarin.Forms;
 
 namespace ChelperPro.Views
@@ -38,8 +39,17 @@ namespace ChelperPro.Views
             }
             else
             {
-                uih.CreateHelperSSN(SocialEntry.Text);
-                Navigation.PushAsync(new SignUpSkillPage());
+                if (SocialEntry.Text.IsNullOrEmpty())
+                {
+                    uih.CreateHelperSSN("000000000");
+                    Navigation.PushAsync(new SignUpSkillPage());
+                }
+                else
+                {
+                    uih.CreateHelperSSN(SocialEntry.Text);
+                    Navigation.PushAsync(new SignUpSkillPage());
+                }
+                
             }
             //Navigation.PushAsync(new SignUpSkillPage());
         }

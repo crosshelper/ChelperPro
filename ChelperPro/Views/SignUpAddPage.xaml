@@ -15,7 +15,7 @@
                 </Picker.ItemsSource>
                 </Picker>
                 <Label Text="SSN" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
-	            <Entry x:Name="SocialEntry" Placeholder="000000000 (Required)"
+	            <Entry x:Name="SocialEntry" Placeholder="000000000 (Optional)"
 	                    FontSize="16"
 	                    MaxLength="9"
 	                    Keyboard="Numeric"

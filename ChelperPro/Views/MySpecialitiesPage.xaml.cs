@@ -16,11 +16,11 @@ namespace ChelperPro.Views
             {
                 if (uih.IsTagExist())
                 {
-                    uih.UpdateHelperTags((IList<TagInfo>)SelectSkills.SelectedItems);
+                    uih.UpdateHelperTags(MytaginfoList);
                 }
                 else
                 {
-                    uih.CreateHelperTags((IList<TagInfo>)SelectSkills.SelectedItems);
+                    uih.CreateHelperTags(MytaginfoList);
                 }
                 Navigation.PopAsync(false);
             }
@@ -36,8 +36,8 @@ namespace ChelperPro.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 await Task.Delay(150);
-                MytaginfoList = uih.GetMyTagsByID(Settings.UserId);
-                SelectSkills.SelectedItems = MytaginfoList;
+                //MytaginfoList = uih.GetMyTagsByID(Settings.UserId);
+                //SelectSkills.SelectedItems = MytaginfoList;
                 PriceEntry.ValueText = uih.GetHelperPriceSign();
             });
         }
@@ -52,10 +52,10 @@ namespace ChelperPro.Views
         {
             InitializeComponent();
 
-            //MytaginfoList = uih.GetMyTagsByID(Settings.UserId);
+            MytaginfoList = uih.GetMyTagsByID(Settings.UserId);
             Alltagslist = th.GetTagList();
             SelectSkills.ItemsSource = Alltagslist;
-            //SelectSkills.SelectedItems = MytaginfoList;
+            SelectSkills.SelectedItems = MytaginfoList;
             SelectSkills.DisplayMember = "Pcategory";
             SelectSkills.Title = "My Skills";
             SelectSkills.UseAutoValueText = true;
@@ -66,12 +66,14 @@ namespace ChelperPro.Views
 
         private void RefreshTag()
         {
+            /*
             var mytaginfoList = uih.GetMyTagsByID(Settings.UserId);
             string TagsStr = "";
             foreach (TagInfo tag in mytaginfoList)
             {
                 TagsStr += tag.Pcategory + ", ";
             }
+            */
         }
     }
 }
