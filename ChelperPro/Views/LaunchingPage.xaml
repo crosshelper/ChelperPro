@@ -4,14 +4,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="ChelperPro.Views.LaunchingPage">
     <ContentPage.Content>
-        <StackLayout Margin="16,50,16,10">
-            <StackLayout Padding="0,50,0,45" HorizontalOptions="FillAndExpand"
+        <StackLayout Margin="16,20,16,10">
+                <StackLayout Margin="0,0,0,0" Padding="0,15,0,0">
+                    <Image Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/CycbisLogoH.png"
+                    HeightRequest="60"/>
+                </StackLayout>
+            <StackLayout Padding="0,30,0,35" HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand">
-                <Image VerticalOptions="Center" Aspect="AspectFill" HorizontalOptions="Center" Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/CycbisLogo/cb_logo.png"/>
+                <Image VerticalOptions="CenterAndExpand" Aspect="AspectFill" HorizontalOptions="Center" Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/helperlaunch.png"/>
             </StackLayout>
         <StackLayout VerticalOptions="End" Margin="0,0,0,0">  
                 <Label Text="Earn money up to $1400 each week. "
-                            VerticalTextAlignment="End" HorizontalTextAlignment="Center" FontSize="21" TextColor="#FF4E18" FontAttributes="Bold" Margin="0,0,0,10"/>
+                            VerticalTextAlignment="End" HorizontalTextAlignment="Center" FontSize="21" TextColor="#666666" FontAttributes="Bold" Margin="0,0,0,10"/>
             <BoxView BackgroundColor="#CDCDCD" HeightRequest="1"></BoxView>
                 <Button Text="Get Started"
                         TextColor="White"
@@ -22,7 +26,7 @@
                         FontAttributes="Bold"
                         BackgroundColor="#ff4e18"
                         Margin="0,5,0,0"
-                        Clicked="Handle_Yes"/>
+                        Clicked="Handle_GetStarted"/>
                 </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -7,7 +7,7 @@ namespace ChelperPro.Views
 {
     public partial class LaunchingPage : ContentPage
     {
-        void Handle_Yes(object sender, System.EventArgs e)
+        void Handle_GetStarted(object sender, System.EventArgs e)
         {
             Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(new SignInPage()));
         }
