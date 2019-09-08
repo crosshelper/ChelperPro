@@ -4,6 +4,7 @@ using Plugin.Multilingual;
 using Stripe;
 using Xamarin.Forms.Xaml;
 using ChelperPro;
+using ChelperPro.Resx;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -15,6 +16,7 @@ namespace ChelperPro
         public App()
         {
             InitializeComponent();
+            AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
             StripeConfiguration.SetApiKey("sk_live_XXXXXXXXXXXXXXX");
             SendBirdClient.Init(ChelperPro.Properties.Resources.APP_ID);
             MainPage = new MySplashScreen();

@@ -2,6 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:ChelperPro.Helpers"
     x:Class="ChelperPro.Views.LaunchingPage">
     <ContentPage.Content>
         <StackLayout Margin="16,20,16,10">
@@ -17,7 +18,7 @@
                 <Label Text="Earn money up to $1400 each week. "
                             VerticalTextAlignment="End" HorizontalTextAlignment="Center" FontSize="21" TextColor="#666666" FontAttributes="Bold" Margin="0,0,0,10"/>
             <BoxView BackgroundColor="#CDCDCD" HeightRequest="1"></BoxView>
-                <Button Text="Get Started"
+                <Button Text="{i18n:Translate Text=GetStart}"
                         TextColor="White"
                         FontSize="18"
                         BorderWidth="1"

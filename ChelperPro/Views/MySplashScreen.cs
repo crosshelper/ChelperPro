@@ -6,6 +6,7 @@ using Xamarin.Essentials;
 using ChelperPro.Helpers;
 using ChelperPro.Models;
 using WebSocketSharp;
+using ChelperPro.Resx;
 
 namespace ChelperPro.Views
 {
@@ -27,7 +28,7 @@ namespace ChelperPro.Views
                        // HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.CenterAndExpand
                     },
-                    new Label { Text = "Data Loading......",
+                    new Label { Text = AppResources.DataLoading,
                         TextColor=Color.FromHex("#999999"),
                         FontAttributes = FontAttributes.Bold,
                         FontSize = 26,
