@@ -2,38 +2,37 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
-             x:Class="ChelperPro.Views.AccountPage">
-        <NavigationPage.TitleView>
-    </NavigationPage.TitleView>
+             x:Class="ChelperPro.Views.AccountPage"
+             xmlns:i18n="clr-namespace:ChelperPro.Helpers">
         <sv:SettingsView x:Name="settings" HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}" HasUnevenRows="true"  >
             <sv:Section>
              <sv:CommandCell x:Name="NameCell"
                              IconSize="60,60" IconRadius="30"
-                             Title="William Liang" Description="Change photo" Tapped="Handle_ChangePhoto"
+                             Title="William Liang" Description="{i18n:Translate Text=ChangePhoto}" Tapped="Handle_ChangePhoto"
                              Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
             </sv:Section>
-            <sv:Section Title="Email Address" FooterText="">
-                <sv:EntryCell Title="Email" ValueText="{Binding Email}" 
+            <sv:Section Title="{i18n:Translate Text=EmailAdd}" FooterText="">
+                <sv:EntryCell Title="{i18n:Translate Text=Email}" ValueText="{Binding Email}" 
                               HintText="{Binding InputError.Value}" />
             </sv:Section>
-            <sv:Section Title="Name" FooterText="">
-                <sv:EntryCell Title="First Name" ValueText="{Binding FirstName}" 
+            <sv:Section Title="{i18n:Translate Text=Name}" FooterText="">
+                <sv:EntryCell Title="{i18n:Translate Text=FName}" ValueText="{Binding FirstName}" 
                               HintText="{Binding InputError.Value}" /> 
-                <sv:EntryCell Title="Last Name" ValueText="{Binding LastName}" 
+                <sv:EntryCell Title="{i18n:Translate Text=LName}" ValueText="{Binding LastName}" 
                               HintText="{Binding InputError.Value}" />
             </sv:Section>
             
-           <sv:Section Title="Security" FooterText="">
-                <sv:EntryCell Title="Phone number" ValueText="{Binding PhoneNumber}" 
+           <sv:Section Title="{i18n:Translate Text=Security}" FooterText="">
+                <sv:EntryCell Title="{i18n:Translate Text=PNumber}" ValueText="{Binding PhoneNumber}" 
                               HintText="{Binding InputError.Value}" /> 
-                <sv:PickerCell Title="Reset Password" Tapped="Handle_ResetPassword" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+                <sv:PickerCell Title="{i18n:Translate Text=RePassword}" Tapped="Handle_ResetPassword" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
                               SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     
             </sv:Section>
                 
               <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-                     <sv:ButtonCell Title="Save" TitleFontSize="Large"
-                     Command="{Binding SectionToggleCommand}" Tapped="Handle_Saved"/>
+                     <sv:ButtonCell Title="{i18n:Translate Text=Save}" TitleFontSize="Large"
+                     Command="{Binding SectionToggleCommand}" Tapped="Handle_Saved" TitleColor="#ff4e18"/>
               </sv:Section>
         </sv:SettingsView>
 </ContentPage>

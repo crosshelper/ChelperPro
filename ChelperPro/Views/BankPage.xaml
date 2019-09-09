@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:ChelperPro.Helpers"
              x:Class="ChelperPro.Views.BankPage">
     <ContentPage.Content>
           <sv:SettingsView x:Name="settings"
                              HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
                              HasUnevenRows="true">
-            <sv:Section Title="Bank Info" FooterText="">
+            <sv:Section Title="{i18n:Translate Text=BankInfo}" FooterText="">
                 <sv:PickerCell x:Name="BankCell" Title="**** **** **** 3306" 
                                ItemsSource="{Binding ItemsSource}" 
                                DisplayMember="Name" 

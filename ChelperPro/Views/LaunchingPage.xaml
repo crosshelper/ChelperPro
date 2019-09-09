@@ -15,7 +15,7 @@
                 <Image VerticalOptions="CenterAndExpand" Aspect="AspectFill" HorizontalOptions="Center" Source="https://s3-us-west-1.amazonaws.com/image.cycbis.com/Icon/helperlaunch.png"/>
             </StackLayout>
         <StackLayout VerticalOptions="End" Margin="0,0,0,0">  
-                <Label Text="Earn money up to $1400 each week. "
+                <Label Text="{i18n:Translate Text=LaunchingText}"
                             VerticalTextAlignment="End" HorizontalTextAlignment="Center" FontSize="21" TextColor="#666666" FontAttributes="Bold" Margin="0,0,0,10"/>
             <BoxView BackgroundColor="#CDCDCD" HeightRequest="1"></BoxView>
                 <Button Text="{i18n:Translate Text=GetStart}"

@@ -18,4 +18,142 @@
     <data name="GetStart" xml:space="preserve">
         <value>开始使用</value>
     </data>
+    <data name="LaunchingText" xml:space="preserve">
+        <value>使用Cycbis每周最高赚取$1400美金</value>
+    </data>
+        <data name="AbCompany" xml:space="preserve">
+        <value>Crosshelper Inc. 创办</value>
+    </data>
+        <data name="AbVersion" xml:space="preserve">
+        <value>测试版本 0.2.2</value>
+    </data>
+        <data name="AbDes" xml:space="preserve">
+        <value>早期测试登入</value>
+    </data>
+        <data name="AbFeedback" xml:space="preserve">
+        <value>反馈</value>
+    </data>
+        <data name="AbContact" xml:space="preserve">
+        <value>联系我们: bo.chen@crosshelper.com</value>
+    </data>
+        <data name="AbCopyRight" xml:space="preserve">
+        <value>版权© 2019-Present, Crosshelper, Inc.</value>
+    </data>
+    <data name="ChangePhoto" xml:space="preserve">
+        <value>更改照片</value>
+    </data>
+    <data name="EmailAdd" xml:space="preserve">
+        <value>电子邮箱地址</value>
+    </data>
+    <data name="Email" xml:space="preserve">
+        <value>电子邮箱</value>
+    </data>
+    <data name="Name" xml:space="preserve">
+        <value>名称</value>
+    </data>
+    <data name="FName" xml:space="preserve">
+        <value>姓</value>
+    </data>
+    <data name="LName" xml:space="preserve">
+        <value>名</value>
+    </data>
+    <data name="Security" xml:space="preserve">
+        <value>安全</value>
+    </data>
+    <data name="PNumber" xml:space="preserve">
+        <value>电话号码</value>
+    </data>
+    <data name="RePassword" xml:space="preserve">
+        <value>重置密码</value>
+    </data>
+    <data name="Save" xml:space="preserve">
+        <value>保存</value>
+    </data>
+    <data name="BankInfo" xml:space="preserve">
+        <value>银行信息</value>
+    </data>
+    <data name="BioText" xml:space="preserve">
+        <value>个人简介</value>
+    </data>
+    <data name="Cancel" xml:space="preserve">
+        <value>取消</value>
+    </data>
+    <data name="EarnTitle" xml:space="preserve">
+        <value>收入</value>
+    </data>
+    <data name="CurrentBalance" xml:space="preserve">
+        <value>当前余额</value>
+    </data>
+    <data name="TransferToBank" xml:space="preserve">
+        <value>转到我的银行</value>
+    </data>
+    <data name="Credit" xml:space="preserve">
+        <value>卡号</value>
+    </data>
+    <data name="ExpiryDate" xml:space="preserve">
+        <value>过期日期</value>
+    </data>
+    <data name="CardHolder" xml:space="preserve">
+        <value>持卡人姓名</value>
+    </data>
+    <data name="CVV" xml:space="preserve">
+        <value>卡背码</value>
+    </data>
+    <data name="ZipCode" xml:space="preserve">
+        <value>邮编</value>
+    </data>
+    <data name="LanguagePreference" xml:space="preserve">
+        <value>语言</value>
+    </data>
+    <data name="PriorityLanguage" xml:space="preserve">
+        <value>第一语言</value>
+    </data>
+    <data name="SecondLanguage" xml:space="preserve">
+        <value>第二语言</value>
+    </data>
+    <data name="Legal" xml:space="preserve">
+        <value>法律</value>
+    </data>
+    <data name="TermsOfService" xml:space="preserve">
+        <value>用户协议</value>
+    </data>
+    <data name="PrivacyPolicy" xml:space="preserve">
+        <value>隐私协议</value>
+    </data>
+    <data name="RealWordHelp" xml:space="preserve">
+        <value>线下需求</value>
+    </data>
+   <data name="DigitalHelp" xml:space="preserve">
+        <value>线上需求</value>
+    </data>
+    <data name="Inbox" xml:space="preserve">
+        <value>收信箱</value>
+    </data>
+    <data name="Profile" xml:space="preserve">
+        <value>我</value>
+    </data>
+    <data name="Earn" xml:space="preserve">
+        <value>收入</value>
+    </data>
+    <data name="Skills" xml:space="preserve">
+        <value>技能</value>
+    </data>
+    <data name="Select3Skills" xml:space="preserve">
+        <value>选择1-3个技能</value>
+    </data>
+    <data name="NoAbove" xml:space="preserve">
+        <value>上面没有？加一个</value>
+    </data>
+    <data name="SkillDes" xml:space="preserve">
+        <value>每次只能添加一个技能，如果添加成功我们会通知您。</value>
+    </data>
+    <data name="SPrice" xml:space="preserve">
+        <value>起始价格</value>
+    </data>
+    <data name="PriceDes" xml:space="preserve">
+        <value>设置您的最低起始价格，这会在客户那边显示</value>
+    </data>
+    <data name="MySkill" xml:space="preserve">
+        <value>我的技能</value>
+    </data>
 </root>

@@ -58,5 +58,281 @@ namespace ChelperPro.Resx {
                 return ResourceManager.GetString("GetStart", resourceCulture);
             }
         }
+        
+        internal static string LaunchingText {
+            get {
+                return ResourceManager.GetString("LaunchingText", resourceCulture);
+            }
+        }
+        
+        internal static string AbCompany {
+            get {
+                return ResourceManager.GetString("AbCompany", resourceCulture);
+            }
+        }
+        
+        internal static string AbVersion {
+            get {
+                return ResourceManager.GetString("AbVersion", resourceCulture);
+            }
+        }
+        
+        internal static string AbDes {
+            get {
+                return ResourceManager.GetString("AbDes", resourceCulture);
+            }
+        }
+        
+        internal static string AbFeedback {
+            get {
+                return ResourceManager.GetString("AbFeedback", resourceCulture);
+            }
+        }
+        
+        internal static string AbContact {
+            get {
+                return ResourceManager.GetString("AbContact", resourceCulture);
+            }
+        }
+        
+        internal static string AbCopyRight {
+            get {
+                return ResourceManager.GetString("AbCopyRight", resourceCulture);
+            }
+        }
+        
+        internal static string ChangePhoto {
+            get {
+                return ResourceManager.GetString("ChangePhoto", resourceCulture);
+            }
+        }
+        
+        internal static string EmailAdd {
+            get {
+                return ResourceManager.GetString("EmailAdd", resourceCulture);
+            }
+        }
+        
+        internal static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        internal static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        internal static string FName {
+            get {
+                return ResourceManager.GetString("FName", resourceCulture);
+            }
+        }
+        
+        internal static string LName {
+            get {
+                return ResourceManager.GetString("LName", resourceCulture);
+            }
+        }
+        
+        internal static string Security {
+            get {
+                return ResourceManager.GetString("Security", resourceCulture);
+            }
+        }
+        
+        internal static string PNumber {
+            get {
+                return ResourceManager.GetString("PNumber", resourceCulture);
+            }
+        }
+        
+        internal static string RePassword {
+            get {
+                return ResourceManager.GetString("RePassword", resourceCulture);
+            }
+        }
+        
+        internal static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        internal static string BankInfo {
+            get {
+                return ResourceManager.GetString("BankInfo", resourceCulture);
+            }
+        }
+        
+        internal static string BioText {
+            get {
+                return ResourceManager.GetString("BioText", resourceCulture);
+            }
+        }
+        
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        internal static string EarnTitle {
+            get {
+                return ResourceManager.GetString("EarnTitle", resourceCulture);
+            }
+        }
+        
+        internal static string CurrentBalance {
+            get {
+                return ResourceManager.GetString("CurrentBalance", resourceCulture);
+            }
+        }
+        
+        internal static string TransferToBank {
+            get {
+                return ResourceManager.GetString("TransferToBank", resourceCulture);
+            }
+        }
+        
+        internal static string Credit {
+            get {
+                return ResourceManager.GetString("Credit", resourceCulture);
+            }
+        }
+        
+        internal static string ExpiryDate {
+            get {
+                return ResourceManager.GetString("ExpiryDate", resourceCulture);
+            }
+        }
+        
+        internal static string CardHolder {
+            get {
+                return ResourceManager.GetString("CardHolder", resourceCulture);
+            }
+        }
+        
+        internal static string CVV {
+            get {
+                return ResourceManager.GetString("CVV", resourceCulture);
+            }
+        }
+        
+        internal static string ZipCode {
+            get {
+                return ResourceManager.GetString("ZipCode", resourceCulture);
+            }
+        }
+        
+        internal static string LanguagePreference {
+            get {
+                return ResourceManager.GetString("LanguagePreference", resourceCulture);
+            }
+        }
+        
+        internal static string PriorityLanguage {
+            get {
+                return ResourceManager.GetString("PriorityLanguage", resourceCulture);
+            }
+        }
+        
+        internal static string SecondLanguage {
+            get {
+                return ResourceManager.GetString("SecondLanguage", resourceCulture);
+            }
+        }
+        
+        internal static string Legal {
+            get {
+                return ResourceManager.GetString("Legal", resourceCulture);
+            }
+        }
+        
+        internal static string TermsOfService {
+            get {
+                return ResourceManager.GetString("TermsOfService", resourceCulture);
+            }
+        }
+        
+        internal static string PrivacyPolicy {
+            get {
+                return ResourceManager.GetString("PrivacyPolicy", resourceCulture);
+            }
+        }
+        
+        internal static string RealWordHelp {
+            get {
+                return ResourceManager.GetString("RealWordHelp", resourceCulture);
+            }
+        }
+        
+        internal static string DigitalHelp {
+            get {
+                return ResourceManager.GetString("DigitalHelp", resourceCulture);
+            }
+        }
+        
+        internal static string Inbox {
+            get {
+                return ResourceManager.GetString("Inbox", resourceCulture);
+            }
+        }
+        
+        internal static string Profile {
+            get {
+                return ResourceManager.GetString("Profile", resourceCulture);
+            }
+        }
+        
+        internal static string Earn {
+            get {
+                return ResourceManager.GetString("Earn", resourceCulture);
+            }
+        }
+        
+        internal static string Skills {
+            get {
+                return ResourceManager.GetString("Skills", resourceCulture);
+            }
+        }
+        
+        internal static string Select3Skills {
+            get {
+                return ResourceManager.GetString("Select3Skills", resourceCulture);
+            }
+        }
+        
+        internal static string NoAbove {
+            get {
+                return ResourceManager.GetString("NoAbove", resourceCulture);
+            }
+        }
+        
+        internal static string SkillDes {
+            get {
+                return ResourceManager.GetString("SkillDes", resourceCulture);
+            }
+        }
+        
+        internal static string SPrice {
+            get {
+                return ResourceManager.GetString("SPrice", resourceCulture);
+            }
+        }
+        
+        internal static string PriceDes {
+            get {
+                return ResourceManager.GetString("PriceDes", resourceCulture);
+            }
+        }
+        
+        internal static string MySkill {
+            get {
+                return ResourceManager.GetString("MySkill", resourceCulture);
+            }
+        }
     }
 }

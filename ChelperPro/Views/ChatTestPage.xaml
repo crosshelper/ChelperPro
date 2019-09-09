@@ -5,13 +5,14 @@
              xmlns:local="clr-namespace:ChelperPro.Helpers" 
              xmlns:partials="clr-namespace:ChelperPro.Views.Partials" 
              xmlns:controls="clr-namespace:ChelperPro.Controls"
+             xmlns:i18n="clr-namespace:ChelperPro.Helpers"
              Title="Chat">
     <NavigationPage.TitleView>
         <Grid>
             <StackLayout Orientation="Horizontal">
-            <!--此行无Event，仅做占位符--><Button Text="Cancel" TextColor="#FF4E18" HorizontalOptions="End" FontSize="17" VerticalOptions="Center"/>
+            <!--此行无Event，仅做占位符--><Button Text="" TextColor="#FF4E18" HorizontalOptions="End" FontSize="17" VerticalOptions="Center"/>
                 <Label x:Name="Page_Title" Text="" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="White" FontSize="17"/>
-                <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Clicked" VerticalOptions="Center"/>
+                <Button Text="{i18n:Translate Text=Cancel}" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Clicked" VerticalOptions="Center"/>
             </StackLayout>
         </Grid>
     </NavigationPage.TitleView>

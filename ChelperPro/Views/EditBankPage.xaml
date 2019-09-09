@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.EditBankPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:i18n="clr-namespace:ChelperPro.Helpers" xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.EditBankPage">
         <NavigationPage.TitleView>
         <Grid>
             <Button Text="Cancel" TextColor="White" HorizontalOptions="End" FontSize="17" Clicked="Handle_Canceled"/>
@@ -10,26 +10,26 @@
                      HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}"
                      HasUnevenRows="true">
     
-        <sv:Section Title="Bank Info" FooterText="">
-            <sv:EntryCell Title="Credit" ValueText="{Binding CardNumber}" 
+        <sv:Section Title="{i18n:Translate Text=BankInfo}" FooterText="">
+            <sv:EntryCell Title="{i18n:Translate Text=Credit}" ValueText="{Binding CardNumber}" 
                           Placeholder="0000 0000 0000 0000" 
                           HintText="{Binding InputError.Value}" /> 
-            <sv:EntryCell Title="Expiry Date" ValueText="{Binding ExDate}" 
+            <sv:EntryCell Title="{i18n:Translate Text=ExpiryDate}" ValueText="{Binding ExDate}" 
                           Placeholder="11/20"
                           HintText="{Binding InputError.Value}" />
-            <sv:EntryCell Title="Card Holder" ValueText="{Binding CName}" 
+            <sv:EntryCell Title="{i18n:Translate Text=CardHolder}" ValueText="{Binding CName}" 
                           Placeholder="Name" 
                           HintText="{Binding InputError.Value}" />
-            <sv:EntryCell Title="CVV" ValueText="{Binding CVV}" 
+            <sv:EntryCell Title="{i18n:Translate Text=CVV}" ValueText="{Binding CVV}" 
                           Placeholder="***" 
                           HintText="{Binding InputError.Value}" />
-            <sv:EntryCell Title="Zip Code" ValueText="{Binding Zip}" 
+            <sv:EntryCell Title="{i18n:Translate Text=ZipCode}" ValueText="{Binding Zip}" 
                           Placeholder="95136" 
                           HintText="{Binding InputError.Value}" />
         </sv:Section>
             
           <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-                 <sv:ButtonCell Title="Save" TitleFontSize="Large"
+                 <sv:ButtonCell Title="{i18n:Translate Text=Save}" TitleFontSize="Large"
                  Tapped="Handle_SavePyament" Command="{Binding SectionToggleCommand}" />
           </sv:Section>
     </sv:SettingsView>

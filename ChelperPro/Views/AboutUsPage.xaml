@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.AboutUsPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChelperPro.Views.AboutUsPage"
+              xmlns:i18n="clr-namespace:ChelperPro.Helpers">
     <NavigationPage.TitleView>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Margin="20,25,20,0">
-            <Label Text="By Crosshelper Inc." FontAttributes="Bold" FontSize="22" HorizontalOptions="Center"></Label>
-            <Label Text="Version beta 0.2.2" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
-            <Label Text="Early access" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
-            <Image Source="https://static1.squarespace.com/static/59c15a448a02c7a81f7a90aa/t/59e67fa1e5dd5b9338707436/1508278185945/Google.png" HeightRequest="80"/>
+            <Label Text="{i18n:Translate Text=AbCompany}" FontAttributes="Bold" FontSize="22" HorizontalOptions="Center"></Label>
+            <Label Text="{i18n:Translate Text=AbVersion}" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
+            <Label Text="{i18n:Translate Text=AbDes}" FontSize="20" HorizontalOptions="CenterAndExpand"></Label>
             <StackLayout>
-                <Label Text="Feedback"></Label>
+                <Label Text="{i18n:Translate Text=AbFeedback}"></Label>
                 <Editor x:Name="emaileditor" Placeholder="leave feedback here" HeightRequest="200" ></Editor>
                 <Button BackgroundColor="#FE5121" TextColor="White" FontAttributes="Bold" FontSize="Medium" Text="Submit" Clicked="Handle_Submit"/>
             </StackLayout>
-            <Label Text="Contact us: bo.chen@crosshelper.com"/>
-            <Label Text="© 2019-Present, Crosshelper, Inc. " FontSize="16" Margin="20"/>
+            <Label Text="{i18n:Translate Text=AbContact}"/>
+            <Label Text="{i18n:Translate Text=AbCopyRight}" FontSize="16" Margin="20"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

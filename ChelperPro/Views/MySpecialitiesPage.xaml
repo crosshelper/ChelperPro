@@ -2,17 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
+             xmlns:i18n="clr-namespace:ChelperPro.Helpers"
              x:Class="ChelperPro.Views.MySpecialitiesPage">
     <ContentPage.Content>
                 <sv:SettingsView>
-                    <sv:Section Title="Skills">
+                    <sv:Section Title="{i18n:Translate Text=Skills}">
                             <sv:PickerCell x:Name="SelectSkills" 
-                                           PageTitle="Select 3 skills"
+                                           PageTitle="{i18n:Translate Text=Select3Skills}"
                                            MaxSelectedNumber="3" />
                     </sv:Section>   
-                    <sv:Section Title="No above? add one." FooterText="Add one for each. We will notify you after processing is done.">
+                    <sv:Section Title="{i18n:Translate Text=NoAbove}" FooterText="{i18n:Translate Text=SkillDes}">
                     <sv:EntryCell 
-                        Title="My skill"
+                        Title="{i18n:Translate Text=MySkill}"
                         ValueText="" 
                         Placeholder="Add one" 
                         MaxLength="20"
@@ -21,7 +22,7 @@
                         HintText=""/>
                     </sv:Section>
 
-                    <sv:Section Title="Starting Price" FooterText="Set up your starting price to display on customer searching page.">
+                    <sv:Section Title="{i18n:Translate Text=SPrice}" FooterText="{i18n:Translate Text=PriceDes}">
                          <sv:EntryCell 
                              x:Name="PriceEntry"
                              Title="$"
@@ -35,7 +36,7 @@
                     </sv:Section>
             
                     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-                     <sv:ButtonCell Title="Save" Tapped="Handle_Save" TitleColor="#ff4e18"
+                     <sv:ButtonCell Title="{i18n:Translate Text=Save}" Tapped="Handle_Save" TitleColor="#ff4e18"
                      Command="{Binding SectionToggleCommand}"/>
                     </sv:Section>
                 </sv:SettingsView>
