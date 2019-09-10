@@ -3,23 +3,24 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
+    xmlns:i18n="clr-namespace:ChelperPro.Helpers"
     x:Class="ChelperPro.Views.SignUpSkillPage">
     <ContentPage.Content>
         <ScrollView>
         <StackLayout  Margin="15,20,15,10">
-            <Label Text="What are your service type?" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+            <Label Text="{i18n:Translate Text=SkillPageQ1}" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
             <Picker x:Name="FSkillType" ItemDisplayBinding="{Binding Pcategory}" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Required)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
             </Picker>
             <Picker x:Name="SSkillType" ItemDisplayBinding="{Binding Pcategory}" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Option)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
             </Picker>
             <Picker x:Name="TSkillType" ItemDisplayBinding="{Binding Pcategory}" ItemsSource="{Binding TypeProblems}" HorizontalOptions="FillAndExpand" HeightRequest="45" Title="Select Skill (Option)" TitleColor="#555555" FontSize="16" TextColor="#555555" >
             </Picker>
-            <Label Text="Not on the List？" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+            <Label Text="{i18n:Translate Text=SkillPageQ2}" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
             <Entry x:Name="AddSkill" Placeholder="Add One (Option)"
                     FontSize="16"
                     HorizontalOptions="FillAndExpand"
                     HeightRequest="45"/>
-            <Label Text="Service Area" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
+            <Label Text="{i18n:Translate Text=ServiceArea}" TextColor="#666666" FontSize="16" FontAttributes="Bold" Margin="0,5,0,0"/>
                 <StackLayout>
                 <Entry x:Name="FArea" Placeholder="Priority area (Required)"
                         FontSize="16"
@@ -50,7 +51,7 @@
 	            </Label>
                     <StackLayout VerticalOptions="StartAndExpand">
                             <Button  
-                                    Text="Launch!"
+                                    Text="{i18n:Translate Text=Save}"
                                     TextColor="White"
                                     FontSize="Medium"
                                     FontAttributes="Bold"

@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.SignInPage" Title="Sign In">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:i18n="clr-namespace:ChelperPro.Helpers"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ChelperPro.Views.SignInPage" Title="Sign In">
     <NavigationPage.TitleView>
         <Button Text="Cancel" TextColor="White" HorizontalOptions="End" Clicked="Handle_Canceled" FontSize="20"/>
     </NavigationPage.TitleView>
     <ContentPage.Content>
          <ScrollView>
             <StackLayout Margin="15,15,15,10"> 
-                    <Label Text="Get Started" FontSize="26" TextColor="#FF4E18" Margin="0,5,0,0" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/> 
-                  <Label Text="Enter your Phone number" FontSize="20" TextColor="#666666" Margin="0,5,0,0"/>
-                <Label Text="We'll sent a verification code to your phone" FontSize="16" TextColor="#666666" Margin="0,2,0,0"/> 
+                    <Label Text="{i18n:Translate Text=GetStart}" FontSize="26" TextColor="#FF4E18" Margin="0,5,0,0" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/> 
+                  <Label Text="{i18n:Translate Text=EnterPhone}" FontSize="20" TextColor="#666666" Margin="0,5,0,0"/>
+                <Label Text="{i18n:Translate Text=EnterPhoneLabel}" FontSize="16" TextColor="#666666" Margin="0,2,0,0"/> 
                 <BoxView BackgroundColor="#999999" HeightRequest="1" Margin="0,2,0,2"></BoxView> 
             <StackLayout VerticalOptions="End" HorizontalOptions="Center">
                 </StackLayout>
@@ -46,7 +48,7 @@
             <StackLayout VerticalOptions="StartAndExpand">
                     <StackLayout VerticalOptions="Start">
                             <Button  
-                                    Text="Get Started"
+                                    Text="{i18n:Translate Text=GetStart}"
                                     TextColor="White"
                                     FontSize="18"
                                     HeightRequest="45"

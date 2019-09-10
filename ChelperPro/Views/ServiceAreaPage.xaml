@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="ChelperPro.Views.ServiceAreaPage"
+             xmlns:i18n="clr-namespace:ChelperPro.Helpers"
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
              Title="Service area">
     <ContentPage.Content>
         <sv:SettingsView  x:Name="settings" HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}" HasUnevenRows="true">
     
-        <sv:Section Title="Priority area" FooterText="">
+        <sv:Section Title="{i18n:Translate Text=PriorityArea}" FooterText="">
             <sv:EntryCell 
                 ValueText="{Binding ZipCode1}" 
                 Placeholder="00000" 
@@ -16,7 +17,7 @@
                 ValueTextFontSize="Medium"
                 HintText="{Binding InputError.Value}"/>
         </sv:Section>
-        <sv:Section Title="Addition area" FooterText="Enter 5 digit zip code here.(Exp: 95131)">
+        <sv:Section Title="{i18n:Translate Text=AdditionArea}" FooterText="{i18n:Translate Text=AdditionEx}">
             <sv:EntryCell 
                 ValueText="{Binding ZipCode2}" 
                 Placeholder="00000" 
@@ -32,7 +33,7 @@
         </sv:Section>
             
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-             <sv:ButtonCell Title="Save" Tapped="Handle_Save" TitleColor="#FF4E18"
+             <sv:ButtonCell Title="{i18n:Translate Text=Save}" Tapped="Handle_Save" TitleColor="#FF4E18"
              Command="{Binding SectionToggleCommand}" />
     </sv:Section>
     

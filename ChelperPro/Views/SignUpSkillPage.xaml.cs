@@ -30,13 +30,13 @@ namespace ChelperPro.Views
         public string ZipCode2 { get; set; }
         public string ZipCode3 { get; set; }
 
-        void Handle_Next(object sender, EventArgs e)
+        async void Handle_Next(object sender, EventArgs e)
         {
             var temp = new TagInfo() { TagID = 99998, ImageUrl = "temp", Pcategory = "General" };
             var temp1 = new TagInfo() { TagID = 99999, ImageUrl = "temp1", Pcategory = "General." };
             if (FSkillType.SelectedItem == null)
             {
-                DisplayAlert("Opps!","You should pick at least one skill","Ok");
+                await DisplayAlert("Opps!","You should pick at least one skill","Ok");
                 return;
             }
             else
@@ -71,7 +71,7 @@ namespace ChelperPro.Views
             if (!string.IsNullOrEmpty(ZipCode1) && !string.IsNullOrEmpty(ZipCode2) && !string.IsNullOrEmpty(ZipCode3))
                 ush.UpdateZipCode(ZipCode1, ZipCode2, ZipCode3);
 
-            DisplayAlert("Congratulations!", "It's time to launch.", "OK");
+            await DisplayAlert("Congratulations!", "It's time to launch.", "OK");
             Application.Current.MainPage = new LaunchingPage();
             //Navigation.PopToRootAsync();
         }

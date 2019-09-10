@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:ChelperPro.Helpers"
              x:Class="ChelperPro.Views.NewcomerProblemPage">
     <ContentPage.Content>
         <ScrollView>
@@ -13,17 +14,17 @@
                         <StackLayout Orientation="Horizontal">
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                               <Label Text="Language:" FontSize="15" TextColor="#575656"></Label>
+                               <Label Text="{i18n:Translate Text=Language}" FontSize="15" TextColor="#575656"></Label>
                                <Label Text="{Binding Language}" FontSize="15" TextColor="#575656" x:Name="NHPPHelperLanguage"></Label>
                         </StackLayout>
         
                         <StackLayout>
-                            <Label Text="Problem type" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,20,0,0"></Label>
+                            <Label Text="{i18n:Translate Text=ProblemType}" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,20,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding TagType}" FontSize="15" TextColor="#575656" x:Name="NHPPSpecialities"></Label>
                             </StackLayout>
-                            <Label Text="Problem description" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
+                            <Label Text="{i18n:Translate Text=Description}" FontSize="16" TextColor="#575656" FontAttributes="Bold" Margin="0,10,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                             <Label FontSize="15" TextColor="#575656" x:Name="NHPPAboutMyself"
                                     Text="{Binding Des}"></Label>
@@ -31,7 +32,7 @@
                     </StackLayout>
                              <Button  
                                 Grid.Row="1"  Grid.ColumnSpan="1"
-                                Text="Confirm"
+                                Text="{i18n:Translate Text=Confirm}"
                                 TextColor="White"
                                 FontSize="16"
                                 FontAttributes="Bold"

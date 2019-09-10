@@ -3,42 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
              x:Class="ChelperPro.Views.ProfilePage"
-             Title="Profile">
+             xmlns:i18n="clr-namespace:ChelperPro.Helpers"
+             Title="{i18n:Translate Text=Profile}">
     <sv:SettingsView  x:Name="settings" HeightRequest="{Binding VisibleContentHeight,Source={x:Reference settings}}" HasUnevenRows="true">
     
-    <sv:Section Title="Account" FooterText="">
+    <sv:Section Title="{i18n:Translate Text=Account}" FooterText="">
             <sv:CommandCell x:Name="UserCell" Tapped="Handle_Account" IconSource="https://s3-us-west-1.amazonaws.com/image.cycbis.com/CycbisLogo/CHAppLogo.png"
             IconSize="60,60" IconRadius="30" Title="William Liang" Description="" DescriptionFontSize="16" 
             Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
-            <sv:PickerCell Title="My Language" Tapped="Handle_HelperBackGround" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+            <sv:PickerCell Title="{i18n:Translate Text=Language}" Tapped="Handle_HelperBackGround" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
             SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
 
     <sv:Section Title="Helper Info" IsVisible="{Binding SctionIsVisible}">
-        <sv:PickerCell Title="My Skills" Tapped="Handle_MySpecicalPage"  ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        <sv:PickerCell Title="{i18n:Translate Text=Skills}" Tapped="Handle_MySpecicalPage"  ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:PickerCell Title="Bio" Tapped="Handle_BioPage"  ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        <sv:PickerCell Title="{i18n:Translate Text=BioText}" Tapped="Handle_BioPage"  ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:PickerCell Title="Banking" Tapped="Handle_Bank" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        <sv:PickerCell Title="{i18n:Translate Text=BankInfo}" Tapped="Handle_Bank" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:CommandCell x:Name="ServiceArea" Tapped="Handle_ServiceArea" Title="Service Area" 
+        <sv:CommandCell x:Name="ServiceArea" Tapped="Handle_ServiceArea" Title="{i18n:Translate Text=ServiceArea}" 
         Command="{Binding ToProfileCommand}" CommandParameter="{Binding Parameter}"/>
     </sv:Section>
         
-    <sv:Section Title="Privacy" IsVisible="{Binding SctionIsVisible}">
-        <sv:PickerCell Title="Safety" Tapped="Handle_TrustedContacts"  ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+    <sv:Section Title="{i18n:Translate Text=Privacy}" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="{i18n:Translate Text=Safety}" Tapped="Handle_TrustedContacts"  ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
-        <sv:PickerCell Title="Legal" Tapped="Handle_LegalPage" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+        <sv:PickerCell Title="{i18n:Translate Text=Legal}" Tapped="Handle_LegalPage" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
         
-    <sv:Section Title="About" IsVisible="{Binding SctionIsVisible}">
-        <sv:PickerCell Title="About us" Tapped="Handle_AboutUsPage" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
+    <sv:Section Title="{i18n:Translate Text=About}" IsVisible="{Binding SctionIsVisible}">
+        <sv:PickerCell Title="{i18n:Translate Text=AboutUs}" Tapped="Handle_AboutUsPage" ItemsSource="{Binding ItemsSource}" DisplayMember="Name" MaxSelectedNumber="3" 
         SelectedItems="{Binding SelectedItems}" KeepSelectedUntilBack="true" PageTitle="select 3 items" />
     </sv:Section>
     
     <sv:Section FooterText="" IsVisible="{Binding SctionIsVisible}">
-             <sv:ButtonCell Title="Sign out" TitleColor="#FF4E18" Tapped="Handle_SignOutPage"
+             <sv:ButtonCell Title="{i18n:Translate Text=Signout}" TitleColor="#FF4E18" Tapped="Handle_SignOutPage"
              Command="{Binding SectionToggleCommand}" />
     </sv:Section>
     

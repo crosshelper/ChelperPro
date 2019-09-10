@@ -153,10 +153,133 @@
     <data name="PriceDes" xml:space="preserve">
         <value>Set up your starting price to display on customer searching page.</value>
     </data>
-    <data name="Earn" xml:space="preserve">
-        <value>Earn</value>
-    </data>
     <data name="MySkill" xml:space="preserve">
         <value>My Skill</value>
+    </data>
+    <data name="Language" xml:space="preserve">
+        <value>Language</value>
+    </data>
+    <data name="ProblemType" xml:space="preserve">
+        <value>Problem type</value>
+    </data>
+    <data name="Confirm" xml:space="preserve">
+        <value>Confirm</value>
+    </data>
+    <data name="Next" xml:space="preserve">
+        <value>Next</value>
+    </data>
+    <data name="Transaction" xml:space="preserve">
+        <value>Transaction</value>
+    </data>
+    <data name="Receipt" xml:space="preserve">
+        <value>Receipt</value>
+    </data>
+    <data name="ServiceFee" xml:space="preserve">
+        <value>Service Fee:</value>
+    </data>
+    <data name="Tax" xml:space="preserve">
+        <value>Tax:</value>
+    </data>
+    <data name="EquipmentFee" xml:space="preserve">
+        <value>Equipment Fee:</value>
+    </data>
+    <data name="CycbisFee" xml:space="preserve">
+        <value>Cycbis Fee:</value>
+    </data>
+    <data name="Total" xml:space="preserve">
+        <value>Total:</value>
+    </data>
+    <data name="CaseInfo" xml:space="preserve">
+        <value>Case Info</value>
+    </data>
+    <data name="Emergency" xml:space="preserve">
+        <value>Emergency</value>
+    </data>
+    <data name="DemandList" xml:space="preserve">
+        <value>Demand List</value>
+    </data>
+    <data name="PullDown" xml:space="preserve">
+        <value>Pull down to refresh the list</value>
+    </data>
+    <data name="PriorityArea" xml:space="preserve">
+        <value>Priority area</value>
+    </data>
+    <data name="AdditionArea" xml:space="preserve">
+        <value>Addition area</value>
+    </data>
+    <data name="AdditionEx" xml:space="preserve">
+        <value>Enter 5 digit zip code here.(Exp: 95131)</value>
+    </data>
+    <data name="Account" xml:space="preserve">
+        <value>Account</value>
+    </data>
+    <data name="Language" xml:space="preserve">
+        <value>Language</value>
+    </data>
+    <data name="Description" xml:space="preserve">
+        <value>Problem Description</value>
+    </data>
+    <data name="Payment" xml:space="preserve">
+        <value>Payment</value>
+    </data>
+    <data name="History" xml:space="preserve">
+        <value>History</value>
+    </data>
+    <data name="About" xml:space="preserve">
+        <value>About</value>
+    </data>
+    <data name="Signout" xml:space="preserve">
+        <value>Sign Out</value>
+    </data>
+    <data name="AboutUs" xml:space="preserve">
+        <value>About us</value>
+    </data>
+    <data name="Safety" xml:space="preserve">
+        <value>Safety</value>
+    </data>
+    <data name="Privacy" xml:space="preserve">
+        <value>Privacy</value>
+    </data>    
+    <data name="ServiceArea" xml:space="preserve">
+        <value>Service Area</value>
+    </data> 
+    <data name="EnterPhone" xml:space="preserve">
+        <value>Enter your Phone number</value>
+    </data>
+    <data name="EnterPhoneLabel" xml:space="preserve">
+        <value>If you're a new user we'll sent a verification code to your phone</value>
+    </data>
+    <data name="EnterPassword" xml:space="preserve">
+        <value>Enter Your Password</value>
+    </data>
+    <data name="ForgetPassword" xml:space="preserve">
+        <value>Forgot My Password</value>
+    </data>
+    <data name="SMSVerify" xml:space="preserve">
+        <value>Phone number verify</value>
+    </data>
+    <data name="SMSVerifyLabel" xml:space="preserve">
+        <value>Enter your code here</value>
+    </data>
+    <data name="ResendCode" xml:space="preserve">
+        <value>Send another code</value>
+    </data>
+    <data name="Old" xml:space="preserve">
+        <value>Old</value>
+    </data>
+    <data name="New" xml:space="preserve">
+        <value>New</value>
+    </data>
+    <data name="SSN" xml:space="preserve">
+        <value>SSN</value>
+    </data>
+    <data name="SSNLabel" xml:space="preserve">
+        <value>Enter SSN for background check and Tax, We will not use your SSN to do any other purposes.</value>
+    </data>
+    <data name="SkillPageQ1" xml:space="preserve">
+        <value>What are your service type?</value>
+    </data>
+    <data name="SkillPageQ2" xml:space="preserve">
+        <value>Not on the List？</value>
     </data>
 </root>

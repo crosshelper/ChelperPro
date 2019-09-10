@@ -2,6 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:ChelperPro.Helpers"
     x:Class="ChelperPro.Views.PwdForgotResetPage">
     <ContentPage.Content>
         <ScrollView>
@@ -9,7 +10,7 @@
                 <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
                   <!--登入 Sign In lable -->
                     <Label Margin="0,0,16,10"
-                           Text="Continuing with a password"
+                           Text="{i18n:Translate Text=EnterPassword}"
                            TextColor="#FF4E17"
                            FontSize="26"
                            FontAttributes="Bold"
@@ -17,7 +18,7 @@
                     </StackLayout>
                 <!--邮箱密码 Email&password input -->
                     <StackLayout VerticalOptions="Start" Margin="0,10,0,10">
-                            <Label Text="Set up new password" TextColor="#888888" FontSize="16" FontAttributes="Bold"/>
+                            <Label Text="{i18n:Translate Text=EnterPassword}" TextColor="#888888" FontSize="16" FontAttributes="Bold"/>
                             <Entry x:Name="PwdEntry" 
                                    FontSize="16"
                                    MaxLength="11"
@@ -33,7 +34,7 @@
            <!--登入按钮 Sign in Button -->   
                     <StackLayout VerticalOptions="StartAndExpand">
                             <Button Margin="0,0,0,0"
-                                    Text="Next"
+                                    Text="{i18n:Translate Text=Next}"
                                     TextColor="White"
                                     FontSize="Medium"
                                     FontAttributes="Bold"

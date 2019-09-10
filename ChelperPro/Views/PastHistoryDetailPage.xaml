@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:ChelperPro.Helpers"
              x:Class="ChelperPro.Views.PastHistoryDetailPage"
              Title="History detail">
 <ContentPage.Content>
@@ -8,7 +9,7 @@
             <ScrollView>
                  <StackLayout Padding="15">
                     <!-- Case detial -->
-                    <Label Text="Case Info" FontSize="Medium" FontAttributes="Bold" Margin="0,5,0,0"></Label>
+                    <Label Text="{i18n:Translate Text=CaseInfo}" FontSize="Medium" FontAttributes="Bold" Margin="0,5,0,0"></Label>
                     <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
                             <StackLayout 
                                      VerticalOptions="FillAndExpand" 
@@ -16,7 +17,7 @@
                             <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
                                         <StackLayout Orientation="Horizontal">
                                             <StackLayout >
-                                              <Label Text="Emergency" TextColor="Red" FontSize="Default" FontAttributes="Bold"></Label>
+                                              <Label Text="{i18n:Translate Text=Emergency}" TextColor="Red" FontSize="Default" FontAttributes="Bold"></Label>
                                             </StackLayout>
                                               <StackLayout HorizontalOptions="EndAndExpand">
                                                     <Label Text="09/29/2018" FontSize="Default" TextColor="#242424" x:Name="CaseDate"></Label>
@@ -24,7 +25,7 @@
                                                </StackLayout>
                             </StackLayout>
                         <StackLayout>
-                            <Label Text="Problem description" FontSize="Default" Margin="0,5,0,0"></Label>
+                            <Label Text="{i18n:Translate Text=Description}" FontSize="Default" Margin="0,5,0,0"></Label>
                             <BoxView BackgroundColor="#999999" HeightRequest="1"></BoxView>
                                 <Label Text="I lost my langage atPairs Charles de Gaulle Airport.But I can not speak French, and I dont  know how to find it."
                                     FontSize="Small" TextColor="#242424" ></Label>
@@ -44,26 +45,26 @@
                         </StackLayout>
                 <!--Receipt-->
                         
-                        <Label Text="Transaction" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" ></Label>
+                        <Label Text="{i18n:Translate Text=Transaction}" FontSize="Medium" Margin="0,20,0,0" FontAttributes="Bold" ></Label>
                         <BoxView BackgroundColor="#999999" HeightRequest="1.5"></BoxView>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Service Fee:" FontSize="Small"></Label>
+                            <Label Text="{i18n:Translate Text=ServiceFee}" FontSize="Small"></Label>
                                 <Label Text="$120" FontSize="Small" TextColor="#242424"></Label>
                         </StackLayout>  
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Equipment Fee:" FontSize="Small"></Label>
+                            <Label Text="{i18n:Translate Text=EquipmentFee}" FontSize="Small"></Label>
                             <Label Text="$65" FontSize="Small" TextColor="#242424"></Label>
                         </StackLayout> 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Cycbis fee:" FontSize="Small"></Label>
+                            <Label Text="{i18n:Translate Text=CycbisFee}" FontSize="Small"></Label>
                             <Label Text="$27.75" FontSize="Small" TextColor="#242424"></Label>
                         </StackLayout> 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Tax:" FontSize="Small"></Label>
+                            <Label Text="{i18n:Translate Text=Tax}" FontSize="Small"></Label>
                             <Label Text="$16.65" FontSize="Small" TextColor="#242424"></Label>
                         </StackLayout> 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                            <Label Text="Total:" FontSize="Small"></Label>
+                            <Label Text="{i18n:Translate Text=Total}" FontSize="Small"></Label>
                             <Label Text="$229.4" FontSize="Small" TextColor="#242424"></Label>
                         </StackLayout>
                     </StackLayout>
