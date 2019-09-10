@@ -157,129 +157,126 @@
         <value>我的技能</value>
     </data>
     <data name="Language" xml:space="preserve">
-        <value>Language</value>
+        <value>语言</value>
     </data>
     <data name="ProblemType" xml:space="preserve">
-        <value>Problem type</value>
+        <value>问题类型</value>
     </data>
     <data name="Confirm" xml:space="preserve">
-        <value>Confirm</value>
+        <value>确认</value>
     </data>
     <data name="Next" xml:space="preserve">
-        <value>Next</value>
+        <value>下一步</value>
     </data>
     <data name="Transaction" xml:space="preserve">
-        <value>Transaction</value>
+        <value>收据</value>
     </data>
     <data name="Receipt" xml:space="preserve">
-        <value>Receipt</value>
+        <value>收据</value>
     </data>
     <data name="ServiceFee" xml:space="preserve">
-        <value>Service Fee:</value>
+        <value>服务费:</value>
     </data>
     <data name="Tax" xml:space="preserve">
-        <value>Tax:</value>
+        <value>税:</value>
     </data>
     <data name="EquipmentFee" xml:space="preserve">
-        <value>Equipment Fee:</value>
+        <value>设备费:</value>
     </data>
     <data name="CycbisFee" xml:space="preserve">
-        <value>Cycbis Fee:</value>
+        <value>Cycbis费:</value>
     </data>
     <data name="Total" xml:space="preserve">
-        <value>Total:</value>
+        <value>总计:</value>
     </data>
     <data name="CaseInfo" xml:space="preserve">
-        <value>Case Info</value>
+        <value>案件信息</value>
     </data>
     <data name="Emergency" xml:space="preserve">
-        <value>Emergency</value>
+        <value>紧急</value>
     </data>
     <data name="DemandList" xml:space="preserve">
-        <value>Demand List</value>
+        <value>事件列表</value>
     </data>
     <data name="PullDown" xml:space="preserve">
-        <value>Pull down to refresh the list</value>
+        <value>下拉刷新t</value>
     </data>
     <data name="PriorityArea" xml:space="preserve">
-        <value>Priority area</value>
+        <value>优选区域</value>
     </data>
     <data name="AdditionArea" xml:space="preserve">
-        <value>Addition area</value>
+        <value>额外区域</value>
     </data>
     <data name="AdditionEx" xml:space="preserve">
-        <value>Enter 5 digit zip code here.(Exp: 95131)</value>
+        <value>输入邮政编码.(例如: 95131)</value>
     </data>
     <data name="Account" xml:space="preserve">
-        <value>Account</value>
-    </data>
-    <data name="Language" xml:space="preserve">
-        <value>Language</value>
+        <value>账户</value>
     </data>
     <data name="Description" xml:space="preserve">
-        <value>Problem Description</value>
+        <value>问题描述</value>
     </data>
     <data name="Payment" xml:space="preserve">
-        <value>Payment</value>
+        <value>支付</value>
     </data>
     <data name="History" xml:space="preserve">
-        <value>History</value>
+        <value>历史记录</value>
     </data>
     <data name="About" xml:space="preserve">
-        <value>About</value>
+        <value>关于</value>
     </data>
     <data name="Signout" xml:space="preserve">
-        <value>Sign Out</value>
+        <value>登出t</value>
     </data>
     <data name="AboutUs" xml:space="preserve">
-        <value>About us</value>
+        <value>关于我们</value>
     </data>
     <data name="Safety" xml:space="preserve">
-        <value>Safety</value>
+        <value>安全</value>
     </data>
     <data name="Privacy" xml:space="preserve">
-        <value>Privacy</value>
+        <value>隐私</value>
     </data>    
     <data name="ServiceArea" xml:space="preserve">
-        <value>Service Area</value>
+        <value>服务区域</value>
     </data> 
     <data name="EnterPhone" xml:space="preserve">
-        <value>Enter your Phone number</value>
+        <value>请输入你的电话号码</value>
     </data>
     <data name="EnterPhoneLabel" xml:space="preserve">
-        <value>If you're a new user we'll sent a verification code to your phone</value>
+        <value>请输入您手机收到的验证码</value>
     </data>
     <data name="EnterPassword" xml:space="preserve">
-        <value>Enter Your Password</value>
+        <value>请输入您的密码</value>
     </data>
     <data name="ForgetPassword" xml:space="preserve">
-        <value>Forgot My Password</value>
+        <value>忘记密码</value>
     </data>
     <data name="SMSVerify" xml:space="preserve">
-        <value>Phone number verify</value>
+        <value>手机验证</value>
     </data>
     <data name="SMSVerifyLabel" xml:space="preserve">
-        <value>Enter your code here</value>
+        <value>请输入您的验证码</value>
     </data>
     <data name="ResendCode" xml:space="preserve">
-        <value>Send another code</value>
+        <value>重新发送</value>
     </data>
     <data name="Old" xml:space="preserve">
-        <value>Old</value>
+        <value>旧</value>
     </data>
     <data name="New" xml:space="preserve">
-        <value>New</value>
+        <value>新</value>
     </data>
     <data name="SSN" xml:space="preserve">
-        <value>SSN</value>
+        <value>社会安全号</value>
     </data>
     <data name="SSNLabel" xml:space="preserve">
-        <value>Enter SSN for background check and Tax, We will not use your SSN to do any other purposes.</value>
+        <value>请输入社会安全号来帮助Cycbis完成背景调查和协助您的税务问题, 我们不会将您的社会安全号用作其他目的.</value>
     </data>
     <data name="SkillPageQ1" xml:space="preserve">
-        <value>What are your service type?</value>
+        <value>您有哪些专业技能？</value>
     </data>
     <data name="SkillPageQ2" xml:space="preserve">
-        <value>Not on the List？</value>
+        <value>没有找到您的特长？</value>
     </data>
 </root>
